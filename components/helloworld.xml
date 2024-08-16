@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="HelloWorld" extends="Scene"> 
+
+<script type="text/brightscript" uri="pkg:/source/Main.brs" />
+
 	<children>
       <Label id="myLabel" 
       	text="HelloRoku!"
@@ -9,6 +12,46 @@
       	vertAlign="center"
       	/>
     </children>
+
+     <!-- <children  > -->
+
+	<!-- Poster node with image from a uri -->
+    <!-- <Poster 
+     
+      id = "PosterExample" 
+      width = "512" 
+      isVisible = "false"
+      height = "288" 
+      uri = "http://www.sdktestinglab.com/Tutorial/images/videopg.jpg" /> -->
+      <!-- <Button 
+      id="exampleButton1" 
+      text="Example Button" 
+      showFocusFootprint="true" 
+      minWidth="240" />
+
+  </children> -->
+
+   <children>
+    <LayoutGroup   id="topContainer" 
+     translation = "[0,0]"    
+     layoutDirection="horiz" 
+     horizAlignment="right" 
+     vertAlignment="top" 
+     itemSpacings="[20]">
+
+        <label id="temperatureLabel" text="test" 	width="1280" 
+      	height="720" >
+         
+        </label>
+
+        <Poster
+            id = "weatherIcon"
+            width = "250"
+            height = "250"
+            uri = "http://www.sdktestinglab.com/Tutorial/images/videopg.jpg" />
+
+      </LayoutGroup>
+  </children>
 <!-- BrightScript Portion -->
 <script type="text/brightscript" >
 <![CDATA[
@@ -21,6 +64,21 @@
     m.myLabel = m.top.findNode("myLabel")
 
     m.mylabel.text = "EmbetDev"
+
+      customView = CreateObject("roSGNode", "ButtonExample")
+    m.top.appendChild(customView)
+    customView.setFocus(true)
+   
+   rect = m.top.boundingRect()
+    print "rect = " rect
+    
+    x = rect.width /2 + 50
+    y = 100
+    customView.translation = [700, 200]
+
+    print m
+    print m.top
+    print m.global
     
     'Set the font size
     m.myLabel.font.size=92

@@ -16,6 +16,14 @@ sub Main()
     scene = screen.CreateScene("HelloWorld")
     screen.show()
 
+    print screen
+
+    print scene
+
+    label = scene.findNode("myLabel")
+
+   label.text = "NBA DEMO"
+
     while(true)
         msg = wait(0, m.port)
         msgType = type(msg)
