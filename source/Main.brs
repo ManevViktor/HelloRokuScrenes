@@ -13,16 +13,16 @@ sub Main()
     screen.setMessagePort(m.port)
 
     'Create a scene and load /components/helloworld.xml'
-    scene = screen.CreateScene("HelloWorld")
+    scene = screen.CreateScene("RowListExample")
     screen.show()
 
     print screen
 
     print scene
 
-    label = scene.findNode("myLabel")
+'     label = scene.findNode("myLabel")
 
-   label.text = "NBA DEMO"
+'    label.text = "NBA DEMO"
 
     while(true)
         msg = wait(0, m.port)

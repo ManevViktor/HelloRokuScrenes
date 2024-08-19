@@ -65,7 +65,7 @@
 
     m.mylabel.text = "EmbetDev"
 
-      customView = CreateObject("roSGNode", "ButtonExample")
+      customView = CreateObject("roSGNode", "SimpleRowList")
     m.top.appendChild(customView)
     customView.setFocus(true)
    
@@ -74,7 +74,7 @@
     
     x = rect.width /2 + 50
     y = 100
-    customView.translation = [700, 200]
+    customView.translation = [300, 200]
 
     print m
     print m.top
