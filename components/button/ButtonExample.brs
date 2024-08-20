@@ -6,11 +6,12 @@
 sub init()
     m.exampleButton1 = m.top.findNode("exampleButton1")
     m.exampleButton2 = m.top.findNode("exampleButton2")
+    m.infoPane =       m.top.findNode("infoPane")
 
-    examplerect = m.top.boundingRect()
-    centerx = (1280 - examplerect.width) / 2
-    centery = (720 - examplerect.height) / 2
-    m.top.translation = [ centerx, centery ]
+    ' examplerect = m.top.boundingRect()
+    ' centerx = (1280 - examplerect.width) / 2
+    ' centery = (720 - examplerect.height) / 2
+    ' m.top.translation = [ centerx, centery ]
 end sub
 
 ' onKeyEvent will handle button presses it recognizes in this example.
@@ -26,8 +27,8 @@ Function onKeyEvent(key as String, press as Boolean)
         if key = "up" or key = "down"
             if m.exampleButton1.hasFocus()
                 m.exampleButton2.setFocus(true)
-            else
-                m.exampleButton1.setFocus(true)
+            else if(m.exampleButton2.hasFocus())
+                m.infoPane.setFocus(true)
             end if
 
             handled = true

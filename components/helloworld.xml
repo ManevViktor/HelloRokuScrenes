@@ -39,8 +39,8 @@
      vertAlignment="top" 
      itemSpacings="[20]">
 
-        <label id="temperatureLabel" text="test" 	width="1280" 
-      	height="720" >
+        <label id="temperatureLabel"    color="FFFFFF" text="test" 	width="100" 
+      	height="100" >
          
         </label>
 
@@ -65,23 +65,26 @@
 
     m.mylabel.text = "EmbetDev"
 
+  rect = m.top.boundingRect()
+ rect2 = m.top.sceneBoundingRect()
+  print "local rect=" rec2
       customView = CreateObject("roSGNode", "ButtonExample")
     m.top.appendChild(customView)
     customView.setFocus(true)
    
-   rect = m.top.boundingRect()
+ 
     print "rect = " rect
     
     x = rect.width /2 + 50
     y = 100
-    customView.translation = [700, 200]
+    customView.translation = [800, 200]
 
     print m
     print m.top
     print m.global
     
     'Set the font size
-    m.myLabel.font.size=92
+    m.myLabel.font.size=30
 
     'Set the color to light blue
     m.myLabel.color="0x72D7EEFF"

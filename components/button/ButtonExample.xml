@@ -26,7 +26,7 @@
     -->
     <Button
       id="exampleButton2"
-      text="Another Button!"
+      text="Another Button!"   
       showFocusFootprint="true"
       minWidth="240"
       translation="[ 0, 80 ]" />
@@ -34,9 +34,9 @@
 
   <LayoutGroup
   id = "fullysaturatedcolors"
-  translation = "[ 0, -50 ]"
+  translation = "[ 0, 0 ]"
   itemSpacings = "[0]"
-  layoutDirection = "horiz" >
+  layoutDirection = "vert" >
 
   <Rectangle
     color = "0xEB1010FF"
@@ -61,6 +61,15 @@
       vertAlign = "center"
       text = "0xEB1010FF">
       </Label>
+
+       <ScrollingLabel 
+            translation="[0, 0]"
+            id = "infoPane"
+            width="300"
+            height="200"
+            color="FFFFFF"
+            text = "The InfoPane node class is used to display an opaque, white-bordered, rounded rectangular label with text providing help for a specific setting. This component can be used to help customers successfully configure settings related to their account profile, closed captioning, parental controls, and so on."
+        />   
       </LayoutGroup>
 
   </children>
