@@ -8,7 +8,12 @@
 <![CDATA[
 function init()
     m.theRowList = m.top.FindNode("theRowList")
-    m.theRowList.SetFocus(true)
+   
+
+         embetUI = CreateObject("roSGNode", "embetRoot")
+     m.top.appendChild(embetUI)
+     embetUI.translation = [800, 200]
+     embetUI.setfocus(true)
 end function
 ]]>
 </script>

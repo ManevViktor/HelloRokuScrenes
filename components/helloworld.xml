@@ -76,6 +76,8 @@
     y = 100
     customView.translation = [300, 200]
 
+
+
     print m
     print m.top
     print m.global

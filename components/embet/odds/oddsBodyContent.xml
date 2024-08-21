@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+<component name="oddsBodyContent" extends="ContentNode">
+      
+ 
+      <interface> 
+            <field id="teamHomeOdds" type="string" />
+            <field id="teamHomeDescription" type="string" />
+            <field id="teamAwayOdds" type="string" />
+            <field id="teamAwayDescription" type="string" />
+            <field id="marketName" type="string" />
+      </interface>
+
+      <children>
+      
+            <ContentNode title="Renderable Nodes">
+                  <ContentNode teamHomeOdds="255" teamAwayOdds="220" marketName="spread" />
+                  <ContentNode teamHomeOdds="215" teamAwayOdds="250" marketName="market" />
+            </ContentNode>
+
+      </children>
+
+</component>

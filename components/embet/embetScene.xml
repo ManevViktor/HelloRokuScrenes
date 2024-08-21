@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+<component name="embetRoot" extends="Group" initialFocus="information">
+    <script type="text/brightscript" uri="pkg:/components/embet/embetScene.brs" />
+    <children>
+        <Rectangle id="exampleRectangleRoot" width="320" height="500" color="0x0000f4">
+                         
+            <Poster id="sponsorLogo" width="150" height="50" uri="pkg:/images/ic_test_bg.png" />
+
+            <Label font="font:MediumBoldSystemFont" translation="[200,15]" text="Place Bet" />
+
+            <Rectangle translation="[0, 50]" width="320" height="70" color="0x000000">
+                <Label width="320"
+                       height="70"
+                       horizAlign="center"
+                       font="font:SmallestSystemFont"
+                       vertAlign="center"
+                       id="information"
+                       text="Tapp on ODSS"
+                       translation="[0,0]"
+                       color="0xFFFFFF" />
+
+            </Rectangle>
+
+            <Rectangle translation="[0, 120]" width="320" height ="250" color = "0x123345">
+            
+            </Rectangle>
+                         
+        </Rectangle>
+    </children>
+</component>
