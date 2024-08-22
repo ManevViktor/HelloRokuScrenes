@@ -22,7 +22,7 @@
 		m.top.rowLabelColor="0xa0b033ff"
         m.top.content = GetRowListContent()
 	    m.top.visible = true
-	    m.top.SetFocus(true)
+	   
 	    m.top.ObserveField("rowItemFocused", "onRowItemFocused")
 
 	   

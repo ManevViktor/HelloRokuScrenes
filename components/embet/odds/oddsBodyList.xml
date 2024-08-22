@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+
+<component name="oddsBodylist" extends="RowList">
+
+      <!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+      <script type="text/brightscript">
+            <![CDATA[
+
+    function init()
+        print "in SimpleRowListPanel init()"
+	    m.top.itemComponentName = "oddsListItem"
+          m.top.numRows = 5
+	    m.top.itemSize = [400, 50]
+	    m.top.rowItemSize= [[320,50],[320,50],[320,50],[320,50]]
+          m.top.showRowLabel = [false]
+          m.top.translation = [0, 10]
+	    m.top.rowFocusAnimationStyle = "floatingFocus"
+          m.top.content = GetRowListContent()
+	    m.top.visible = true
+	   
+    end function
+
+
+      function GetRowListContent() as object
+	    'Populate the RowList content here
+	    data = CreateObject("roSGNode", "ContentNode")
+	    for numRows = 0 to 5
+	        row = data.CreateChild("ContentNode")
+              row.title = "hello" + stri(numRows)	        
+	            item = row.CreateChild("oddsBodyContent")
+	            item.marketName =  "market"
+	            item.teamAwayOdds = "255" + stri(numRows)
+	            item.teamHomeOdds = stri(numRows)
+	       
+	    end for
+          ?"get content =" data
+            return data
+	end function
+
+      
+
+    function onRowItemFocused() as void
+        row = m.top.rowItemFocused[0]
+        col = m.top.rowItemFocused[1]
+        print "Row Focused: " + stri(row)
+        print "Col Focused: " + stri(col)
+    end function
+]]>
+
+
+</script>
+
+
+      </component>

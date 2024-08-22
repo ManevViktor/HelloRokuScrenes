@@ -1,28 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?> 
 
-<component name="embetRoot" extends="Group" initialFocus="information">
+<component name="embetRoot"  extends="Group" initialFocus="embetOddsHeaderText">
     <script type="text/brightscript" uri="pkg:/components/embet/embetScene.brs" />
     <children>
-        <Rectangle id="exampleRectangleRoot" width="320" height="500" color="0x0000f4">
+        <Rectangle focusable="true"  id="embetOddsRoot" width="400" height="550" color="0x0000f4">
+
+            <Rectangle focusable="true" id="embetOddsHeader"
+                       width="400"
+                       height="70"
+                       color="0x000000B4">
                          
-            <Poster id="sponsorLogo" width="150" height="50" uri="pkg:/images/ic_test_bg.png" />
+                <Poster loadDisplayMode="scaleToZoom" id="embetOddsSponsorLogo" translation="[5,0]" width="130" height="55" uri="pkg:/images/ic_test_bg.png" />
 
-            <Label font="font:MediumBoldSystemFont" translation="[200,15]" text="Place Bet" />
+                <Label id="embetOddsHeaderText"
+                       font="font:SmallestSystemFont"
+                       horizAlign="end"
+                       focusable="true"
+                       height="55"
+                       vertAlign="center"
+                       text="Place Bet" />
+            </Rectangle>
 
-            <Rectangle translation="[0, 50]" width="320" height="70" color="0x000000">
-                <Label width="320"
+            <Rectangle id="embetOddsBodyInfo"
+                       translation="[0, 50]"
+                       width="400"
+                       height="70"
+                       color="0x000000">
+                <Label width="400"
                        height="70"
                        horizAlign="center"
                        font="font:SmallestSystemFont"
                        vertAlign="center"
-                       id="information"
+                       id="embetOddsInformation"
                        text="Tapp on ODSS"
                        translation="[0,0]"
                        color="0xFFFFFF" />
 
             </Rectangle>
 
-            <Rectangle translation="[0, 120]" width="320" height ="250" color = "0x123345">
+            <Rectangle translation="[0, 120]" width="400" height="300" color="0x123345F0">
+                 <oddsBodylist />
             
             </Rectangle>
                          

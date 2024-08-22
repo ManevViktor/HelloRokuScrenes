@@ -4,17 +4,19 @@ sub init()
 
 rect=  m.top.boundingRect()
 
-?m.top.localBoundingRect()
+?"widgetRoot" m.top.localBoundingRect()
 
-node = m.top.findNode("information")
-
-rect2 = node.boundingRect()
-
-?rect2
+m.headerText = m.top.findNode("embetOddsHeaderText")
+m.root = m.top.findNode("embetOddsRoot")
+rect2 = m.headerText.boundingRect()
 
 ' node.translation = [rect2.width/2 , rect2.height/2 + 10]
-node.width = rect2.width
-node.height = rect2.height
+m.headerText.width = rect.width/2 - 50
+x = rect.width/2 
+
+m.headerText.translation = [x,0]
+
+?"rect2 =" rect2
 
 
 end sub

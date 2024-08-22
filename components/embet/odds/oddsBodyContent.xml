@@ -11,13 +11,14 @@
             <field id="marketName" type="string" />
       </interface>
 
-      <children>
+      <!-- <children> -->
+      <!-- <ContentNode > 
+            <ContentNode teamHomeOdds="255" teamAwayOdds="220" marketName="spread" />
+      </ContentNode>
+      <ContentNode> 
+            <ContentNode teamHomeOdds="215" teamAwayOdds="100" marketName="market" />
+      </ContentNode> -->
       
-            <ContentNode title="Renderable Nodes">
-                  <ContentNode teamHomeOdds="255" teamAwayOdds="220" marketName="spread" />
-                  <ContentNode teamHomeOdds="215" teamAwayOdds="250" marketName="market" />
-            </ContentNode>
-
-      </children>
+      <!-- </children> -->
 
 </component>

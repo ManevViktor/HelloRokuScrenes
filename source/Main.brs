@@ -18,9 +18,9 @@ sub Main()
 
     print screen
 
-    print scene
-
-'     label = scene.findNode("myLabel")
+    print scene.boundingRect()
+ 
+'     label = scene.findNode("myLabel")78998798778897
 
 '    label.text = "NBA DEMO"
 
