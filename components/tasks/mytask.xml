@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+<component name="mytask" extends="Task">
+    <script type="text/brightscript" uri="mytask.brs" />
+    
+
+<interface>
+    <field id="index" type="int" value="0"/>
+	<field id="id" type="integer" />
+	 <function name="hello" />
+</interface>
+
+<script type="text/brightscript" >
+<![CDATA[
+
+sub init()
+	m.top.functionName = "executeTask"
+end sub
+
+function executeTask() as void
+	while true
+		sleep(2000)
+		m.top.index = m.top.index + 1
+	end while
+end function
+
+function hello(param as object) as void
+ ?"hello" param
+end function
+
+]]>
+</script>
+
+</component>

@@ -9,9 +9,7 @@
 function init()
     m.theRowList = m.top.FindNode("theRowList")
 
-   
-
-         embetUI = CreateObject("roSGNode", "embetRoot")
+    embetUI = CreateObject("roSGNode", "embetRoot")
         
      m.top.appendChild(embetUI)
      embetUI.translation = [700, 100]
@@ -19,6 +17,9 @@ function init()
 
      ?embetLabel.hasFocus()
 
+       taskUI = CreateObject("roSGNode", "simpletaskscene")
+       m.top.appendChild(taskUI)
+       
 
 
 end function
