@@ -4,7 +4,7 @@
 <component name="oddsListItem" extends="Group">
       
       <interface > 
-             <field id="itemContent" type="node" onChange="itemContentChanged" alwaysNotify="true"/> 
+            <field id="itemContent" type="node" onChange="itemContentChanged" alwaysNotify="true" /> 
       </interface>
  
       <script type="text/brightscript">
@@ -13,8 +13,13 @@
 
     sub init()
       m.labelHome = m.top.findNode("labelHome") 
+      m.labelHome.font.size = 17
+    
+
       m.labelMarket = m.top.findNode("labelMarket")
+       m.labelMarket.font.size = 17
       m.labelAway = m.top.findNode("labelAway")
+       m.labelAway.font.size = 17
     end sub
 
     sub itemContentChanged()
@@ -32,34 +37,39 @@
 
             <children>
 
-                  <Rectangle  height="90" width="400">
-                        <LayoutGroup id="childernOdds" translation="[ 0, 0 ]" itemSpacings="[0]" layoutDirection="horiz">
+                  <Rectangle color="0x272727d5" height="50" width="400">
+                        <LayoutGroup id="childernOdds" translation="[ 0, 0 ]"  itemSpacings="[10]" layoutDirection="horiz">
+                              
+                              <Rectangle width = "70" height="50" color="0x123212">
                               <Label id="labelHome"
-                                     color="0x262626FF"
-                                     height="40"
+                                     color="0xffffff"
+                                     height="50"
                                      width="70"
                                      horizAlign="center"
                                      vertAlign="center"
-                                      font="font:SmallestSystemFont"
+                                     font="font:SmallestSystemFont"
                                      text="0xEB1010FF"></Label>
+                              </Rectangle>
 
                               <Label id="labelMarket"
-                                     color="0x262626FF"
-                                     height="40"
+                                     color="0xffffff"
+                                     height="50"
                                      width="240"
-                                      font="font:SmallestSystemFont"
+                                     font="font:SmallestSystemFont"
                                      horizAlign="center"
                                      vertAlign="center"
                                      text="0xEB1010FF"></Label>
 
-                              <Label color="0x262626FF"
+                              <Rectangle width = "70" height="50" color="0x123212">
+                              <Label color="0xffffff"
                                      id="labelAway"
-                                     height="40"
-                                      font="font:SmallestSystemFont"
+                                     height="50"
+                                     font="font:SmallestSystemFont"
                                      width="70"
                                      horizAlign="center"
                                      vertAlign="center"
-                                     text="0xEB1010FF"></Label>
+                                     text="0xEB1010FF"/>
+                                     </Rectangle>
                         </LayoutGroup>
 
                   </Rectangle>

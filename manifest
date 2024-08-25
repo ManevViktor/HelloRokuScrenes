@@ -27,4 +27,4 @@ splash_color=#000000
 splash_min_time=1
 
 # Resolution
-ui_resolutions=sd,hd
+ui_resolutions=sd,hd,fhd
