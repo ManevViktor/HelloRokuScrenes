@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <!--********** Copyright 2018 Roku Corp.  All Rights Reserved. **********-->
 
 <!-- This component will create a Button node example -->
-<component name="ButtonExample" extends="Group" initialFocus="exampleButton1" >
+<component name="ButtonExample" extends="Group" initialFocus="exampleButton1">
 
   <script type="text/brightscript" uri="pkg:/components/button/ButtonExample.brs" />
 
@@ -14,54 +14,46 @@
         focus on launching this channel due to the initialFocus field
         being set to this button id.
     -->
-    <Button 
-      id="exampleButton1" 
-      text="Example Button" 
-      showFocusFootprint="true" 
-      minWidth="240" />
 
-    <!--
+    <LayoutGroup id="fullysaturatedcolors"  translation="[ 0, 0 ]" itemSpacings="[0]" layoutDirection="vert">
+
+    <Rectangle  width="400" height="500" color = "0x000000" >
+
+ 
+  
+      <Button id="exampleButton1" text="Example Button" showFocusFootprint="true" minWidth="240" />
+
+      <!--
         Another button node. This button has predefined text and will
         have feedback when the button is focused.
     -->
-    <Button
-      id="exampleButton2"
-      text="Another Button!"
-      showFocusFootprint="true"
-      minWidth="240"
-      translation="[ 0, 80 ]" />
+      <Button id="exampleButton2"
+              text="Another Button!"
+              showFocusFootprint="true"
+              minWidth="240"
+              translation="[ 0, 80 ]" />
 
 
-  <LayoutGroup
-  id = "fullysaturatedcolors"
-  translation = "[ 0, -50 ]"
-  itemSpacings = "[0]"
-  layoutDirection = "horiz" >
 
-  <Rectangle
-    color = "0xEB1010FF"
-    height = "40"
-    width = "180" >
-      </Rectangle>
 
-         <Label
-      color = "0x262626FF"
-      height = "40"
-      width = "180"
-      horizAlign = "center"
-      vertAlign = "center"
-      text = "0xEB1010FF">
-      </Label>
+      <Rectangle color="0xEB1010FF" height="40" width="180"></Rectangle>
 
-         <Label
-      color = "0x262626FF"
-      height = "40"
-      width = "180"
-      horizAlign = "center"
-      vertAlign = "center"
-      text = "0xEB1010FF">
-      </Label>
-      </LayoutGroup>
+      <Label color="0x262626FF"
+             height="40"
+             width="180"
+             horizAlign="center"
+             vertAlign="center"
+             text="0xEB1010FF"></Label>
+
+      <Label color="0x262626FF"
+             height="40"
+             width="180"
+             horizAlign="center"
+             vertAlign="center"
+             text="0xEB1010FF"></Label>
+
+                </Rectangle> 
+    </LayoutGroup>
 
   </children>
 
