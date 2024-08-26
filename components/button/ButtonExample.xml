@@ -7,17 +7,27 @@
 
   <script type="text/brightscript" uri="pkg:/components/button/ButtonExample.brs" />
 
-  <children >
+  <children  >
     <!--
         A button node. This button has predefined text and will have
         feedback when the button is focused. This button will have
         focus on launching this channel due to the initialFocus field
         being set to this button id.
     -->
-
+<RadioButtonList
+  id="category_list"
+  translation="[0, 0]"
+  itemSize="[400,48]"
+>
+<ContentNode id = "categories" role = "content" >
+  <ContentNode title = "DRAMA"/>
+  <ContentNode title = "COMEDY"/>
+  <ContentNode title = "HORROR"/>
+</ContentNode>
+</RadioButtonList>
     <LayoutGroup id="fullysaturatedcolors"  translation="[ 0, 0 ]" itemSpacings="[0]" layoutDirection="vert">
 
-    <Rectangle  width="400" height="500" color = "0x000000" >
+    <Rectangle opacity="0.1"  width="400" height="250" color = "0x000000" >
 
  
   
@@ -52,7 +62,7 @@
              vertAlign="center"
              text="0xEB1010FF"></Label>
 
-                </Rectangle> 
+    </Rectangle> 
     </LayoutGroup>
 
   </children>

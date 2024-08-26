@@ -24,9 +24,9 @@ m.top.translation = [1920 - 500, 200]
 
 buttoinUI2 = CreateObject("roSGNode", "ButtonExample")
 m.top.appendChild(buttoinUI2)
-buttoinUI2.translation = [0, 30]
+buttoinUI2.translation = [0, 0]
 
-m.root.opacity =0.2
+m.root.opacity =0.9
 
 ?"UI buttonUI2" buttoinUI2.boundingRect()
 ?"UI embet" m.root.boundingRect()
