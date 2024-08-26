@@ -14,7 +14,7 @@ sub init()
 	m.simpleTask = CreateObject("roSGNode", "mytask")
 	m.simpleTask.ObserveField("index", "onIndexChanged")
     m.simpleTask.callFunc("hello", {viktor:"maneb"})
-	m.simpleTask.control = "RUN"
+	
 	
 
 

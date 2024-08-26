@@ -11,10 +11,10 @@
         print "in SimpleRowListPanel init()"
 	    m.top.itemComponentName = "SimpleRowListItem"
 	    m.top.numRows = 2
-	    m.top.itemSize = [190 * 3 + 20 * 2, 213]
+	    m.top.itemSize = [220 * 3 + 20 * 2, 253]
 	    m.top.rowHeights = [213]
-	    m.top.rowItemSize = [ [300, 213], [250, 213], [196, 213] ]
-	    m.top.itemSpacing = [ 0, 80 ]
+	    m.top.rowItemSize = [ [320, 213], [300, 213], [300, 213] ]
+	    m.top.itemSpacing = [ 0, 30 ]
 	    m.top.rowItemSpacing = [ [20, 25] ]
 		m.top.rowLabelOffset = [ [0, 30] ]
 	    m.top.rowFocusAnimationStyle = "floatingFocus"
@@ -22,6 +22,7 @@
 		m.top.rowLabelColor="0xa0b033ff"
         m.top.content = GetRowListContent()
 	    m.top.visible = true
+	   
 	   
 	    m.top.ObserveField("rowItemFocused", "onRowItemFocused")
 

@@ -20,13 +20,14 @@ sub Main()
 
     print "global bounds"scene.boundingRect()
  
-'     label = scene.findNode("myLabel")78998798778897
+'     label = scene.findNode("myLabel")
 
 '    label.text = "NBA DEMO"
 
     while(true)
         msg = wait(0, m.port)
         msgType = type(msg)
+        ?"msg type " msgType
         if msgType = "roSGScreenEvent"
             if msg.isScreenClosed() then return
         end if

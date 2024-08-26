@@ -10,6 +10,7 @@ sub init()
     examplerect = m.top.boundingRect()
     centerx = (1280 - examplerect.width) / 2
     centery = (720 - examplerect.height) / 2
+   
     ' m.top.translation = [ centerx, centery ]
 end sub
 
@@ -22,6 +23,7 @@ end sub
 ' this button event.
 Function onKeyEvent(key as String, press as Boolean)
     handled = false
+    ?"focus = " key , press
     if press
         if key = "up" or key = "down"
             if m.exampleButton1.hasFocus()

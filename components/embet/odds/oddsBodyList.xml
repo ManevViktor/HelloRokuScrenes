@@ -20,7 +20,9 @@
           m.top.itemSpacing = [0,2]
 	    m.top.rowFocusAnimationStyle = "floatingFocus"
           m.top.content = GetRowListContent()
+          m.top.ObserveField("rowItemFocused", "onRowItemFocused")
 	    m.top.visible = true
+        m.top.setFocus(true)
 	   
     end function
 
@@ -37,7 +39,7 @@
 	            item.teamHomeOdds = stri(numRows)
 	       
 	    end for
-          ?"get content =" data
+          
             return data
 	end function
 
@@ -49,6 +51,26 @@
         print "Row Focused: " + stri(row)
         print "Col Focused: " + stri(col)
     end function
+
+function onKeyEvent(key as String, press as Boolean) as Boolean
+  handled = false
+   ?"key press" key "  " press
+   node = type(m.top)
+   ?"type = " node
+
+   if node = "roSGNode" then
+      m.top.jumpToRowItem = [4,0]
+      handled = true
+   endif
+
+   ?getInterface(m.top, "ifRoSGNode") <> invalid
+   ?m.top 
+
+      ? m.top.currFocusRow
+   ? m.top.itemFocused
+  return handled
+end function
+   
 ]]>
 
 
