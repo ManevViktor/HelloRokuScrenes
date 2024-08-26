@@ -36,6 +36,11 @@ end function
 	text="Iteration 0"
 	translation="[550,550]" />
 
+
+	 <MaskGroup width="100" height="100" id="roundedMask" maskUri="pkg:/images/rounded_mask.png">
+        <Poster id="roundedImage" uri="pkg:/images/example_image.jpg" />
+    </MaskGroup>
+
 </children>
 
 </component>

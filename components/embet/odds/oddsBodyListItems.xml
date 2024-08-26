@@ -75,10 +75,10 @@
 
 
                     <Rectangle id="oddsVertical" visible= "false" color="0x272727d5" height="50" width="400">
-                        <LayoutGroup id="childernOdds"  translation="[ 0, 0 ]" vertAlign="center"  itemSpacings="[10]" layoutDirection="vertical">
+                        <LayoutGroup id="childernOdds"  translation="[ 0, 0 ]"   itemSpacings="[10]" layoutDirection="vertical">
                               
                               <Rectangle width = "70" height="50" color="0x123212">
-                              <Label id="labelHome"
+                              <Label id="vertlabelHome"
                                      color="0xffffff"
                                      height="50"
                                      width="70"
@@ -88,7 +88,7 @@
                                      text="0xEB1010FF"></Label>
                               </Rectangle>
 
-                              <Label id="labelMarket"
+                              <Label id="vertlabelMarket"
                                      color="0xffffff"
                                      height="50"
                                      width="240"
@@ -99,7 +99,7 @@
 
                               <Rectangle width = "70" height="50" color="0x123212">
                               <Label color="0xffffff"
-                                     id="labelAway"
+                                     id="vertlabelAway"
                                      height="50"
                                      font="font:SmallestSystemFont"
                                      width="70"
