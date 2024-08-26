@@ -7,14 +7,17 @@
 <![CDATA[
 
 sub init()
-	m.top.backgroundURI = "pkg:/images/purplebg.jpg"
+	
 
+  prot= CreateObject("roMessagePort")
 	m.indexLabel = m.top.findNode("indexLabel")
 	m.simpleTask = CreateObject("roSGNode", "mytask")
 	m.simpleTask.ObserveField("index", "onIndexChanged")
+    m.simpleTask.callFunc("hello", {viktor:"maneb"})
+	m.simpleTask.control = "RUN"
+	
 
 
-	params = { hey : buljas}
 	
 end sub
 

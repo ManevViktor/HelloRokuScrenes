@@ -17,15 +17,18 @@ sub init()
 	m.top.functionName = "executeTask"
 end sub
 
+
 function executeTask() as void
-	while true
+i =0
+	while i < 3
 		sleep(2000)
 		m.top.index = m.top.index + 1
+		i++
 	end while
 end function
 
 function hello(param as object) as void
- ?"hello" param
+ ?"hello from task call func" param
 end function
 
 ]]>

@@ -10,15 +10,18 @@ function init()
     m.theRowList = m.top.FindNode("theRowList")
 
     embetUI = CreateObject("roSGNode", "embetRoot")
+
+  m.top.backgroundURI = "pkg:/images/basket.jpg"
         
      m.top.appendChild(embetUI)
-     embetUI.translation = [700, 100]
+     
      embetLabel = m.top.FindNode("embetOddsHeaderText")
 
      ?embetLabel.hasFocus()
 
        taskUI = CreateObject("roSGNode", "simpletaskscene")
        m.top.appendChild(taskUI)
+     
        
 
 

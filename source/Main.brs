@@ -18,7 +18,7 @@ sub Main()
 
     print screen
 
-    print scene.boundingRect()
+    print "global bounds"scene.boundingRect()
  
 '     label = scene.findNode("myLabel")78998798778897
 

@@ -16,6 +16,8 @@ x = rect.width/2
 
 m.headerText.translation = [x,0]
 
+m.top.translation = [1920 - 500, 200]
+
 ?"rect2 =" rect2
 
 
