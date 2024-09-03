@@ -9,21 +9,23 @@
 function init()
     m.theRowList = m.top.FindNode("theRowList")
 
-    embetUI = CreateObject("roSGNode", "embetRoot")
+    m.embetUI = CreateObject("roSGNode", "embetRoot")
 
  
-     m.top.appendChild(embetUI)
-     
-     embetLabel = m.top.FindNode("embetOddsHeaderText")
-
-     
+     m.top.appendChild(m.embetUI)
+     m.embetUI.setfocus(true)
+     m.embetUI.observeField("focusChanged", "onFocusChanged")
 
        taskUI = CreateObject("roSGNode", "simpletaskscene")
        m.top.appendChild(taskUI)
       
-     
-       
 
+end function
+
+
+function onFocusChanged()
+?"onFocusChanged" m.embetUI.focusChanged
+    ' return focus to your own components
 
 end function
 ]]></script>

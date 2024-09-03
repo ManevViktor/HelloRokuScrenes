@@ -12,7 +12,7 @@ function init()
       m.top.content = GetRowListContent()
       m.top.ObserveField("rowItemFocused", "onRowItemFocused")
       m.top.visible = true
-      m.top.setFocus(true)
+ 
 
 end function
 
@@ -24,7 +24,7 @@ function GetRowListContent() as object
             row = data.CreateChild("ContentNode")
             row.title = "hello" + stri(numRows)
             item = row.CreateChild("oddsBodyContent")
-            item.marketName = "market"
+            item.marketName = "market "+ stri(numRows)
             item.teamAwayOdds = "255" + stri(numRows)
             item.teamHomeOdds = stri(numRows)
 
@@ -65,7 +65,10 @@ function onKeyEvent(key as string, press as boolean) as boolean
       end if
 
       if key = "left" then
+            ?"pressed left"
             m.global.findNode("")
+      else if key="right"
+            m.top.setfocus(false)    
       end if
 
 

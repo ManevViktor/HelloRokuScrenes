@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?> 
 
-<component name="embetRoot"  extends="Group" initialFocus="embetOddsHeaderText">
+<component name="embetRoot"  extends="Group" initialFocus="embetOddsList">
+<interface>
+    <field id="focusChanged" type="string" />
+</interface>
     <script type="text/brightscript" uri="pkg:/components/embet/embetScene.brs" />
     <children>
-        <Rectangle focusable="true"  id="embetOddsRoot" width="400" height="550" color="0x0000f4">
+        <Rectangle focusable="false"  id="embetOddsRoot" width="400" height="550" color="0x0000f4">
 
-            <Rectangle focusable="true" id="embetOddsHeader"
+            <Rectangle focusable="false" id="embetOddsHeader"
                        width="400"
                        height="70"
                        color="0x000000B4">
@@ -39,10 +42,16 @@
             </Rectangle>
 
             <Rectangle translation="[0, 120]" width="400" height="300" color="0x123345F0">
-                 <oddsBodylist />
+                 <oddsBodylist id="embetOddsList" focusable="true" />
             
             </Rectangle>
                          
         </Rectangle>
+
+            
+     
+
     </children>
+
+    
 </component>

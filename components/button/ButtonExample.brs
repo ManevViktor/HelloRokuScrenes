@@ -1,4 +1,4 @@
-' ********** Copyright 2018 Roku Corp.  All Rights Reserved. ********** 
+' ********** Copyright 2018 Roku Corp.  All Rights Reserved. **********
 '
 ' We will initialize the Button example by setting two variables that
 ' contain references to the two different buttons in this example and
@@ -10,7 +10,7 @@ sub init()
     examplerect = m.top.boundingRect()
     centerx = (1280 - examplerect.width) / 2
     centery = (720 - examplerect.height) / 2
-   
+
     ' m.top.translation = [ centerx, centery ]
 end sub
 
@@ -21,20 +21,20 @@ end sub
 ' home button), this onKeyEvent will not handle the button press and
 ' pass this information up the focus chain until something handles
 ' this button event.
-Function onKeyEvent(key as String, press as Boolean)
-    handled = false
-    ?"focus = " key , press
-    if press
-        if key = "up" or key = "down"
-            if m.exampleButton1.hasFocus()
-                m.exampleButton2.setFocus(true)
-            else
-                m.exampleButton1.setFocus(true)
-            end if
+function onKeyEvent(key as string, press as boolean) as boolean
+    handled = true
+    ?" "
+    ?" on key event button example focus = " key, press
 
-            handled = true
-        end if
+    if(key = "left" and press = true) then
+        node = m.global.findNode("embetOddsList")
+        node.setFocus(true)
+     
+    else     m.exampleButton1.setFocus(true)
+
+        handled = true
     end if
 
+
     return handled
-end Function
+end function
