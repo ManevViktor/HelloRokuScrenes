@@ -14,11 +14,33 @@ sub init()
 	m.simpleTask = CreateObject("roSGNode", "mytask")
 	m.simpleTask.ObserveField("index", "onIndexChanged")
     m.simpleTask.callFunc("hello", {viktor:"maneb"})
-	
-	
+	   
+    m.bcLib = createObject("roSGNode", "ComponentLibrary")
+    m.bcLib.observeField("loadStatus", "onLoadStatus")
+    m.bcLib.id = "bcLib"
+    m.bcLib.uri = "pkg:/components/external/roku-deploy.zip"
 
 
 	
+end sub
+
+sub onLoadStatus(ev)
+    status = ev.getData()
+    if status = "ready" then
+
+    messagePort = createObject("roMessagePort")
+ 
+       ?m.bclib
+        ?"QR code was successfully downloaded and all its components are now accessible"
+
+    else if status = "loading" then
+
+        ?Qr code  package is currently being downloaded
+
+    else if status = "failed" then
+
+        ?"Something went wrong with the bcLib download/load process"
+    end if
 end sub
 
 function onIndexChanged() as void
@@ -35,6 +57,7 @@ end function
 	id="indexLabel"
 	text="Iteration 0"
 	translation="[550,550]" />
+
 
 
 	 <MaskGroup width="100" height="100" id="roundedMask" maskUri="pkg:/images/rounded_mask.png">

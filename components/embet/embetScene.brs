@@ -31,5 +31,29 @@ m.root.opacity =0.9
 ?"UI buttonUI2" buttoinUI2.boundingRect()
 ?"UI embet" m.root.boundingRect()
 
+initlib()
 
+end sub
+
+
+sub initlib()
+    
+end sub
+
+sub onLoadStatus(ev)
+    status = ev.getData()
+    if status = "ready" then
+
+        ' bcLib was successfully downloaded and all its components are now accessible
+
+    else if status = "loading" then
+
+        ' bcLib package is currently being downloaded
+
+    else if status = "failed" then
+
+        ' Something went wrong with the bcLib download/load process.
+        ' Please check if the package URL was properly set.
+
+    end if
 end sub
