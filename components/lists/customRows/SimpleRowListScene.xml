@@ -9,28 +9,38 @@
 function init()
     m.theRowList = m.top.FindNode("theRowList")
 
-    m.embetUI = CreateObject("roSGNode", "embetRoot")
-
- 
+     m.embetUI = CreateObject("roSGNode", "embetRoot")
      m.top.appendChild(m.embetUI)
      m.embetUI.setfocus(true)
      m.embetUI.observeField("focusChanged", "onFocusChanged")
+    
+       di = CreateObject("roDeviceInfo")
+  screenSize = di.GetDisplaySize()
+   if screenSize <> invalid then
+      widgetSize = {w:screenSize.w/4, h: screenSize.h}
+      widgetX = screenSize.w - widgetSize.w
+      m.embetUI.translation = [widgetX, 0] 
+     
+end if
 
        taskUI = CreateObject("roSGNode", "simpletaskscene")
        m.top.appendChild(taskUI)
       
+            m.buttoinUI2 = CreateObject("roSGNode", "ButtonExample")
+      m.top.appendChild(m.buttoinUI2)
+      m.buttoinUI2.translation = [600, 250]
 
 end function
 
 
 function onFocusChanged()
-?"onFocusChanged" m.embetUI.focusChanged
+?" onFocusChanged" m.embetUI.focusChanged
     ' return focus to your own components
 
 end function
 ]]></script>
 
-        <children>
-            <SimpleRowList id="theRowList" translation="[50,50]" />
-        </children>
-    </component>
+            <children>
+                <SimpleRowList id="theRowList" translation="[50,50]" />
+            </children>
+        </component>

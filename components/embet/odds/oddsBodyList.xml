@@ -5,7 +5,9 @@
 <component name="oddsBodylist" extends="RowList">
 
       <!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
-    
+    <interface>
+      <field id="sizeChanged" type="assocArray" />
+    </interface>
 
       <script type="text/brightscript" uri="pkg:/components/embet/odds/oddsBodylist.brs"/>
         

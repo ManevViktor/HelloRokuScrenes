@@ -3,6 +3,7 @@
 <component name="embetRoot"  extends="Group" initialFocus="embetOddsList">
 <interface>
     <field id="focusChanged" type="string" />
+    <field id="size" type="assocArray" />
 </interface>
     <script type="text/brightscript" uri="pkg:/components/embet/embetScene.brs" />
     <children>
@@ -41,7 +42,7 @@
 
             </Rectangle>
 
-            <Rectangle translation="[0, 120]" width="400" height="300" color="0x123345F0">
+            <Rectangle id="oddsListRect" translation="[0, 120]" width="400" height="300" color="0x123345F0">
                  <oddsBodylist id="embetOddsList" focusable="true" />
             
             </Rectangle>

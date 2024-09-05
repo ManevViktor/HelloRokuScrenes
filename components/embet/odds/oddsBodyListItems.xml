@@ -5,6 +5,8 @@
       
       <interface > 
             <field id="itemContent" type="node" onChange="itemContentChanged" alwaysNotify="true" /> 
+            <field id="newSize" onChange="onnewSize" type="integer" />
+         
       </interface>
  
       <script type="text/brightscript">
@@ -13,19 +15,27 @@
 
     sub init()
       m.labelHome = m.top.findNode("labelHome") 
-      m.labelHome.font.size = 17
-    
-
       m.labelMarket = m.top.findNode("labelMarket")
-       m.labelMarket.font.size = 17
       m.labelAway = m.top.findNode("labelAway")
+      m.background = m.top.findNode("oddsHoriz")
+       
+       m.labelHome.font.size = 17
+       m.labelMarket.font.size = 17
        m.labelAway.font.size = 17
     end sub
 
-    sub itemContentChanged()
+    sub onnewSize()
+?"priont from cell on new size " m.top.boundingRect()
+ m.background.width =  m.top.newSize
+    end sub
 
-    ?"on contentChanged"
+    sub itemContentChanged()
+       ?"heyyy"  m.top
+rect =  m.top.boundingRect()
+?"priont from cell"   
       itemcontent = m.top.itemContent
+       m.background.width =  m.top.newSize
+      m.background.width = rect.width
       m.labelHome.text = itemcontent.teamHomeOdds
       m.labelMarket.text = itemcontent.marketName
        m.labelAway.text = itemcontent.teamAwayOdds
