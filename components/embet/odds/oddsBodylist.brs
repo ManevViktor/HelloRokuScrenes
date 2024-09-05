@@ -40,6 +40,7 @@ function GetRowListContent() as object
             item.marketName = array.getEntry(numRows)
             item.teamAwayOdds = "255" + stri(numRows)
             item.teamHomeOdds = stri(numRows)
+            item.width = 250
 
       end for
 
@@ -60,7 +61,9 @@ function GetRowListContent2() as object
             item.marketName = array.getEntry(numRows)
             item.teamAwayOdds = "255" + stri(numRows)
             item.teamHomeOdds = stri(numRows)
+            item.width = 500
 
+            ?"global from list" m.global
       end for
 
       return data

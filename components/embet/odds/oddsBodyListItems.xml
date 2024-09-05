@@ -5,7 +5,7 @@
       
       <interface > 
             <field id="itemContent" type="node" onChange="itemContentChanged" alwaysNotify="true" /> 
-            <field id="newSize" onChange="onnewSize" type="integer" />
+      
          
       </interface>
  
@@ -18,27 +18,27 @@
       m.labelMarket = m.top.findNode("labelMarket")
       m.labelAway = m.top.findNode("labelAway")
       m.background = m.top.findNode("oddsHoriz")
+
        
        m.labelHome.font.size = 17
        m.labelMarket.font.size = 17
        m.labelAway.font.size = 17
     end sub
 
-    sub onnewSize()
-?"priont from cell on new size " m.top.boundingRect()
- m.background.width =  m.top.newSize
-    end sub
 
     sub itemContentChanged()
        ?"heyyy"  m.top
 rect =  m.top.boundingRect()
-?"priont from cell"   
+?"priont from cell" rect
+?"Get Global ="getGlobalAA().global 
+?""
+?"m..global " m.global 
       itemcontent = m.top.itemContent
-       m.background.width =  m.top.newSize
-      m.background.width = rect.width
+       m.background.width =  itemcontent.width
       m.labelHome.text = itemcontent.teamHomeOdds
       m.labelMarket.text = itemcontent.marketName
        m.labelAway.text = itemcontent.teamAwayOdds
+       m.background.setFocus(true)
     end sub
 
    ]]></script>
@@ -47,7 +47,7 @@ rect =  m.top.boundingRect()
             <children>
 
                   <Rectangle id="oddsHoriz" visible= "true" color="0x272727d5" height="50" width="400">
-                        <LayoutGroup id="childernOdds"  translation="[ 0, 0 ]"  itemSpacings="[10]" layoutDirection="horiz">
+                        <LayoutGroup id="childernOdds" focusable="true" translation="[ 0, 0 ]"  itemSpacings="[10]" layoutDirection="horiz">
                               
                               <Rectangle width = "70" height="50" color="0x123212">
                               <Label id="labelHome"
