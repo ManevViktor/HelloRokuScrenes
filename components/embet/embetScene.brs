@@ -57,7 +57,9 @@ sub redraw()
 
       m.oddsListItems.sizeChanged = {w:500,h:220}
 
-m.global.embet.size = rect
+      m.global.addFields( {red: &hff0000ff, green: &h00ff00ff, blue: &h0000ffff} ) 
+     m.global.size = 500
+     m.global.myVariable = "“Hello World"
 end sub
 
 sub onFocusedChildChange()

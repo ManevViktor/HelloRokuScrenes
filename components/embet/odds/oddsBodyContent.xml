@@ -9,6 +9,7 @@
             <field id="teamAwayOdds" type="string" />
             <field id="teamAwayDescription" type="string" />
             <field id="marketName" type="string" />
+            <field id="width" type="integer" />
       </interface>
 
       <!-- <children> -->

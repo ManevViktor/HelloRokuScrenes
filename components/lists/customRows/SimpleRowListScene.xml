@@ -16,12 +16,15 @@ function init()
     
        di = CreateObject("roDeviceInfo")
   screenSize = di.GetDisplaySize()
-   if screenSize <> invalid then
-      widgetSize = {w:screenSize.w/4, h: screenSize.h}
-      widgetX = screenSize.w - widgetSize.w
-      m.embetUI.translation = [widgetX, 0] 
-     
-end if
+
+
+
+m.timer = createObject("roSGNode", "Timer")
+  m.timer.id = "timer"
+  m.timer.repeat = false
+  m.timer.duration = 5
+  m.timer.ObserveField("fire", "onTimer")
+  m.timer.control = "start"
 
        taskUI = CreateObject("roSGNode", "simpletaskscene")
        m.top.appendChild(taskUI)
@@ -32,6 +35,18 @@ end if
 
 end function
 
+sub onTimer()
+       di = CreateObject("roDeviceInfo")
+  screenSize = di.GetDisplaySize()
+   if screenSize <> invalid then
+      widgetSize = {w:screenSize.w/4, h: screenSize.h}
+      widgetX = (screenSize.w - widgetSize.w) - 50
+      m.embetUI.translation = [widgetX, 0] 
+      m.embetUI.size = widgetSize
+     end if
+end sub
+
+
 
 function onFocusChanged()
 ?" onFocusChanged" m.embetUI.focusChanged
@@ -41,6 +56,6 @@ end function
 ]]></script>
 
             <children>
-                <SimpleRowList id="theRowList" translation="[50,50]" />
+                <!-- <SimpleRowList id="theRowList" translation="[50,50]" /> -->
             </children>
         </component>
