@@ -13,10 +13,12 @@ sub Main()
     screen.setMessagePort(m.port)
 
     'Create a scene and load /components/helloworld.xml'
-    scene = screen.CreateScene("SimpleRowListScene")
+
+    scene = screen.CreateScene("MarkupGridExample")
     screen.show()
 
-    print screen
+    ?"Mod = "5 mod 3
+
 
     print "global bounds"scene.boundingRect()
  

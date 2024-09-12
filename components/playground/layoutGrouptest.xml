@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+  
+<component name="layoutGroupsTest" extends="Group">
+      
+      <interface > 
+            <field id="itemContent" type="node" onChange="itemContentChanged" alwaysNotify="true" /> 
+      
+         
+      </interface>
+
+      <script type="text/brightscript" uri="pkg:/components/playground/layoutgruptest.brs" />
+      <children>
+            
+            <LayoutGroup id="childernOdds" itemSpacings="[10]" layoutDirection="vert">
+                              
+                  <Rectangle width="400" height="50" color="0x123212">
+                        <Label id="vertHome"
+                               color="0xffffff"
+                               height="50"
+                               width="400"
+                               horizAlign="center"
+                               vertAlign="center"
+                               font="font:SmallestSystemFont"
+                               text="0xEB1010FF"></Label>
+                  </Rectangle>
+
+                  <Label id="vertMarket"
+                         color="0xffffff"
+                         height="50"
+                         width="400"
+                         text="qwewqewq"
+                         font="font:SmallestSystemFont"
+                         horizAlign="center"
+                         vertAlign="center" />
+
+                  <Rectangle width="400" height="50" color="0x123212">
+                        <Label color="0xffffff"
+                               id="vertAway"
+                               height="50"
+                               font="font:SmallestSystemFont"
+                               width="400"
+                               horizAlign="center"
+                               vertAlign="center"
+                               text="0xEB1010FF" />
+                  </Rectangle>
+
+                  <Button minwidth="120" iconUri="" showFocusFootprint="false"  text="045"/>
+            </LayoutGroup>
+
+
+      </children>
+</component>

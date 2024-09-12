@@ -1,10 +1,13 @@
 sub init()
+      m.global.addFields({embetSDK:{debug:false}})
 
-      ? m.top.boundingRect()
+      logEvent({key : "m.top.rect" , value: m.top.boundingRect()})
 
       rect = m.top.boundingRect()
 
-      ?"widgetRoot" m.top.localBoundingRect()
+      logEvent({key : "widgetRoot", value : m.top.localBoundingRect()})
+
+      ' initLibrary2()
 
       m.headerText = m.top.findNode("embetOddsHeaderText")
       m.root = m.top.findNode("embetOddsRoot")
@@ -16,21 +19,22 @@ sub init()
       m.oddsListItems = m.top.findNode("embetOddsList")
       rect2 = m.headerText.boundingRect()
 
+'      m.clippingRect = rect
 
       m.headerText.width = rect.width / 2 - 50
       x = rect.width / 2
       m.headerText.translation = [x, 0]
-      ?"rect2 =" rect2
+
+      logEvent({key : "rect headerText", value :rect2})
 
       m.root.opacity = 1
-      ?"UI embet" m.root.boundingRect()
+      logEvent({key : "UI embet root" , value: m.root.boundingRect()})
 
       m.top.observeField("focusedChild", "onFocusedChildChange")
 
       di = CreateObject("roDeviceInfo")
       size = di.GetDisplaySize()
-
-      ' initLibrary()
+      
 
       m.top.observeField("size", "onSizeChanged")
 
@@ -58,8 +62,7 @@ sub redraw()
       m.oddsListItems.sizeChanged = {w:500,h:220}
 
       m.global.addFields( {red: &hff0000ff, green: &h00ff00ff, blue: &h0000ffff} ) 
-     m.global.size = 500
-     m.global.myVariable = "“Hello World"
+      
 end sub
 
 sub onFocusedChildChange()
@@ -76,8 +79,16 @@ end sub
 sub initLibrary()
       m.bcLib = createObject("roSGNode", "ComponentLibrary")
       m.bcLib.id = "QRCodelib"
-      m.bcLib.uri = "pkg:/components/lib/rokutest.zip"
+      m.bcLib.uri = "pkg:/components/external/qrcode.zip"
       m.bcLib.observeField("loadStatus", "onLoadStatus")
+
+end sub
+
+sub initLibrary2()
+      m.pblib = createObject("roSGNode", "ComponentLibrary")
+      m.pblib.id = "PubNubRoku"
+      m.pblib.uri = "pkg:/components/external/pubnb.zip"
+      m.pblib.observeField("loadStatus", "onpbStatus")
 
 end sub
 
@@ -107,10 +118,37 @@ sub onLoadStatus(ev)
 end sub
 
 
+
+sub onpbStatus(ev)
+      status = ev.getData()
+      if status = "ready" then
+            ?"Load lib ready"
+            ' m.pubnub = createObject("roSGNode", "PubNubRoku:pubnubTask")
+            ' m.pubnub.debug = true
+            ' m.pubnub.config = { subscribeKey: "sub-c-57fa010c-b8db-11ec-a091-7ec486788b75", publishKey: "pub-c-b475f60f-5f12-4537-a7ff-93bd7a3c0388"}
+
+
+            ' m.bcLib = createObject("roSGNode", "Embet:MultibetWidget")
+            ' Lib was successfully downloaded and all its components are now accessible
+
+      else if status = "loading" then
+            ?"Load lib Loading"
+
+            ' bcLib package is currently being downloaded
+
+      else if status = "failed" then
+            ?"Load lib failed"
+            ' Something went wrong with the bcLib download/load process.
+            ' Please check if the package URL was properly set.
+
+      end if
+end sub
+
+
 function onKeyEvent(key as string, press as boolean) as boolean
       handled = true
       m.keyPress = key
-      ?"key event embet Root = " key, press
+      ' ?"key event embet Root = " key, press
       ' if press
       '     if key = "up" or key = "down"
       '         if m.exampleButton1.hasFocus()

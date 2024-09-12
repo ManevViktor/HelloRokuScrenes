@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+<component name="MarkupGridExample" extends="Scene" initialFocus="exampleMarkupGrid">
+
+  <script type="text/brightscript">
+
+    <![CDATA[
+
+    sub init()
+      m.top.backgroundURI = "pkg:/images/rsgde_bg_hd.jpg"
+
+      m.top.setFocus(true)
+      addtimer()
+
+      m.markupgrid = m.top.findNode("exampleMarkupGrid")
+
+      m.readMarkupGridTask = createObject("roSGNode", "ContentReader")
+      m.readMarkupGridTask.contenturi = "http://www.sdktestinglab.com/Tutorial/content/rendergrid.xml"
+      m.readMarkupGridTask.observeField("content", "showmarkupgrid")
+      m.readMarkupGridTask.control = "RUN"
+    end sub
+
+    sub showmarkupgrid()
+      m.markupgrid.content = GetRowListContent()
+    end sub
+
+    
+function GetRowListContent() as object
+
+      array = ["Spread", "MoneyLine", "Total", "Over 3.5", "Under 3.5", "Test", "MoneyLine", "Over 3.5", "Test", "Spread", "Test", "Spread"]
+      'Populate the RowList content here
+      data = CreateObject("roSGNode", "ContentNode")
+      for numRows = 1 to 12
+            item = data.CreateChild("oddsBodyContent")
+            item.marketName = array.getEntry(numRows)
+            item.teamAwayOdds = "255" + stri(numRows)
+            item.teamHomeOdds = stri(numRows)
+            item.num = numRows
+
+?"Row number = " numRows
+
+            if(numRows =  5 or numRows = 2 or numRows = 8 or numRows = 11) then
+              item.width = 250
+                 item.teamHomeOdds = array.getEntry(numRows mod 5)
+            else
+              item.width = 70
+            endif 
+           
+            if(numRows > 3) then
+                  item.type = "vertical"
+            else
+                  item.type = "horizontal"
+            end if
+
+      end for
+
+      return data
+end function
+
+
+
+sub addTimer()
+      m.timer = createObject("roSGNode", "Timer")
+      m.timer.id = "timer"
+      m.timer.repeat = false
+      m.timer.duration = 5
+      m.timer.ObserveField("fire", "onTimer")
+   
+end sub
+
+
+
+sub onTimer()
+    
+end sub
+
+
+    ]]></script>
+
+    <children >
+
+      <MarkupGrid id="exampleMarkupGrid"
+                  translation="[ 130, 160 ]"
+                  itemComponentName="oddsSegmentedItems"
+                  numColumns="3"
+                  numRows="5"
+                  itemSize="[50,70]"
+                  rowHeights="[50,50,50]"
+                  itemSpacing="[ 5, 5 ]"
+                  columnWidths="[70,250,70]"
+                  drawFocusFeedback="true" />
+
+      
+      <Rectangle id="oddsListRect"
+                 translation="[700, 120]"
+                 width="400"
+                 height="300"
+                 color="0x123345F0">
+        <oddsBodylist translation="[500, 120]" id="embetOddsList" focusable="true" />
+            
+      </Rectangle>
+
+    </children>
+
+  </component>

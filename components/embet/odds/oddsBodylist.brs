@@ -1,6 +1,6 @@
 
 function init()
-      print "in SimpleRowListPanel init()"
+
       m.top.itemComponentName = "oddsListItem"
       m.top.numRows = 4
       m.top.itemSize = [400, 50]
@@ -20,9 +20,9 @@ end function
 
 
 sub onSizeChanged()
-      m.top.width = 600
-      m.top.itemSize = [500, 50]
-      m.top.rowItemSize = [[500, 50]]
+
+      m.top.itemSize = [400*3, 50]
+      m.top.rowItemSize = [[400*3, 50]]
       ?"trrrigered on size change"
       m.top.itemComponentName = "oddsListItem"
       m.top.content = GetRowListContent2()
@@ -30,17 +30,24 @@ end sub
 
 function GetRowListContent() as object
 
-      array = ["Spread", "MoneyLine", "Total", "Over 3.5", "Under 3.5", "Test"]
+      array = ["Spread", "MoneyLine", "Total", "Over 3.5", "Under 3.5", "Test", "Test", "Test", "Test", "Test", "Test"]
       'Populate the RowList content here
       data = CreateObject("roSGNode", "ContentNode")
-      for numRows = 0 to 5
+      for numRows = 0 to 6
             row = data.CreateChild("ContentNode")
             row.title = "hello" + stri(numRows)
+            for i = 0 to 3
             item = row.CreateChild("oddsBodyContent")
             item.marketName = array.getEntry(numRows)
             item.teamAwayOdds = "255" + stri(numRows)
             item.teamHomeOdds = stri(numRows)
-            item.width = 250
+            item.width = 400
+            if(numRows > 3) then
+                  item.type = "vertical"
+            else
+                  item.type = "horizontal"
+            end if
+            end for
 
       end for
 
@@ -61,9 +68,8 @@ function GetRowListContent2() as object
             item.marketName = array.getEntry(numRows)
             item.teamAwayOdds = "255" + stri(numRows)
             item.teamHomeOdds = stri(numRows)
-            item.width = 500
+            item.width = 800
 
-            ?"global from list" m.global
       end for
 
       return data
@@ -74,15 +80,15 @@ end function
 function onRowItemFocused() as void
       row = m.top.rowItemFocused[0]
       col = m.top.rowItemFocused[1]
-      print "Row Focused: " + stri(row)
-      print "Col Focused: " + stri(col)
+      ' print "Row Focused: " + stri(row)
+      ' print "Col Focused: " + stri(col)
 end function
 
 function onKeyEvent(key as string, press as boolean) as boolean
-      handled = false
+      handled = true
       node = type(m.top)
 
-      ?"embet key press = " key
+      ' ?"embet key press = " key
 
       ' m.top.jumpToRowItem = [4, 0]
       if press = true then
@@ -91,22 +97,23 @@ function onKeyEvent(key as string, press as boolean) as boolean
                         if m.top.rowItemFocused[0] = 5 then
                               m.top.setfocus(false)
                         else
-                              m.top.jumpToItem = m.top.itemFocused + 1
+                              m.top.jumpToItem = m.top.rowItemFocused[0] + 1
                         end if
                   else if key = "up"
                         if(m.top.itemFocused = 0) then
                               m.top.setfocus(false)
                         else
-                              m.top.jumpToItem = m.top.itemFocused - 1
+                              m.top.jumpToItem = m.top.rowItemFocused[0] - 1
                         end if
                   else if key = "OK"
                         m.top.jumpToItem = 0
+                  else if key = "back"
+                        m.top.setfocus(false)
+                        handled = true
                   end if
 
-
-
-                  handled = true
             end if
+
 
             if key = "left" then
                   m.top.setfocus(false)
