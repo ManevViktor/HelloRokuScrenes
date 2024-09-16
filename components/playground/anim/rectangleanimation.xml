@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+<!--********** Copyright 2015 Roku Corp.  All Rights Reserved. **********-->
+
+<component name="rectangleanimationScene" extends="Scene">
+
+	<script type="text/brightscript">
+		<![CDATA[
+
+sub init()
+	m.top.backgroundURI = "pkg:/images/purplebg.jpg"
+
+	sec= createObject("roSGNode","MaskGroupExample")
+
+	m.top.setFocus(true)
+end sub
+
+]]></script>
+
+		<children>
+
+			<MaskGroup id="scrollView" maskSize="[200,50]" maskOffset="[-100,50]" translation="[100, 100]">
+
+	
+				<!-- Rectangle -->
+				<Rectangle id="rect"
+				           width="200"
+				           height="100"
+				           color="#FF0000"
+				           translation="[50, 50]" />
+
+			</MaskGroup>
+
+			<Rectangle id="bottomRectangle"
+			           color="0x0000FFFF"
+			           width="1280"
+			           height="60"
+			           translation="[0,620]" />
+
+			<Animation id="colorchangeAnimation" duration="2" repeat="true" easeFunction="linear">
+				<FloatFieldInterpolator id="colorchangeRectangle" key="[0.0, 1.0]" keyValue="[ 0, 200 ]" fieldToInterp="rect.height" />
+			</Animation>
+
+
+
+
+			<Rectangle id="bottomRectangle2"
+			           color="0x0000FFFF"
+			           width="1280"
+			           height="60"
+			           translation="[0,620]" />
+
+			<Animation id="colorchangeAnimation2" duration="2" repeat="true" easeFunction="linear">
+				<Vector2DFieldInterpolator id="colorchangeRectangle" key="[0.0, 1.0]" keyValue="[ [100, 100], [1, 200], [1, 1000] ]" fieldToInterp="scrollView.maskOffset" />
+			</Animation>
+		</children>
+
+	</component>

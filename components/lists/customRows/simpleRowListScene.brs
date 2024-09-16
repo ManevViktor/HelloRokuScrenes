@@ -1,8 +1,8 @@
 function init()
       m.theRowList = m.top.FindNode("theRowList")
 
-      addEmbet()
-      addTask()
+      ' addEmbet()
+      ' addTask()
 
 end function
 

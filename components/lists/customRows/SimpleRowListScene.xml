@@ -7,6 +7,6 @@
     <script type="text/brightscript" uri ="pkg:/components/lists/customRows/simpleRowListScene.brs"/>
 
                 <children>
-                    <!-- <SimpleRowList id="theRowList" translation="[50,50]" /> -->
+                    <SimpleRowList id="theRowList" translation="[50,50]" />
                 </children>
             </component>

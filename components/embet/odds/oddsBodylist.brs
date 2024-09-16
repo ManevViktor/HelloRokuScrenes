@@ -3,11 +3,12 @@ function init()
 
       m.top.itemComponentName = "oddsListItem"
       m.top.numRows = 4
-      m.top.itemSize = [400, 50]
-      m.top.rowItemSize = [[400, 50]]
-      m.top.showRowLabel = [false]
+      m.top.itemSize = [400, 120]
+      m.top.rowItemSize = [[150, 50]]
+      m.top.showRowLabel = [true]
       m.top.translation = [0, 10]
-      m.top.itemSpacing = [0, 2]
+      m.top.numColumns = 0
+      m.top.itemSpacing = [5, 2]
       m.top.rowFocusAnimationStyle = "floatingFocus"
       m.top.vertFocusAnimationStyle = "floatingFocus"
       m.top.content = GetRowListContent()
@@ -15,6 +16,8 @@ function init()
       m.top.visible = true
 
       m.top.ObserveField("sizeChanged", "onSizeChanged")
+
+      ?"Fields rowlist = " m.top
 
 end function
 
@@ -36,12 +39,12 @@ function GetRowListContent() as object
       for numRows = 0 to 6
             row = data.CreateChild("ContentNode")
             row.title = "hello" + stri(numRows)
-            for i = 0 to 3
+            for i = 0 to 1
             item = row.CreateChild("oddsBodyContent")
             item.marketName = array.getEntry(numRows)
             item.teamAwayOdds = "255" + stri(numRows)
             item.teamHomeOdds = stri(numRows)
-            item.width = 400
+            item.width = 100
             if(numRows > 3) then
                   item.type = "vertical"
             else
@@ -68,7 +71,7 @@ function GetRowListContent2() as object
             item.marketName = array.getEntry(numRows)
             item.teamAwayOdds = "255" + stri(numRows)
             item.teamHomeOdds = stri(numRows)
-            item.width = 800
+            item.width = 400
 
       end for
 
@@ -84,44 +87,44 @@ function onRowItemFocused() as void
       ' print "Col Focused: " + stri(col)
 end function
 
-function onKeyEvent(key as string, press as boolean) as boolean
-      handled = true
-      node = type(m.top)
+' function onKeyEvent(key as string, press as boolean) as boolean
+'       handled = true
+'       node = type(m.top)
 
-      ' ?"embet key press = " key
+'       ' ?"embet key press = " key
 
-      ' m.top.jumpToRowItem = [4, 0]
-      if press = true then
-            if node = "roSGNode" then
-                  if key = "down"
-                        if m.top.rowItemFocused[0] = 5 then
-                              m.top.setfocus(false)
-                        else
-                              m.top.jumpToItem = m.top.rowItemFocused[0] + 1
-                        end if
-                  else if key = "up"
-                        if(m.top.itemFocused = 0) then
-                              m.top.setfocus(false)
-                        else
-                              m.top.jumpToItem = m.top.rowItemFocused[0] - 1
-                        end if
-                  else if key = "OK"
-                        m.top.jumpToItem = 0
-                  else if key = "back"
-                        m.top.setfocus(false)
-                        handled = true
-                  end if
+'       ' m.top.jumpToRowItem = [4, 0]
+'       if press = true then
+'             if node = "roSGNode" then
+'                   if key = "down"
+'                         if m.top.rowItemFocused[0] = 5 then
+'                               m.top.setfocus(false)
+'                         else
+'                               m.top.jumpToItem = m.top.rowItemFocused[0] + 1
+'                         end if
+'                   else if key = "up"
+'                         if(m.top.itemFocused = 0) then
+'                               m.top.setfocus(false)
+'                         else
+'                               m.top.jumpToItem = m.top.rowItemFocused[0] - 1
+'                         end if
+'                   else if key = "OK"
+'                         m.top.jumpToItem = 0
+'                   else if key = "back"
+'                         m.top.setfocus(false)
+'                         handled = true
+'                   end if
 
-            end if
+'             end if
 
 
-            if key = "left" then
-                  m.top.setfocus(false)
-            else if key = "right"
-                  m.top.setfocus(false)
-            end if
+'             if key = "left" then
+'                   m.top.setfocus(false)
+'             else if key = "right"
+'                   m.top.setfocus(false)
+'             end if
 
-      end if
+'       end if
 
 
 
@@ -129,7 +132,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
       ' ?getInterface(m.top, "ifRoSGNode") <> invalid
       ' ? m.top.currFocusRow
       ' ? m.top.itemFocused
-      return handled
-end function
+'       return handled
+' end function
 
 

@@ -9,6 +9,8 @@ sub init()
 
       ' initLibrary2()
 
+      initLibrary()
+
       m.headerText = m.top.findNode("embetOddsHeaderText")
       m.root = m.top.findNode("embetOddsRoot")
       m.list = m.top.findNode("embetOddsList")
@@ -37,6 +39,7 @@ sub init()
       
 
       m.top.observeField("size", "onSizeChanged")
+     
 
 end sub
 
@@ -79,7 +82,7 @@ end sub
 sub initLibrary()
       m.bcLib = createObject("roSGNode", "ComponentLibrary")
       m.bcLib.id = "QRCodelib"
-      m.bcLib.uri = "pkg:/components/external/qrcode.zip"
+      m.bcLib.uri = "https://main--pocrokutest.netlify.app/4/qrcodes.zip"
       m.bcLib.observeField("loadStatus", "onLoadStatus")
 
 end sub
@@ -97,8 +100,13 @@ sub onLoadStatus(ev)
       status = ev.getData()
       if status = "ready" then
             ?"Load lib ready"
-            m.bcPlayer = createObject("roSGNode", "QrCodeLib:qrCode")
+            ?"mtop bound"m.top.boundingRect()
+            m.bcPlayer = createObject("roSGNode", "QrCode:qrCode")
             m.bcPlayer.text = "wqeqwewqewqeqwwwwwewqe"
+            m.bcPlayer.width = 400
+            m.bcPlayer.height = 400
+            m.bcPlayer.translation = [0,120]
+            m.top.appendChild(m.bcPlayer)
 
 
             ' m.bcLib = createObject("roSGNode", "Embet:MultibetWidget")

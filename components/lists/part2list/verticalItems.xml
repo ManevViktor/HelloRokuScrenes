@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+  
+<component name="verticalItemsGrid" extends="Group">
+      
+      <interface > 
+            <field id="itemContent" type="node" onChange="itemContentChanged" />   
+      </interface>
+
+      <script type="text/brightscript" uri="verticalitems.brs" />
+      
+      <children>
+                              
+           <Rectangle id="titleTeam">
+          <LayoutGroup translation="[0, 0]"
+                       layoutDirection="horiz" 
+                       vertAlignment="center"                   
+                       itemSpacings="5">
+            <Poster width="50" height="50" uri="pkg:/images/team.jpg" />       
+
+            <Label id="itemTextTeamName"  width="200" font="font:SmallestSystemFont" text="Warriors" color="0xffffff" />                
+            <Label width="100"     horizAlign="right" id="outcome" text="+370" color="0xffffff"/>
+          </LayoutGroup>
+        </Rectangle>       
+               
+
+      </children>
+</component>

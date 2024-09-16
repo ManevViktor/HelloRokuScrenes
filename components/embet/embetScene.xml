@@ -8,7 +8,7 @@
     <script type="text/brightscript" uri="pkg:/components/embet/embetScene.brs" />
     <script type="text/brightscript" uri="pkg:/components/embet/odds/util.brs" />
     <children>
-        <Rectangle focusable="false"  id="embetOddsRoot" width="400" height="550" color="0x0000f4">
+        <Rectangle focusable="false"  id="embetOddsRoot" width="400" height="650" color="0x0000f4">
 
             <Rectangle focusable="false" id="embetOddsHeader"
                        width="400"

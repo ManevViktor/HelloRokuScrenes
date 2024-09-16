@@ -14,7 +14,9 @@ sub Main()
 
     'Create a scene and load /components/helloworld.xml'
 
-    scene = screen.CreateScene("MarkupGridExample")
+      scene = screen.CreateScene("MarkupGridExample")
+    ' scene = screen.CreateScene("SimpleRowListScene")
+    ' scene = screen.CreateScene("rectangleanimationScene")
     screen.show()
 
     ?"Mod = "5 mod 3

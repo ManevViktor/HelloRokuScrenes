@@ -4,24 +4,36 @@
 <component name="oddsSegmentedItems" extends="Group">
       
       <interface > 
-                   <field id="itemContent" type="node" onChange="itemContentChanged" alwaysNotify="true" />   
+            <field id="itemContent" type="node" onChange="itemContentChanged" alwaysNotify="true" />   
       </interface>
 
-<script type="text/brightscript" uri="oddsSegmentedItems.brs" />
+      <script type="text/brightscript" uri="oddsSegmentedItems.brs" />
       
       <children>
                               
-                  <Rectangle id="rectMarkUp" width="70" height="50" color="0x123212">
-                        <Label id="labelMarkup"
-                               color="0xffffff"
-                               height="50"
-                               width="70"
-                               horizAlign="center"
-                               vertAlign="center"
-                               font="font:SmallestSystemFont"></Label>
-                  </Rectangle>
+            <Rectangle visible="true"
+                       id="rectMarkUp"
+                       width="70"
+                       height="50"
+                       color="0x123212">
+                  <Label id="labelMarkup"
+                         color="0xffffff"
+                         height="50"
+                         width="70"
+                         horizAlign="center"
+                         vertAlign="center"
+                         font="font:SmallestSystemFont"></Label>
+            </Rectangle>
 
             
+           
+            <LayoutGroup visible="false" layoutDirection="vert" vertAlignment="center" horizAlignment="center" itemSpacings="0">
+                  <Rectangle id="rectVeretical" width="70" height="50" color="0xfff212">
+                        <Label id="itemText" font="font:MediumSystemFont" text="hi" color="0x000000ff" />
+                        <!-- <Label id="item2Text" font="font:SmallSystemFont" text= "hi" color="0xa0cc40ff" /> -->
+                  </Rectangle>
+            </LayoutGroup>
+                
                
 
       </children>
