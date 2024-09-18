@@ -25,16 +25,44 @@
                          font="font:SmallestSystemFont"></Label>
             </Rectangle>
 
-            
-           
-            <LayoutGroup visible="false" layoutDirection="vert" vertAlignment="center" horizAlignment="center" itemSpacings="0">
-                  <Rectangle id="rectVeretical" width="70" height="50" color="0xfff212">
-                        <Label id="itemText" font="font:MediumSystemFont" text="hi" color="0x000000ff" />
-                        <!-- <Label id="item2Text" font="font:SmallSystemFont" text= "hi" color="0xa0cc40ff" /> -->
-                  </Rectangle>
-            </LayoutGroup>
+
+            <Rectangle id="marketVertPoster" visible="false">
+                  <Poster width="50" height="50"  uri="pkg:/images/team.jpg" />       
+            </Rectangle>
+
+
                 
-               
+            <Rectangle visible="false"
+                       width="270"
+                       height="50"
+                       translation ="[-20,0]"
+                       id="marketVertTeam"
+                       color="0x000000">                
+                     
+                  <Label id="itemTextTeamName"
+                         height="50"
+                         vertAlign="center"
+                         horizAlign="left"
+                         width="400"
+                         font="font:SmallestSystemFont"
+                         text="Warriors"
+                         color="0xffffff" />                 
+            </Rectangle>
+
+
+
+            <Rectangle id="mvertoutcome" visible="false">
+                  <Label width="100"
+                         height="50"
+                         font="font:SmallestSystemFont"
+                         vertAlign="center"
+                         horizAlign="right"
+                         id="outcome"
+                         text="+370"
+                         color="0xffffff" />         
+            </Rectangle>
+
+         
 
       </children>
 </component>

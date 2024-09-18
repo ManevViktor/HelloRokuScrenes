@@ -9,7 +9,7 @@ sub init()
 
       taskUI = CreateObject("roSGNode", "simpletaskscene")
 
-      init2()
+      ' init2()
       ?"layoutgruop = "node
 
       node.appendChild(obj2)

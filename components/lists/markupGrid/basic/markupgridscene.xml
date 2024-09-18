@@ -7,19 +7,21 @@
   <script type="text/brightscript" uri="markupgridscene.brs"></script>
 
   <children >
+    <LayoutGroup id="embetBodyUI" layoutDirection="vert">
+      <MarkupGrid id="exampleMarkupGrid"
+                  itemComponentName="oddsSegmentedItems"
+                  numColumns="3"
+                  numRows="5"
+                  wrapDividerHeight="0"
+                  vertFocusAnimationStyle = "floatingFocus"
+                  itemSize="[50,50]"
+                  rowHeights="[50]"
+                  itemSpacing="[ 5, 5 ]"
+                  columnWidths="[70,250,70]"
+                  drawFocusFeedback="true" />
 
-    <MarkupGrid id="exampleMarkupGrid"
-                translation="[ 50, 160 ]"
-                itemComponentName="oddsSegmentedItems"
-                numColumns="3"
-                numRows="5"
-                itemSize="[70,50]"
-                rowHeights="[50,50,50]"
-                itemSpacing="[ 5, 5 ]"
-                columnWidths="[70,250,70]"
-                drawFocusFeedback="true" />
-
-      
+    </LayoutGroup>
+    <!--       
     <Rectangle id="oddsListRect"
                translation="[400, 120]"
                width="400"
@@ -27,10 +29,10 @@
                color="0x123345F0">
       <oddsBodylist translation="[500, 120]" id="embetOddsList" focusable="true" />
 
-    </Rectangle>
+    </Rectangle> -->
 
 
-    <Rectangle translation="[500,500]"
+    <Rectangle translation="[600,350]"
                id="rectVeretical"
                width="400"
                height="300"
@@ -49,13 +51,55 @@
 
         <Rectangle id="titleTeam">
           <LayoutGroup translation="[0, 0]"
-                       layoutDirection="horiz" 
-                       vertAlignment="center"                   
-                       itemSpacings="5">
+                       id="lgFocus"
+                       focusable="true"
+                       layoutDirection="horiz"
+                       vertAlignment="center"
+                       itemSpacings="15">
             <Poster width="50" height="50" uri="pkg:/images/team.jpg" />       
 
-            <Label id="itemTextTeamName"  width="200" font="font:SmallestSystemFont" text="Warriors" color="0xffffff" />                
-            <Label width="100"     horizAlign="right" id="outcome" text="+370" color="0xffffff"/>
+            <Label id="itemTextTeamName"
+                   width="200"
+                   font="font:SmallestSystemFont"
+                   text="Warriors"
+                   color="0xffffff" />                
+            <Label width="100"
+                   horizAlign="right"
+                   id="outcome"
+                   text="+370"
+                   color="0xffffff" />
+
+
+            <LayoutGroup
+                         id="lgFocus"
+                         focusable="true"
+                         layoutDirection="vert"                 
+                         itemSpacings="5">
+              <Button minwidth="70"
+                      id="btn1"
+                      iconUri=""
+                      focusedIconUri=""
+                      showFocusFootprint="true"
+                      text="045" />
+
+              <Button minwidth="70"
+                      id="btn2"
+                      iconUri=""
+                      focusedIconUri=""
+                      showFocusFootprint="true"
+                      text="045" />
+
+              <Button minwidth="70"
+                      id="btn3"
+                      iconUri=""
+                      focusedIconUri=""
+                      showFocusFootprint="true"
+                      text="045" />
+
+                      
+
+            </LayoutGroup>
+
           </LayoutGroup>
         </Rectangle>       
       </LayoutGroup>

@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+<component name = "JsonReader" extends = "Task" >
+
+  <interface>
+    
+
+  </interface>
+
+  <script type = "text/brightscript" uri="jsonReader.brs" />
+
+    
+
+</component>

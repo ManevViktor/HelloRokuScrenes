@@ -2,23 +2,8 @@
 
 <!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
 
-<component name="MarkupGridVertical" extends="Group" initialFocus="exampleMarkupGrid">
+<component name="MarkupGridVertical" extends="MarkupGrid" initialFocus="vertGrid">
 
       <script type="text/brightscript" uri="vertlist.brs"></script>
-
-      <children >
-
-            <MarkupGrid id="vertGrid"
-                        translation="[ 50, 160 ]"
-                        itemComponentName="oddsSegmentedItems"
-                        numColumns="3"
-                        numRows="5"
-                        itemSize="[70,50]"
-                        rowHeights="[50,50,50]"
-                        itemSpacing="[ 5, 5 ]"
-                        columnWidths="[70,250,70]"
-                        drawFocusFeedback="true" />
-
-      </children>
 
 </component>

@@ -12,6 +12,8 @@
             <field id="width" type="integer" />
             <field id="type" type="string" />
             <field id="num" type="integer" />
+            <field id="nodeType" type="string" />
+            <field id="color" type="string" />
       </interface>
 
       <!-- <children> -->

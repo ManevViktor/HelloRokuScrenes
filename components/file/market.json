@@ -1,0 +1,94 @@
+{
+  "widgetType": "live-odds",
+  "sportsbookLogoUrl": "https://Somelogo.com/logo",
+  "labels": {
+    "information": "Tap on odds to place bets or set notifications.",
+    "disclaimerTitle": "Responsible gaming:",
+    "disclaimerDescription": "Responsible gaming description",
+    "disclaimerDescriptionCollapsed": "..."
+  },
+  "disclaimerPosition": "bottom|top",
+  "placeBetLabel": "Place Bet",
+  "placeBetUrl": "https://placebeturl.com",
+  "teams": [
+    {
+      "description": "MUTD",
+      "logoUrl": "https://logo1.com/logo1"
+    },
+    {
+      "description": "LIV",
+      "logoUrl": "https://logo2.com/logo2"
+    }
+  ],
+  "betDetails": [
+    {
+      "marketId": "sr:market:1",
+      "marketName": "SPREAD",
+      "presentation": "horizontal",
+      "marketOptions": [
+        {
+          "description": "O 3.5",
+          "odds": "-200",
+          "imageUrl": "",
+          "url": "https://odds_composit_url",
+          "outcomeId": "sr:outcome:1",
+          "isSuspended": false
+        },
+        {
+          "description": "U 3.5",
+          "odds": "+200",
+          "imageUrl": "",
+          "url": "https://odds_composit_url",
+          "outcomeId": "sr:outcome:2",
+          "isSuspended": false
+        }
+      ]
+    },
+    {
+      "marketId": "sr:market:2",
+      "presentation": "vertical",
+      "marketName": "MONEYLINE",
+      "marketOptions": [
+        {
+          "description": "O 3.5",
+          "odds": "-200",
+          "imageUrl": "",
+          "url": "https://odds_composit_url",
+          "outcomeId": "sr:outcome:3",
+          "isSuspended": false
+        },
+        {
+          "description": "U 3.5",
+          "odds": "+200",
+          "imageUrl": "",
+          "url": "https://odds_composit_url",
+          "outcomeId": "sr:outcome:4",
+          "isSuspended": false
+        }
+      ]
+    },
+    {
+      "marketId": "sr:market:3",
+      "presentation": "vertical",
+      "marketName": "TOTAL",
+      "marketOptions": [
+        {
+          "description": "O 3.5",
+          "odds": "-200",
+          "imageUrl": "",
+          "outcomeId": "sr:outcome:12",
+          "issuspended": false,
+          "url": "https://odds_composit_url"
+        },
+        {
+          "description": "U 3.5",
+          "odds": "+200",
+          "imageUrl": "",
+          "outcomeId": "sr:outcome:13",
+          "isSuspended": false,
+          "url": "https://odds_composit_url"
+        }
+      ]
+    }
+  ]
+}
