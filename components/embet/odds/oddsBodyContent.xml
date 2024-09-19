@@ -15,6 +15,7 @@
             <field id="nodeType" type="string" />
             <field id="color" type="string" />
             <field id="canFocus" type="boolean" />
+            <field id="style" type="assocArray" />
       </interface>
 
       <!-- <children> -->

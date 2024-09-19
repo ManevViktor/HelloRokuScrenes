@@ -52,12 +52,12 @@
 
 
 
-            <Rectangle id="mvertoutcome" visible="false">
-                  <Label width="100"
+            <Rectangle id="mvertoutcome" width="70" height="50"  color="0x000000" visible="false">
+                  <Label width="70"
                          height="50"
                          font="font:SmallestSystemFont"
                          vertAlign="center"
-                         horizAlign="right"
+                         horizAlign="left"
                          id="outcome"
                          text="+370"
                          color="0xffffff" />         

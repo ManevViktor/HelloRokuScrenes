@@ -49,6 +49,16 @@ sub itemContentChanged()
             m.horRect.color = con.color
 
 
+      else if(con.nodeType = "voutcome") then
+            m.horRect.visible = false
+            m.vertPoster.visible = false
+            m.vertLabel.visible = false
+            m.vertOutcome.visible = false
+
+            m.vertOutcome.visible = true
+            m.vertOutcome.width = con.width
+
+
       end if
 
       if(con.nodeType = "verticalImage") then
