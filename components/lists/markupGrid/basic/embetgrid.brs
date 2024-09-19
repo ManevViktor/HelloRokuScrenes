@@ -3,7 +3,7 @@ sub init()
       m.top.itemComponentName = "oddsSegmentedItems"
       m.top.numColumns = 3
       m.top.numRows = 10
-      m.top.itemSize = [50, 50]
+      m.top.itemSize = [70, 50]
       m.top.rowHeights = [50]
       m.top.itemSpacing = [5, 5]
       m.top.columnWidths = [70, 250, 70]
