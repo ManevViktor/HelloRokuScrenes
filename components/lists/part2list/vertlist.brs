@@ -18,36 +18,35 @@ sub init()
 end sub
 
 
-' function onKeyEvent(key as string, press as boolean) as boolean
-'       handled = true
-'       ?
-'       ?" "
-'       ?" on key event button example focus = " key, press
+function onKeyEvent(key as string, press as boolean) as boolean
+      handled = true
+      ?
+      ?" on key event button example focus = " key, press
 
-'       if(key = "left" and press = true) then
-'             m.nodem.setFocus(true)
-'             m.nodem.jumptoitem = 6
-'             handled = true
-'       else if(key = "up" and press = true) then
-'             if(m.top.currFocusRow = 0) then
-'                   m.nodem.setFocus(true)
-'                   ' if(getInterface(m.nodem, "ifRoSGNode") <> invalid) then 
-'                   '       ?"print true"
-'                   ' m.nodem.jumpToItem(12)
-'                   ' end if
-'                   handled = true
-'             end if
-'       else if(key = "ok" and press = true)
-'             m.top.jumptoitem= 6
-'             handled = true
+      if(key = "left" and press = true) then
+            m.nodem.setFocus(true)
+            m.nodem.jumptoitem = 6
+            handled = true
+      else if(key = "up" and press = true) then
+            if(m.top.currFocusRow = 0) then
+                  m.nodem.setFocus(true)
+                  ' if(getInterface(m.nodem, "ifRoSGNode") <> invalid) then 
+                  '       ?"print true"
+                  ' m.nodem.jumpToItem(12)
+                  ' end if
+                  handled = true
+            end if
+      else if(key = "ok" and press = true)
+            m.top.jumptoitem= 6
+            handled = true
 
-'      else 
-'       handled = false       
-'       end if
+     else 
+      handled = false       
+      end if
 
 
-'       return handled
-' end function
+      return handled
+end function
 
 sub onTimer()
 

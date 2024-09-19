@@ -46,6 +46,7 @@ sub itemContentChanged()
             m.horlabel.text = con.marketName
             m.horRect.width = con.width
             m.horlabel.width = con.width
+            m.horRect.color = con.color
 
 
       end if

@@ -27,10 +27,11 @@ sub init()
   m.grid.ObserveField("itemFocused", "onRowItemFocused")
   m.readgridTask = createObject("roSGNode", "JsonReader")
   ' m.readgridTask.observeField("content", "showgrid")
-  m.readgridTask.control = "RUN"
+  ' m.readgridTask.control = "RUN"
   
   
   m.grid.setFocus(true)
+
 end sub
 
 sub showmarkupgrid()
@@ -49,6 +50,7 @@ end sub
 
 sub onRowItemFocused()
 ?"send analytics event"
+m.grid.content.getChild(1).marketName = (Rnd(10).TOstr())
 endsub
 
 function GetRowListContent() as object
@@ -57,16 +59,16 @@ function GetRowListContent() as object
   'Populate the RowList content here
   data = CreateObject("roSGNode", "ContentNode")
   for numRows = 0 to 30
-
-
     item = data.CreateChild("oddsBodyContent")
     item.marketName = array[numRows]
     item.teamAwayOdds = "255" + stri(numRows)
     item.teamHomeOdds = stri(numRows)
     item.num = numRows
 
-    item.focusable = false
+    item.canFocus = false
     modus = numRows mod 3
+
+    item.color = "0x123212"
 
     '  if("horizontal")
     if(numRows <= 8) then
@@ -76,10 +78,11 @@ function GetRowListContent() as object
         item.teamAwayOdds = array.getEntry(numRows mod 3)
         item.width = 250
         item.focusable = false
+        item.color= "0x000000"
       else
         item.nodeType = "outcome"
         item.width = 70
-        item.focusable = true
+        item.canFocus = true
       end if
 
       item.type = "horizontal"
@@ -87,13 +90,16 @@ function GetRowListContent() as object
     else
       if(modus = 0) then
         item.nodeType = "Image"
-        item.width = 30
+        item.width = 50
       else if(modus = 1) then
         item.nodeType = "teamName"
-        item.width = 300
+        item.color= "0x000000"
+        item.width = 270
       else
+        item.canFocus = true
         item.nodeType = "outcome"
         item.width = 70
+
       end if
 
     end if
@@ -116,6 +122,7 @@ sub addTimer()
   m.timer.duration = 5
   m.timer.ObserveField("fire", "onTimer")
 
+
 end sub
 
 
@@ -124,23 +131,6 @@ function onKeyEvent(key as string, press as boolean) as boolean
   ?" "
 
   ?" on key event markupGrid focus = " key, press
-
-  if(key = "left" and press = true) then
-     itemS = m.grid.itemFocused-1
-
-     focusable = m.grid.content.getChild(itemS)
-     if(focusable) then
-      handled = true
-      else
-      m.grid.animateToItem = 4 
-
-    endif
-
-  else if(key = "ok") then
-
-    handled = true
-  end if
-
 
   return handled
 end function
@@ -153,7 +143,8 @@ function shouldFocus() as integer
  endfunction 
 
 sub onTimer()
-
+  ?"on timer"
+ m.grid.content.getChild(1).marketName = "vice"
 end sub
 
 

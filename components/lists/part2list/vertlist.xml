@@ -2,7 +2,7 @@
 
 <!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
 
-<component name="MarkupGridVertical" extends="MarkupGrid" initialFocus="vertGrid">
+<component name="MarkupGridVertical" extends="MarkupGrid" >
 
       <script type="text/brightscript" uri="vertlist.brs"></script>
 

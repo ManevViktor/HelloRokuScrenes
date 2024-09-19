@@ -14,6 +14,7 @@
             <field id="num" type="integer" />
             <field id="nodeType" type="string" />
             <field id="color" type="string" />
+            <field id="canFocus" type="boolean" />
       </interface>
 
       <!-- <children> -->

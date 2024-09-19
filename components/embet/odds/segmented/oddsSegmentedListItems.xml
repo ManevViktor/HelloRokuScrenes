@@ -26,8 +26,8 @@
             </Rectangle>
 
 
-            <Rectangle id="marketVertPoster" visible="false">
-                  <Poster width="50" height="50"  uri="pkg:/images/team.jpg" />       
+            <Rectangle width="50" height ="50"  id="marketVertPoster" color="0x000000d4" visible="false">
+                  <Poster translation="[7,7]"  loadDisplayMode="scaleToZoom" width="35" height="35" uri="pkg:/images/team.jpg" />       
             </Rectangle>
 
 
@@ -35,12 +35,13 @@
             <Rectangle visible="false"
                        width="270"
                        height="50"
-                       translation ="[-20,0]"
+                       translation="[-20,0]"
                        id="marketVertTeam"
                        color="0x000000">                
                      
                   <Label id="itemTextTeamName"
                          height="50"
+                         translation="[5,0]"
                          vertAlign="center"
                          horizAlign="left"
                          width="400"

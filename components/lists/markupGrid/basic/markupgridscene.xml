@@ -8,17 +8,7 @@
 
   <children >
     <LayoutGroup id="embetBodyUI" layoutDirection="vert">
-      <MarkupGrid id="exampleMarkupGrid"
-                  itemComponentName="oddsSegmentedItems"
-                  numColumns="3"
-                  numRows="5"
-                  wrapDividerHeight="0"
-                  vertFocusAnimationStyle = "floatingFocus"
-                  itemSize="[50,50]"
-                  rowHeights="[50]"
-                  itemSpacing="[ 5, 5 ]"
-                  columnWidths="[70,250,70]"
-                  drawFocusFeedback="true" />
+      <embetMarkUP id="exampleMarkupGrid" />
 
     </LayoutGroup>
     <!--       
