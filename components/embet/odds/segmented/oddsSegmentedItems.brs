@@ -4,6 +4,7 @@ sub init()
       m.vertPoster = m.top.findNode("marketVertPoster")
       m.vertOutcome = m.top.findNode("mvertoutcome")
       m.vertLabel = m.top.findNode("marketVertTeam")
+      m.vertOutcomelbl = m.top.findNode("voutcome")
 end sub
 
 
@@ -36,6 +37,7 @@ sub itemContentChanged()
             m.horlabel.text = con.teamHomeOdds
             m.horRect.width = con.width
             m.horlabel.width = con.width
+            m.horlabel.font.size = con.style.fontSize
 
       else if(con.nodeType = "market") then
             m.horRect.visible = true
@@ -57,6 +59,7 @@ sub itemContentChanged()
 
             m.vertOutcome.visible = true
             m.vertOutcome.width = con.width
+            m.vertOutcomelbl.font.size = 15
 
 
       end if

@@ -57,8 +57,8 @@
                          height="50"
                          font="font:SmallestSystemFont"
                          vertAlign="center"
-                         horizAlign="left"
-                         id="outcome"
+                         horizAlign="center"
+                         id="voutcome"
                          text="+370"
                          color="0xffffff" />         
             </Rectangle>

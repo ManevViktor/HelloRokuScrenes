@@ -41,6 +41,7 @@ function GetRowListContent() as object
             item.teamAwayOdds = "255" + stri(numRows)
             item.teamHomeOdds = stri(numRows)
             item.num = numRows
+            item.style = { fontSize: 14 }
 
             item.canFocus = false
             modus = numRows mod 3
@@ -117,8 +118,7 @@ sub ok()
       obj.width = 70
       obj.fontSize = 14
       obj.bgcolor = "0x000000"
-      obj.canFocus = false
-
+      obj.textColor = "0xffffff"
 end sub
 
 function onKeyEvent(key as string, press as boolean) as boolean

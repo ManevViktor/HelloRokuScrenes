@@ -16,7 +16,7 @@ sub getcontent()
             })
       endfor
 
-      ?"new data = "newdata[0]
+      ?"new data = "newdata
 end sub
 
 function getMarket(market as dynamic) as object

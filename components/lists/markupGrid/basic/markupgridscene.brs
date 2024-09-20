@@ -23,9 +23,9 @@ sub init()
   ' ' m.vertGrtid.setFocus(True)
   ' getTestConent()
   ' m.grid.ObserveField("itemFocused", "onRowItemFocused")
-  ' m.readgridTask = createObject("roSGNode", "JsonReader")
+  m.readgridTask = createObject("roSGNode", "JsonReader")
   ' m.readgridTask.observeField("content", "showgrid")
-  ' m.readgridTask.control = "RUN"
+  m.readgridTask.control = "RUN"
 
 
   m.grid.setFocus(true)

@@ -7,12 +7,12 @@
   <script type="text/brightscript" uri="markupgridscene.brs"></script>
 
   <children>
-    <LayoutGroup id="embetBodyUI" horizAlignment="left" translation="[0,0]" layoutDirection="vert">
-    <Rectangle width="400" height="800" color="0x0000004d" >
+    <!-- <LayoutGroup id="embetBodyUI" horizAlignment="left" translation="[0,0]" layoutDirection="vert"> -->
+    <Rectangle width="400" height="800" translation="[50,20]" color="0x0000004d" >
       <embetMarkUP id="exampleMarkupGrid"  translation="[0,0]"/> 
       </Rectangle>
-      <Rectangle width="400" height="100" color="0x000000" />
-    </LayoutGroup>
+      <Rectangle width="400" translation="[50,820]" height="100" color="0x000000" />
+    <!-- </LayoutGroup> -->
     <!--       
     <Rectangle id="oddsListRect"
                translation="[400, 120]"
@@ -64,10 +64,12 @@
               text="045" />
 
 
+
     </LayoutGroup>
 
   
-  
+<!--   
+<embetRoot  translation="[900,200]"/> -->
             
 
   </children>
