@@ -11,12 +11,13 @@
         print "in SimpleRowListPanel init()"
 	    m.top.itemComponentName = "SimpleRowListItem"
 	    m.top.numRows = 2
-	    m.top.itemSize = [750,400]
-	    m.top.rowHeights = [300]
-	    m.top.rowItemSize = [ [300, 300], [300, 300], [600, 500] ]
+	    m.top.numColumns = 1
+	    m.top.itemSize = [800,200]
+	    m.top.rowHeights = [300, 250,200]
+	    m.top.rowItemSize = [ [300, 300] ]
 	    m.top.itemSpacing = [ 0, 30 ]
 	    m.top.rowItemSpacing = [ [20, 25] ]
-		m.top.rowLabelOffset = [ [0, 30] ]
+	m.top.rowLabelOffset = [ [0, 70] ]
 	    m.top.rowFocusAnimationStyle = "floatingFocus"
 		m.top.showRowLabel = [true, true]
 		m.top.rowLabelColor="0xa0b033ff"
@@ -25,7 +26,7 @@
 	   
 	   
 	    m.top.ObserveField("rowItemFocused", "onRowItemFocused")
-	    m.top.setfocus(true)
+	
 
 	   
     end function
@@ -33,7 +34,7 @@
 	function GetRowListContent() as object
 	    'Populate the RowList content here
 	    data = CreateObject("roSGNode", "ContentNode")
-	    for numRows = 0 to 1
+	    for numRows = 0 to 3
 	        row = data.CreateChild("ContentNode")
 			row.title = "Row " + stri(numRows)
 	        for i = 1 to 3

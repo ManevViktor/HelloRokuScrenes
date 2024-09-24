@@ -4,6 +4,14 @@ function init()
       ' addEmbet()
       ' addTask()
 
+      ' my = CreateObject("roSGNode", "embetSections")
+      my = CreateObject("roSGNode", "embetRowSections")
+      my.translation = "[1100,300]"
+
+      my.setFocus(true)
+      my.jumptoItem = 0
+      m.top.appendChild(my)
+
 end function
 
 

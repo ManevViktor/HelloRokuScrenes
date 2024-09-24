@@ -61,7 +61,14 @@ sub itemContentChanged()
             m.vertOutcome.width = con.width
             m.vertOutcomelbl.font.size = 15
 
-
+      else if(con.nodeType = "fake") then
+            m.horRect.visible = false
+            m.vertPoster.visible = false
+            m.vertLabel.visible = false
+            m.vertOutcome.visible = false
+            m.vertOutcome.visible = false
+            m.vertOutcome.width = con.width
+            m.vertOutcomelbl.font.size = 15
       end if
 
       if(con.nodeType = "verticalImage") then

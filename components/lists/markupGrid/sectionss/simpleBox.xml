@@ -1,0 +1,29 @@
+  
+<component name="simpleBoxItems" extends="Group">
+      
+      <interface > 
+            <field id="itemContent" type="node" onChange="itemContentChanged" alwaysNotify="true" />   
+      </interface>
+
+      <script type="text/brightscript" uri="simpleBox.brs" />
+      
+      <children>
+                              
+            <Rectangle visible="true"
+                       id="rectMarkUp"
+                       width="70"
+                       height="70"
+                       color="0x123212">
+                  <Label id="labelMarkup"
+                         color="0xffffff"
+                         height="70"
+                         width="70"
+                         text="hi"
+                         horizAlign="center"
+                         vertAlign="center"
+                         font="font:SmallestSystemFont"></Label>
+            </Rectangle>
+
+            </children>
+
+            </component>

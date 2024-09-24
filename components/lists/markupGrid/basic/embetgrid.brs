@@ -9,6 +9,8 @@ sub init()
       m.top.columnWidths = [70, 250, 70]
       m.top.drawFocusFeedback = true
       m.top.vertFocusAnimationStyle = "floatingFocus"
+      m.top.fixedLayout = false
+
 
 
       showmarkupgrid()
@@ -35,8 +37,15 @@ function GetRowListContent() as object
       'Populate the RowList content here
       data = CreateObject("roSGNode", "ContentNode")
       m.widthseqnece = []
-      for numRows = 0 to 30
+   
+      for numRows = 0 to 26
+
             item = data.CreateChild("oddsBodyContent")
+            ' item.W = 1
+            ' item.H = 1
+            ' item.X = numRows mod 3
+            ' item.Y = numRows mod 3
+            
             item.marketName = array[numRows]
             item.teamAwayOdds = "255" + stri(numRows)
             item.teamHomeOdds = stri(numRows)
@@ -66,6 +75,8 @@ function GetRowListContent() as object
 
             else
                   item.type = "vertical"
+             
+
                   if(modus = 0) then
                         item.nodeType = "Image"
                         item.width = 50
@@ -79,6 +90,11 @@ function GetRowListContent() as object
                         item.width = 70
 
                   end if
+
+
+                      if(numRows mod 4)= 1 then
+                       
+                      endif
 
             end if
 
