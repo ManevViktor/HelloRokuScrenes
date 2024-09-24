@@ -19,16 +19,26 @@ sub init()
 end sub
 
 sub onItemFocused()
-?"on item focused " m.top.itemFocused
-?"on row focused " m.top.focusRow
-?"on column focused " m.top.focusColumn
+      ?"on item focused " m.top.itemFocused
+      ?"on row focused " m.top.focusRow
+      ?"on column focused " m.top.focusColumn
 
-?"content num = "m.top.content.getChild(m.top.itemFocused).text
-endsub
+      ?"content num = "m.top.content.getChild(m.top.itemFocused).text
+end sub
 
+sub onNewData(event as object)
+
+      m.embetData = event.getData()
+      parseEmbetContent()
+
+end sub
 
 sub showmarkupgrid()
       content = GetRowListContent()
+
+      task = CreateObject("roSGNode", "JsonReader")
+      task.control = "run"
+      task.observeField("dataContent", "onNewData")
       ' listWidths = []
 
       ' for i = 0 to content.getChildCount() - 1
@@ -41,6 +51,37 @@ sub showmarkupgrid()
 end sub
 
 
+function parseEmbetContent() as object
+      data = CreateObject("roSGNode", "ContentNode")
+      json = m.embetData
+
+
+
+      m.x = 0
+      m.y = 0
+
+      y = 0
+      x = 0
+
+      for each item in json.betDetails
+            item = data.CreateChild("oddsBodyContent")
+
+            ' "marketId": "sr:market:2",
+            ' "presentation": "vertical",
+            ' "marketName": "MONEYLINE",
+
+
+            ?"item =" item
+            if(item.presentation = "vertical")
+            
+            end if
+
+      end for
+
+
+end function
+
+
 function GetRowListContent() as object
 
       m.y = 0
@@ -51,50 +92,50 @@ function GetRowListContent() as object
       i = CreateObject("roInt")
       ' for numRows = 0 to 7
       '       item = data.CreateChild("oddsBodyContent")
-      '       item.num = numRows  
-      '       i.setInt( numRows / 3) 
-      '        if(numRows =4) then 
+      '       item.num = numRows
+      '       i.setInt( numRows / 3)
+      '        if(numRows =4) then
       '             item.W = 2
-      '             item.X = numRows mod 3  
-      '             item.Y = i.getint() 
+      '             item.X = numRows mod 3
+      '             item.Y = i.getint()
       '        else if(numRows = 5)
       '             item.W = 1
-      '             numRows+=1 
-      '             i.setInt( numRows / 3) 
+      '             numRows+=1
+      '             i.setInt( numRows / 3)
       '             item.Y = i.getint()
-      '             item.X = (numRows mod 3) 
-             
-      '        else 
-      '             item.X = numRows mod 3  
+      '             item.X = (numRows mod 3)
+
+      '        else
+      '             item.X = numRows mod 3
       '             item.W = 1
-      '             item.Y = i.getint() 
+      '             item.Y = i.getint()
       '       endif
-      
+
       '        item.H = 1
       '        ?"x , y  =[" item.X "," item.Y "]"
-             
-               
-            
+
+
+
 
       ' end for
 
       item = data.CreateChild("oddsBodyContent")
       item.W = 1
       item.H = 1
-      item.X = 0  
-      item.Y = 0 
-      item.text = "150"  
-      item.num = 0  
+      item.X = 0
+      item.Y = 0
+      item.text = "150"
+      item.num = 0
       item.width = 70
 
 
       item = data.CreateChild("oddsBodyContent")
       item.W = 1
       item.H = 1
-      item.X = 1  
-      item.Y = 0 
-      item.num = 1  
-      item.text = "190"  
+      item.X = 1
+      item.Y = 0
+      item.num = 1
+      item.text = "190"
       item.width = 70
 
 
@@ -102,93 +143,94 @@ function GetRowListContent() as object
       item = data.CreateChild("oddsBodyContent")
       item.W = 1
       item.H = 1
-      item.X = 2  
-      item.Y = 0 
-      item.num = 2 
+      item.X = 2
+      item.Y = 0
+      item.num = 2
       item.width = 70
-      item.text = "190"  
+      item.text = "190"
 
 
       item = data.CreateChild("oddsBodyContent")
       item.W = 3
       item.H = 1
-      item.X = 0  
-      item.Y = 1 
-      item.num = 0  
-      item.text = "190"  
+      item.X = 0
+      item.Y = 1
+      item.num = 0
+      item.text = "190"
       item.width = 220
 
       item = data.CreateChild("oddsBodyContent")
       item.W = 2
       item.H = 1
-      item.X = 0  
-      item.Y = 2 
-      item.num = 0  
+      item.X = 0
+      item.Y = 2
+      item.num = 0
       item.width = 140
-
+ 
+      item.market =""
 
       item = data.CreateChild("oddsBodyContent")
       item.W = 1
       item.H = 1
-      item.X = 2  
-      item.Y = 2 
-      item.num = 5  
+      item.X = 2
+      item.Y = 2
+      item.num = 5
       item.width = 70
 
 
-      
+
       item = data.CreateChild("oddsBodyContent")
       item.W = 2
       item.H = 1
-      item.X = 0 
-      item.Y =3 
-      item.num = 6  
+      item.X = 0
+      item.Y = 3
+      item.num = 6
       item.width = 140
 
 
       item = data.CreateChild("oddsBodyContent")
       item.W = 1
       item.H = 1
-      item.X = 2  
-      item.Y = 3 
-      item.num = 7 
+      item.X = 2
+      item.Y = 3
+      item.num = 7
       item.width = 70
       item.text = "qnuID"
 
 
-      
+
       item = data.CreateChild("oddsBodyContent")
       item.W = 3
       item.H = 1
-      item.X = 0  
-      item.Y = 4 
-      item.num = 8 
+      item.X = 0
+      item.Y = 4
+      item.num = 8
       item.width = 270
 
       item = data.CreateChild("oddsBodyContent")
       item.W = 2
       item.H = 1
-      item.X = 0  
+      item.X = 0
       item.Y = 5
-      item.num = 0  
+      item.num = 0
       item.width = 140
 
 
       item = data.CreateChild("oddsBodyContent")
       item.W = 1
       item.H = 1
-      item.X = 2  
-      item.Y = 5 
-      item.num = 0  
+      item.X = 2
+      item.Y = 5
+      item.num = 0
       item.width = 70
 
 
- rects = [ [0,0] , [0,1] , [0, 2] , [1,1] , [1,2] ]
+      rects = [[0, 0], [0, 1], [0, 2], [1, 1], [1, 2]]
 
-  for j =0  to data.getChildCount() -1
+      for j = 0 to data.getChildCount() - 1
 
-      ?"x , y = ["data.getChild(j).X data.getChild(j).Y "]"
-  endfor 
+            ?"x , y = ["data.getChild(j).X data.getChild(j).Y "]"
+      end for
 
       return data
 end function

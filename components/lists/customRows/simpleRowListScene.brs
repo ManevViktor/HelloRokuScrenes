@@ -4,8 +4,8 @@ function init()
       ' addEmbet()
       ' addTask()
 
-      ' my = CreateObject("roSGNode", "embetSections")
-      my = CreateObject("roSGNode", "embetRowSections")
+       my = CreateObject("roSGNode", "embetSections")
+      ' my = CreateObject("roSGNode", "embetRowSections")
       my.translation = "[1100,300]"
 
       my.setFocus(true)

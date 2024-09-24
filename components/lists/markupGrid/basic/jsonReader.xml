@@ -5,8 +5,7 @@
 <component name = "JsonReader" extends = "Task" >
 
   <interface>
-    
-
+     <field id="dataContent" type="assocArray" />
   </interface>
 
   <script type = "text/brightscript" uri="jsonReader.brs" />

@@ -46,12 +46,9 @@ sub getcontent()
 
       end for
 
-      for i = 0 to rodata.count() 
-            ?"ro data" type(rodata.getEntry(i))
-            ?"..."
-      end for
+    
 
-      ?"new data = "newdata
+      m.top.dataContent = json
 end sub
 
 
