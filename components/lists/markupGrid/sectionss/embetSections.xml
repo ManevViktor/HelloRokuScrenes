@@ -4,6 +4,7 @@
 
 <component name="embetSections" extends="MarkupGrid" >
 
+<script type="text/brightscript" uri="contentCreatorEmbet.brs" />
   <script type="text/brightscript" uri="embetSections.brs"></script>
 
   <children >

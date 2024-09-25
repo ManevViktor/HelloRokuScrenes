@@ -10,6 +10,7 @@
             <field id="teamAwayDescription" type="string" />
             <field id="marketName" type="string" />
             <field id="width" type="integer" />
+            <field id="height" type="integer" />
             <field id="type" type="string" />
             <field id="num" type="integer" />
             <field id="nodeType" type="string" />

@@ -1,15 +1,15 @@
 sub init()
-      m.global.addFields({embetSDK:{debug:false}})
+      m.global.addFields({ embetSDK: { debug: false } })
 
-      logEvent({key : "m.top.rect" , value: m.top.boundingRect()})
+      logEvent({ key: "m.top.rect", value: m.top.boundingRect() })
 
       rect = m.top.boundingRect()
 
-      logEvent({key : "widgetRoot", value : m.top.localBoundingRect()})
+      logEvent({ key: "widgetRoot", value: m.top.localBoundingRect() })
 
       ' initLibrary2()
 
-      initLibrary()
+      ' initLibrary()
 
       m.headerText = m.top.findNode("embetOddsHeaderText")
       m.root = m.top.findNode("embetOddsRoot")
@@ -21,25 +21,25 @@ sub init()
       m.oddsListItems = m.top.findNode("embetOddsList")
       rect2 = m.headerText.boundingRect()
 
-'      m.clippingRect = rect
+      '      m.clippingRect = rect
 
       m.headerText.width = rect.width / 2 - 50
       x = rect.width / 2
       m.headerText.translation = [x, 0]
 
-      logEvent({key : "rect headerText", value :rect2})
+      logEvent({ key: "rect headerText", value: rect2 })
 
       m.root.opacity = 1
-      logEvent({key : "UI embet root" , value: m.root.boundingRect()})
+      logEvent({ key: "UI embet root", value: m.root.boundingRect() })
 
       m.top.observeField("focusedChild", "onFocusedChildChange")
 
       di = CreateObject("roDeviceInfo")
       size = di.GetDisplaySize()
-      
+
 
       m.top.observeField("size", "onSizeChanged")
-     
+
 
 end sub
 
@@ -56,16 +56,16 @@ sub redraw()
       m.bodyRect.width = rect.width
       m.oddsRect.width = rect.width
       m.bodyTitle.width = rect.width
-     m.oddsListItems.rowItemSize = [[rect.width, 50]]
+      m.oddsListItems.rowItemSize = [[rect.width, 50]]
 
       m.headerText.width = rect.width / 2 - 50
       x = rect.width / 2
       m.headerText.translation = [x, 0]
 
-      m.oddsListItems.sizeChanged = {w:500,h:220}
+      m.oddsListItems.sizeChanged = { w: 500, h: 220 }
 
-      m.global.addFields( {red: &hff0000ff, green: &h00ff00ff, blue: &h0000ffff} ) 
-      
+      m.global.addFields({ red: &hff0000ff, green: &h00ff00ff, blue: &h0000ffff })
+
 end sub
 
 sub onFocusedChildChange()
@@ -73,7 +73,9 @@ sub onFocusedChildChange()
             ?"embet sending event unfocused"
             m.top.focusChanged = "unfocused"
       else
-            ?"embet sending event focused"
+            if(m.oddsListItems.hasFocus() = false) then
+                  m.oddsListItems.setfocus(true)
+            end if
             m.top.focusChanged = "focused"
       end if
 end sub
@@ -105,7 +107,7 @@ sub onLoadStatus(ev)
             m.bcPlayer.text = "wqeqwewqewqeqwwwwwewqe"
             m.bcPlayer.width = 400
             m.bcPlayer.height = 400
-            m.bcPlayer.translation = [0,120]
+            m.bcPlayer.translation = [0, 120]
             m.top.appendChild(m.bcPlayer)
 
 
@@ -154,7 +156,7 @@ end sub
 
 
 function onKeyEvent(key as string, press as boolean) as boolean
-      handled = true
+      handled = false
       m.keyPress = key
       ' ?"key event embet Root = " key, press
       ' if press

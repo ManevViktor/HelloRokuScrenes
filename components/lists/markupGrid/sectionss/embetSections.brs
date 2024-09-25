@@ -3,16 +3,18 @@ sub init()
       m.top.itemComponentName = "simpleBoxItems"
       m.top.numColumns = 3
       m.top.numRows = 10
-      m.top.itemSize = [70, 50]
-      m.top.rowHeights = [50]
+      m.top.itemSize = [60, 60]
       m.top.itemSpacing = [5, 5]
-      m.top.columnWidths = [70, 70, 70]
+      m.top.wrapDividerHeight = 0
       m.top.drawFocusFeedback = true
       m.top.vertFocusAnimationStyle = "floatingFocus"
       m.top.fixedLayout = true
       m.top.observeField("itemFocused", "onItemFocused")
 
-
+      m.s = CreateObject("RoSGNode", "Rectangle")
+           
+      m.s.width = 423
+      m.s.height = 200
 
       showmarkupgrid()
 
@@ -20,21 +22,26 @@ end sub
 
 sub onItemFocused()
       ?"on item focused " m.top.itemFocused
-      ?"on row focused " m.top.focusRow
-      ?"on column focused " m.top.focusColumn
-
-      ?"content num = "m.top.content.getChild(m.top.itemFocused).text
+      rect = m.top.boundingRect()
+      ?"height = " rect
+ 
+      m.top.appendChild(m.s)
+      m.s.translation = [0,rect.height -15 ]
+      if(m.top.content <> invalid)
+            ' ?"content num = "m.top.content.getChild(m.top.itemFocused).text
+      end if
 end sub
 
 sub onNewData(event as object)
 
       m.embetData = event.getData()
-      parseEmbetContent()
+      content = parseEmbetContent(m.embetData)
 
+      m.top.content = content
 end sub
 
 sub showmarkupgrid()
-      content = GetRowListContent()
+      ' content = GetRowListContent()
 
       task = CreateObject("roSGNode", "JsonReader")
       task.control = "run"
@@ -46,40 +53,10 @@ sub showmarkupgrid()
       ' end for
       ' ?"list widths" listWidths
       '  m.grid.columnWidths = listWidths
-      m.top.content = content
+      ' m.top.content = content
 
 end sub
 
-
-function parseEmbetContent() as object
-      data = CreateObject("roSGNode", "ContentNode")
-      json = m.embetData
-
-
-
-      m.x = 0
-      m.y = 0
-
-      y = 0
-      x = 0
-
-      for each item in json.betDetails
-            item = data.CreateChild("oddsBodyContent")
-
-            ' "marketId": "sr:market:2",
-            ' "presentation": "vertical",
-            ' "marketName": "MONEYLINE",
-
-
-            ?"item =" item
-            if(item.presentation = "vertical")
-            
-            end if
-
-      end for
-
-
-end function
 
 
 function GetRowListContent() as object
@@ -166,8 +143,8 @@ function GetRowListContent() as object
       item.Y = 2
       item.num = 0
       item.width = 140
- 
-      item.market =""
+
+      item.market = ""
 
       item = data.CreateChild("oddsBodyContent")
       item.W = 1

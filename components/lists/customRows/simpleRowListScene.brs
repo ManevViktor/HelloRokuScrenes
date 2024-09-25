@@ -1,17 +1,26 @@
 function init()
       m.theRowList = m.top.FindNode("theRowList")
 
-      ' addEmbet()
-      ' addTask()
+      m.label = m.top.FindNode("exampleScrollableText")
+      m.btn = m.top.FindNode("btn1")
 
-       my = CreateObject("roSGNode", "embetSections")
-      ' my = CreateObject("roSGNode", "embetRowSections")
-      my.translation = "[1100,300]"
+
+      ' addTask()
+      my2 = CreateObject("roSGNode", "Rectangle")
+      my2.width = 500
+      my2.height = 500
+      my2.color = "0x000000"
+      '  my = CreateObject("roSGNode", "embetRoot")
+      my = CreateObject("roSGNode", "embetRowSections")
+      my2.translation = "[800,150]"
 
       my.setFocus(true)
       my.jumptoItem = 0
-      m.top.appendChild(my)
+      m.label.setfocus(true)
+      '  m.top.appendChild(my)
 
+      '  my2.appendChild(my)
+      addEmbet()
 end function
 
 
@@ -28,9 +37,9 @@ sub addEmbet()
 
       if screenSize <> invalid then
             ' For this POC the size of the widget is fixed for next release you will be able to change the size
-            widgetWidth = 400*2
+            widgetWidth = 400 * 2
             widgetX = (screenSize.w - widgetWidth)
-            padding = {x:10, y:10}
+            padding = { x: 150, y: 150 }
             m.embetUI.translation = [widgetx - padding.x, padding.y]
       end if
 end sub
@@ -54,8 +63,8 @@ sub addTask()
 
       m.newLg = CreateObject("roSGNode", "layoutGroupsTest")
       m.top.appendChild(m.newLg)
-      m.newLg.translation = [100,100]
-     
+      m.newLg.translation = [100, 100]
+
 end sub
 
 sub onTimer()
@@ -69,9 +78,21 @@ sub onTimer()
       end if
 end sub
 
+function onKeyEvent(key as string, press as boolean) as boolean
 
+      if(press = true) then
+            if( m.btn.hasFocus()= true) then 
+                 m.embetUI.setfocus(true)
+            endif
+      end if
+      ?"on key smlrkss " key
+      return false
+end function
 
 function onFocusChanged()
+      if(m.embetUI.focusChanged = "unfocused") then
+            m.btn.setfocus(true)
+      end if
       ?" onFocusChanged" m.embetUI.focusChanged
       ' return focus to your own components
 

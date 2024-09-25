@@ -26,7 +26,6 @@ sub itemContentChanged()
 
       itemcontent = m.top.itemContent
 
-      m.background.width = itemcontent.width
       m.labelHome.text = itemcontent.teamHomeOdds
       m.labelMarket.text = itemcontent.marketName
       m.labelAway.text = itemcontent.teamAwayOdds

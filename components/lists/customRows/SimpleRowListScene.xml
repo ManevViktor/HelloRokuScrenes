@@ -4,9 +4,27 @@
 
 <component name="SimpleRowListScene" extends="Scene">
 
-    <script type="text/brightscript" uri ="pkg:/components/lists/customRows/simpleRowListScene.brs"/>
+    <script type="text/brightscript" uri="pkg:/components/lists/customRows/simpleRowListScene.brs" />
 
-                <children>
-                    <SimpleRowList id="theRowList" translation="[50,50]" />
-                </children>
-            </component>
+    <children>
+        <ScrollableText id="exampleScrollableText"
+                        translation="[ 50, 50 ]"
+                        width="400"
+                        height = "200"
+                        font="font:SmallBoldSystemFont"
+                        text="Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement software on the Roku...FURTHER INFORMATION."
+                        color="0x000000"
+                         />
+
+
+                         <Button 
+     translation="[1000,50]"
+              minwidth="380"
+              id="btn1"
+              iconUri=""
+              focusedIconUri=""
+              showFocusFootprint="true"
+              text="test focus butn" />
+
+    </children>
+</component>
