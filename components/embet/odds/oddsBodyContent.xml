@@ -18,6 +18,7 @@
             <field id="canFocus" type="boolean" />
             <field id="style" type="assocArray" />
             <field id="text" type="string" />
+            <field id="marketData" type="assocArray" />
       </interface>
 
       <!-- <children> -->

@@ -15,7 +15,7 @@
                        color="0x123212">
                                         
                  
-                  <LayoutGroup id="groupOutcomes" layoutDirection="vert" vertAlignment="top"  itemSpacings="0"> 
+                  <LayoutGroup id="groupOutcomes" layoutDirection="vert" vertAlignment="top"  itemSpacings="5"> 
                         <Label id="labelMarkup"
                                color="0xffffff"
                                text="hi"

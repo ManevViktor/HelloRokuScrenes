@@ -1,0 +1,301 @@
+{
+      "widgetType": "live-odds",
+      "sportsbookLogoUrl": "https://Somelogo.com/logo",
+      "labels": {
+            "information": "Tap on odds to place bets or set notifications.",
+            "disclaimerTitle": "Responsible gaming:",
+            "disclaimerDescription": "Responsible gaming description",
+            "disclaimerDescriptionCollapsed": "..."
+      },
+      "disclaimerPosition": "bottom|top",
+      "placeBetLabel": "Place Bet",
+      "placeBetUrl": "https://placebeturl.com",
+      "teams": [
+            {
+                  "description": "MUTD",
+                  "logoUrl": "https://logo1.com/logo1"
+            },
+            {
+                  "description": "LIV",
+                  "logoUrl": "https://logo2.com/logo2"
+            }
+      ],
+      "betDetails": [
+            {
+                  "marketId": "sr:market:1",
+                  "marketName": "SPREAD",
+                  "presentation": "horizontal",
+                  "marketOptions": [
+                        {
+                              "description": "O 3.5",
+                              "odds": "-200",
+                              "imageUrl": "",
+                              "url": "https://odds_composit_url",
+                              "outcomeId": "sr:outcome:1",
+                              "isSuspended": false
+                        },
+                        {
+                              "description": "U 3.5",
+                              "odds": "+200",
+                              "imageUrl": "",
+                              "url": "https://odds_composit_url",
+                              "outcomeId": "sr:outcome:2",
+                              "isSuspended": false
+                        }
+                  ]
+            },
+            {
+                  "marketId": "sr:market:2",
+                  "presentation": "horizontal",
+                  "marketName": "MONEYLINE",
+                  "marketOptions": [
+                        {
+                              "description": "O 3.5",
+                              "odds": "-200",
+                              "imageUrl": "",
+                              "url": "https://odds_composit_url",
+                              "outcomeId": "sr:outcome:3",
+                              "isSuspended": false
+                        },
+                        {
+                              "description": "U 3.5",
+                              "odds": "+200",
+                              "imageUrl": "",
+                              "url": "https://odds_composit_url",
+                              "outcomeId": "sr:outcome:4",
+                              "isSuspended": false
+                        }
+                  ]
+            },
+            {
+                  "marketId": "sr:market:3",
+                  "presentation": "horizontal",
+                  "marketName": "TOTAL",
+                  "marketOptions": [
+                        {
+                              "description": "O 3.5",
+                              "odds": "-200",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:12",
+                              "issuspended": false,
+                              "url": "https://odds_composit_url"
+                        },
+                        {
+                              "description": "U 3.5",
+                              "odds": "+200",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:13",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        }
+                  ]
+            },
+            {
+                  "marketId": "sr:market:4",
+                  "presentation": "vertical",
+                  "marketName": "HANDICAP",
+                  "marketOptions": [
+                        {
+                              "description": "O 4.5",
+                              "odds": "-180",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:14",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        },
+                        {
+                              "description": "U 4.5",
+                              "odds": "+220",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:15",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        }
+                  ]
+            },
+            {
+                  "marketId": "sr:market:5",
+                  "presentation": "vertical",
+                  "marketName": "ODDS",
+                  "marketOptions": [
+                        {
+                              "description": "O 5.5",
+                              "odds": "-250",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:16",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        },
+                        {
+                              "description": "U 5.5",
+                              "odds": "+300",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:17",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        }
+                  ]
+            },
+            {
+                  "marketId": "sr:market:6",
+                  "presentation": "vertical",
+                  "marketName": "OVER/UNDER",
+                  "marketOptions": [
+                        {
+                              "description": "O 2.5",
+                              "odds": "-190",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:18",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        },
+                        {
+                              "description": "U 2.5",
+                              "odds": "+250",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:19",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        }
+                  ]
+            },
+            {
+                  "marketId": "sr:market:7",
+                  "presentation": "vertical",
+                  "marketName": "ASIAN HANDICAP",
+                  "marketOptions": [
+                        {
+                              "description": "O 1.5",
+                              "odds": "-210",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:20",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        },
+                        {
+                              "description": "U 1.5",
+                              "odds": "+270",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:21",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        }
+                  ]
+            },
+            {
+                  "marketId": "sr:market:8",
+                  "presentation": "vertical",
+                  "marketName": "DOUBLE CHANCE",
+                  "marketOptions": [
+                        {
+                              "description": "1X",
+                              "odds": "-160",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:22",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        },
+                        {
+                              "description": "12",
+                              "odds": "+180",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:23",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        }
+                  ]
+            },
+            {
+                  "marketId": "sr:market:9",
+                  "presentation": "vertical",
+                  "marketName": "WINNER",
+                  "marketOptions": [
+                        {
+                              "description": "Team A",
+                              "odds": "-170",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:24",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        },
+                        {
+                              "description": "Team B",
+                              "odds": "+230",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:25",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        }
+                  ]
+            },
+            {
+                  "marketId": "sr:market:10",
+                  "presentation": "vertical",
+                  "marketName": "CORRECT SCORE",
+                  "marketOptions": [
+                        {
+                              "description": "1-0",
+                              "odds": "+300",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:26",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        },
+                        {
+                              "description": "2-1",
+                              "odds": "+350",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:27",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        }
+                  ]
+            },
+            {
+                  "marketId": "sr:market:11",
+                  "presentation": "vertical",
+                  "marketName": "DRAW NO BET",
+                  "marketOptions": [
+                        {
+                              "description": "Team A",
+                              "odds": "-130",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:28",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        },
+                        {
+                              "description": "Team B",
+                              "odds": "+120",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:29",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        }
+                  ]
+            },
+            {
+                  "marketId": "sr:market:12",
+                  "presentation": "vertical",
+                  "marketName": "GOAL LINE",
+                  "marketOptions": [
+                        {
+                              "description": "O 2.5",
+                              "odds": "-160",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:30",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        },
+                        {
+                              "description": "U 2.5",
+                              "odds": "+210",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:31",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        }
+                  ]
+            }
+      ]
+}

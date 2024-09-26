@@ -3,13 +3,14 @@ sub init()
 end sub
 
 sub getcontent()
-      json = ParseJson(ReadAsciifile("pkg:/components/file/market.json"))
+      json = ParseJson(ReadAsciifile("pkg:/components/file/marketextend.json"))
 
 
       newdata = []
-
+      count = 0
       for each item in json.betDetails
 
+            count ++
             newdata.push({
                   homeodds: item.marketOptions[0]
                   marketName: item

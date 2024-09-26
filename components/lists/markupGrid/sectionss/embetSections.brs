@@ -2,7 +2,7 @@ sub init()
 
       m.top.itemComponentName = "simpleBoxItems"
       m.top.numColumns = 3
-      m.top.numRows = 10
+      m.top.numRows = 7
       m.top.itemSize = [60, 60]
       m.top.itemSpacing = [5, 5]
       m.top.wrapDividerHeight = 0

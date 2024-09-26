@@ -6,21 +6,20 @@ function init()
 
 
       ' addTask()
-      my2 = CreateObject("roSGNode", "Rectangle")
-      my2.width = 500
-      my2.height = 500
-      my2.color = "0x000000"
-      '  my = CreateObject("roSGNode", "embetRoot")
-      my = CreateObject("roSGNode", "embetRowSections")
-      my2.translation = "[800,150]"
+      rect = CreateObject("roSGNode", "Rectangle")
+      rect.width = 500
+      rect.height = 500
+      rect.color = "0x000000"
+      my = CreateObject("roSGNode", "embetSections")
+      rect.translation = "[800,150]"
 
       my.setFocus(true)
       my.jumptoItem = 0
       m.label.setfocus(true)
-      '  m.top.appendChild(my)
+      m.top.appendChild(rect)
 
-      '  my2.appendChild(my)
-      addEmbet()
+      rect.appendChild(my)
+      ' addEmbet()
 end function
 
 
@@ -81,9 +80,9 @@ end sub
 function onKeyEvent(key as string, press as boolean) as boolean
 
       if(press = true) then
-            if( m.btn.hasFocus()= true) then 
-                 m.embetUI.setfocus(true)
-            endif
+            if(m.btn.hasFocus() = true) then
+                  m.embetUI.setfocus(true)
+            end if
       end if
       ?"on key smlrkss " key
       return false

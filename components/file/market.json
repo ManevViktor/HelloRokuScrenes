@@ -28,14 +28,14 @@
       "marketOptions": [
         {
           "description": "O 3.5",
-          "odds": "-200",
+          "odds": "-150",
           "imageUrl": "",
           "url": "https://odds_composit_url",
           "outcomeId": "sr:outcome:1",
           "isSuspended": false
         },
         {
-          "description": "U 3.5",
+          "description": " 100",
           "odds": "+200",
           "imageUrl": "",
           "url": "https://odds_composit_url",
@@ -46,7 +46,7 @@
     },
     {
       "marketId": "sr:market:2",
-      "presentation": "vertical",
+      "presentation": "horizontal",
       "marketName": "MONEYLINE",
       "marketOptions": [
         {
@@ -77,7 +77,7 @@
           "odds": "-200",
           "imageUrl": "",
           "outcomeId": "sr:outcome:12",
-          "issuspended": false,
+          "isSuspended": false,
           "url": "https://odds_composit_url"
         },
         {
