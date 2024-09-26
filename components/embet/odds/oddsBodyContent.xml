@@ -10,15 +10,16 @@
             <field id="teamAwayDescription" type="string" />
             <field id="marketName" type="string" />
             <field id="width" type="integer" />
-            <field id="height" type="integer" />
+            <field id="height" type="integer"  value ="50"/>
             <field id="type" type="string" />
-            <field id="num" type="integer" />
+            <field id="num" type="integer" value="100" />
             <field id="nodeType" type="string" />
             <field id="color" type="string" />
             <field id="canFocus" type="boolean" />
             <field id="style" type="assocArray" />
             <field id="text" type="string" />
             <field id="marketData" type="assocArray" />
+            <field id="present" type="string" />
       </interface>
 
       <!-- <children> -->

@@ -16,7 +16,7 @@ sub itemContentChanged()
             m.label2.text = content.marketData.description
       else
             m.label.text = content.text
-            m.label2.text = content.num
+            ' m.label2.text = content.num
 
       
       end if

@@ -2,7 +2,7 @@ sub init()
 
       m.top.itemComponentName = "simpleBoxItems"
       m.top.numColumns = 3
-      m.top.numRows = 7
+      m.top.numRows = 8
       m.top.itemSize = [60, 60]
       m.top.itemSpacing = [5, 5]
       m.top.wrapDividerHeight = 0
@@ -11,10 +11,8 @@ sub init()
       m.top.fixedLayout = true
       m.top.observeField("itemFocused", "onItemFocused")
 
-      m.s = CreateObject("RoSGNode", "Rectangle")
+      m.s = CreateObject("RoSGNode", "disclaimer")
            
-      m.s.width = 423
-      m.s.height = 200
 
       showmarkupgrid()
 

@@ -1,25 +1,27 @@
 function init()
       m.theRowList = m.top.FindNode("theRowList")
 
-      m.label = m.top.FindNode("exampleScrollableText")
-      m.btn = m.top.FindNode("btn1")
+      ' m.label = m.top.FindNode("exampleScrollableText")
+      ' m.btn = m.top.FindNode("btn1")
 
 
-      ' addTask()
+      ' ' addTask()
       rect = CreateObject("roSGNode", "Rectangle")
-      rect.width = 500
-      rect.height = 500
-      rect.color = "0x000000"
+      rect.width = 410
+      rect.height = 600
+      rect.color = "0x000000a8"
       my = CreateObject("roSGNode", "embetSections")
       rect.translation = "[800,150]"
 
       my.setFocus(true)
-      my.jumptoItem = 0
-      m.label.setfocus(true)
+      ' my.jumptoItem = 0
+      ' m.label.setfocus(true)
       m.top.appendChild(rect)
 
       rect.appendChild(my)
       ' addEmbet()
+
+ 
 end function
 
 
@@ -79,12 +81,12 @@ end sub
 
 function onKeyEvent(key as string, press as boolean) as boolean
 
-      if(press = true) then
-            if(m.btn.hasFocus() = true) then
-                  m.embetUI.setfocus(true)
-            end if
-      end if
-      ?"on key smlrkss " key
+      ' if(press = true) then
+      '       if(m.btn.hasFocus() = true) then
+      '             m.embetUI.setfocus(true)
+      '       end if
+      ' end if
+      ' ?"on key smlrkss " key
       return false
 end function
 

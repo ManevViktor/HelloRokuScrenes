@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+
+<component name="disclaimer" extends="Group">
+
+      <children>
+            <Rectangle width="410" height="120" color="0x000000D3">
+                  <!-- <ScrollableText id="exampleScrollableText"                                  
+                                  width="415"
+                                  height="70"
+                                  font="font:SmallestSystemFont"
+                                  text="Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement software on the Roku...FURTHER INFORMATION."
+                                  color="0xffffff" />               -->
+            </Rectangle>
+      </children>
+</component>
