@@ -12,8 +12,11 @@ sub init()
       m.top.observeField("itemFocused", "onItemFocused")
 
       m.s = CreateObject("RoSGNode", "disclaimer")
-           
-
+      m.top.appendChild(m.s)
+     
+      text = m.top.findNode("txtDis")
+      text.font.size = 13
+       
       showmarkupgrid()
 
 end sub
@@ -23,7 +26,7 @@ sub onItemFocused()
       rect = m.top.boundingRect()
       ?"height = " rect
  
-      m.top.appendChild(m.s)
+     
       m.s.translation = [0,rect.height -15 ]
       if(m.top.content <> invalid)
             ' ?"content num = "m.top.content.getChild(m.top.itemFocused).text

@@ -8,7 +8,7 @@ function init()
       ' ' addTask()
       rect = CreateObject("roSGNode", "Rectangle")
       rect.width = 410
-      rect.height = 600
+      rect.height = 550
       rect.color = "0x000000a8"
       my = CreateObject("roSGNode", "embetSections")
       rect.translation = "[800,150]"
@@ -19,7 +19,8 @@ function init()
       m.top.appendChild(rect)
 
       rect.appendChild(my)
-      ' addEmbet()
+
+       addEmbet()
 
  
 end function
@@ -29,7 +30,7 @@ sub addEmbet()
 
       m.embetUI = CreateObject("roSGNode", "embetRoot")
       m.top.appendChild(m.embetUI)
-      m.embetUI.setfocus(true)
+      ' m.embetUI.setfocus(true)
       m.embetUI.observeField("focusChanged", "onFocusChanged")
 
       di = CreateObject("roDeviceInfo")
@@ -38,9 +39,9 @@ sub addEmbet()
 
       if screenSize <> invalid then
             ' For this POC the size of the widget is fixed for next release you will be able to change the size
-            widgetWidth = 400 * 2
+            widgetWidth = 400 
             widgetX = (screenSize.w - widgetWidth)
-            padding = { x: 150, y: 150 }
+            padding = { x: 15, y: 15 }
             m.embetUI.translation = [widgetx - padding.x, padding.y]
       end if
 end sub

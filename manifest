@@ -40,6 +40,6 @@ splash_min_time=1
 ui_resolutions=sd,hd,fhd
 
 ### lib
-hidden=1
+hidden=0
 rsg_version=1.2
 sg_component_libs_provided=EmbetSDK

@@ -5,13 +5,15 @@
 <component name="disclaimer" extends="Group">
 
       <children>
-            <Rectangle width="410" height="120" color="0x000000D3">
-                  <!-- <ScrollableText id="exampleScrollableText"                                  
+            <Rectangle width="410" height="80" color="0x000000D3">
+                  <Label id="txtDis" 
+                                  translation="[20,10]"                                 
                                   width="415"
                                   height="70"
+                                  horizAlign="left"
                                   font="font:SmallestSystemFont"
-                                  text="Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement software on the Roku...FURTHER INFORMATION."
-                                  color="0xffffff" />               -->
+                                  text="Disclaimer info "
+                                  color="0xffffff" />              
             </Rectangle>
       </children>
 </component>
