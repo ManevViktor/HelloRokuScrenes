@@ -1,17 +1,21 @@
 
-function parseEmbetContent(data as object) as object
+function parseEmbetContent(jsondata as object) as object
 
-      json = m.embetData
+      json = jsondata
 
       m.x = 0
       m.y = 0
 
       y = 0
       x = 0
-      ?"jsopn" json
+
+      totalWidth = m.global.embetSDK
+      ?"total width"
 
       widths = []
       heights = []
+
+      nodesCollection = node_types()
 
       data = CreateObject("roSGNode", "ContentNode")
       j = 0
@@ -26,6 +30,7 @@ function parseEmbetContent(data as object) as object
             rowPos = 0
             present = getPresentationType(market)
 
+
             if(present = "horizontal") then
                   for i = 0 to 2
                         cell = data.CreateChild("oddsBodyContent")
@@ -33,16 +38,17 @@ function parseEmbetContent(data as object) as object
                         cell.Y = y
                         cell.W = 1
                         cell.H = 1
-
                         cell.num = rowPos
                         cell.marketData = createCellData(market, i)
                         if(i = 1) then
                               ?"cell bound rect"
                               wid = 220
                               cell.text = "market"
+                              cell.nodeType = nodesCollection.horizMarket
                         else
                               wid = 90
                               cell.text = "125"
+                              cell.nodeType = nodesCollection.horizOdds
                         end if
                         cell.width = wid
                         cell.height = 50
@@ -62,10 +68,11 @@ function parseEmbetContent(data as object) as object
                   cell.H = 1
                   cell.width = 410
                   cell.text = market.marketName
+                  cell.nodeType = nodesCollection.vertMarket
                   y++
 
-                  
-                  for kl = 0 to market.marketoptions.count() *2 -1
+
+                  for kl = 0 to market.marketoptions.count() * 2 - 1
 
                         if(kl mod 2) = 1 then
                               cell = data.CreateChild("oddsBodyContent")
@@ -74,26 +81,28 @@ function parseEmbetContent(data as object) as object
                               cell.W = 1
                               cell.H = 1
                               cell.width = 90
-                              cell.text = market.marketoptions[kl/2].odds
-                              cell.num = StrToI(market.marketoptions[kl/2].description)
-                              y++                             
-                             
-                        else 
+                              cell.nodeType = nodesCollection.vertOdds
+                              cell.text = market.marketoptions[kl / 2].odds
+                              cell.num = StrToI(market.marketoptions[kl / 2].description)
+                              y++
+
+                        else
                               cell = data.CreateChild("oddsBodyContent")
                               cell.X = 0
                               cell.Y = y
                               cell.W = 2
                               cell.H = 1
                               cell.width = 315
-                              if(kl  = 0) then 
-                              cell.text = "Suns"
+                              cell.nodeType = nodesCollection.vertDesciption
+                              if(kl = 0) then
+                                    cell.text = market.marketoptions[kl / 2].description
                               else
-                                    cell.text = "Lakers"
-                              endif
+                                    cell.text = market.marketoptions[kl / 2].description
+                              end if
                               cell.num = 120
 
                         end if
-                       
+
                   end for
             end if
 
@@ -272,3 +281,5 @@ function parseEmbetContentVert(data as object) as object
       return data
 
 end function
+
+

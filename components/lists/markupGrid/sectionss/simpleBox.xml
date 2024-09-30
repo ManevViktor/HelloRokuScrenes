@@ -5,37 +5,34 @@
       </interface>
 
       <script type="text/brightscript" uri="simpleBox.brs" />
+      <script type="text/brightscript" uri="celldataUtil.brs" />
       
       <children>
                               
-            <Rectangle visible="true"
-                       id="rectMarkUp"
-                       width="90"
-                       height="70"
-                       color="0x000000b3">
+            <Rectangle id="rectMarkUp" width="90" height="70" color="0x000000">
                                         
                  
-                  <LayoutGroup id="groupOutcomes" layoutDirection="vert" vertAlignment="top"  itemSpacings="5"> 
+                  <LayoutGroup id="groupOutcomes" layoutDirection="vert" vertAlignment="top" itemSpacings="5"> 
                         <Label id="labelMarkup"
                                color="0xffffff"
                                text="hi"
                                width="90"
                                horizAlign="center"
-                                vertAlign="top"                             
+                               vertAlign="top"
                                font="font:SmallestSystemFont" />
 
                         <Label id="lbldescripton"
                                color="0xffffff"
-                               
                                horizAlign="center"
                                vertAlign="top"
                                width="90"
-                           
                                font="font:SmallestSystemFont" />
                          
                   </LayoutGroup>
                  
             </Rectangle>
+
+            <vertiOddDescr id="verticalOdds" visible="false" />
 
       </children>
 

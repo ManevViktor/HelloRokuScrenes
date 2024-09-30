@@ -96,7 +96,7 @@
                   "marketName": "HANDICAP",
                   "marketOptions": [
                         {
-                              "description": "O 4.5",
+                              "description": "Warriors",
                               "odds": "-180",
                               "imageUrl": "",
                               "outcomeId": "sr:outcome:14",
@@ -104,7 +104,15 @@
                               "url": "https://odds_composit_url"
                         },
                         {
-                              "description": "U 4.5",
+                              "description": "Suns",
+                              "odds": "+290",
+                              "imageUrl": "",
+                              "outcomeId": "sr:outcome:15",
+                              "isSuspended": false,
+                              "url": "https://odds_composit_url"
+                        },
+                        {
+                              "description": "Lakers",
                               "odds": "+220",
                               "imageUrl": "",
                               "outcomeId": "sr:outcome:15",

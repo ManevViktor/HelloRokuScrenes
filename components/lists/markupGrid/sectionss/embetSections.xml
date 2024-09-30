@@ -2,15 +2,12 @@
 
 <!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
 
-<component name="embetSections" extends="MarkupGrid" >
+<component name="embetSections" extends="MarkupGrid">
 
-<script type="text/brightscript" uri="contentCreatorEmbet.brs" />
+  <script type="text/brightscript" uri="contentCreatorEmbet.brs" />
+  <script type="text/brightscript" uri="celldataUtil.brs" />
   <script type="text/brightscript" uri="embetSections.brs"></script>
 
-  <children >
-
-            
-
-  </children>
+  <children ></children>
 
 </component>

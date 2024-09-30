@@ -4,30 +4,26 @@ sub init()
       m.top.numColumns = 3
       m.top.numRows = 8
       m.top.itemSize = [60, 60]
-      m.top.itemSpacing = [5, 5]
+      m.top.itemSpacing = [1, 1]
       m.top.wrapDividerHeight = 0
       m.top.drawFocusFeedback = true
       m.top.vertFocusAnimationStyle = "floatingFocus"
       m.top.fixedLayout = true
       m.top.observeField("itemFocused", "onItemFocused")
 
-      m.s = CreateObject("RoSGNode", "disclaimer")
-      m.top.appendChild(m.s)
-     
-      text = m.top.findNode("txtDis")
-      text.font.size = 13
-       
+
+      m.global.addFields({ embetSDK: { width: 400 } })
+
+
       showmarkupgrid()
 
 end sub
 
 sub onItemFocused()
       ?"on item focused " m.top.itemFocused
-      rect = m.top.boundingRect()
-      ?"height = " rect
- 
-     
-      m.s.translation = [0,rect.height -15 ]
+
+
+
       if(m.top.content <> invalid)
             ' ?"content num = "m.top.content.getChild(m.top.itemFocused).text
       end if
@@ -39,6 +35,15 @@ sub onNewData(event as object)
       content = parseEmbetContent(m.embetData)
 
       m.top.content = content
+
+      m.s = CreateObject("RoSGNode", "disclaimer")
+      m.top.appendChild(m.s)
+      rect = m.top.boundingRect()
+
+      text = m.top.findNode("txtDis")
+      text.font.size = 13
+      m.s.translation = [0, rect.height - 15]
+      ?"rect = " m.top.boundingRect
 end sub
 
 sub showmarkupgrid()
