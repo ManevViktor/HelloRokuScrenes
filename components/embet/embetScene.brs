@@ -7,6 +7,7 @@ sub init()
 
       logEvent({ key: "widgetRoot", value: m.top.localBoundingRect() })
 
+
       ' initLibrary2()
 
       ' initLibrary()
@@ -20,6 +21,8 @@ sub init()
       m.bodyTitle = m.top.findNode("embetOddsInformation")
       m.oddsListItems = m.top.findNode("embetOddsList")
       rect2 = m.headerText.boundingRect()
+     
+
 
       '      m.clippingRect = rect
 

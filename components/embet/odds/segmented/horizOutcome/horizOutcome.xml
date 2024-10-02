@@ -1,19 +1,18 @@
-<component name="simpleBoxItems" extends="Group">
+<component name="horizOutcomes" extends="Group">
       
       <interface > 
-            <field id="itemContent" type="node" onChange="itemContentChanged"  />   
+            
       </interface>
 
-      <script type="text/brightscript" uri="simpleBox.brs" />
-      <script type="text/brightscript" uri="celldataUtil.brs" />
+      <script type="text/brightscript" uri="horizOucome.brs" />
+
       
       <children>
                               
-            <Rectangle visible="true" id="rectMarkUp" width="90" height="70" color="0x000000">
-                                        
-                 
+            <Rectangle id="horizontalOucome" width="90" height="70" color="0x000000">
+                                             
                   <LayoutGroup id="groupOutcomes" layoutDirection="vert" vertAlignment="top" itemSpacings="5"> 
-                        <Label id="labelMarkup"
+                        <Label id="lblPrimary"
                                color="0xffffff"
                                text="hi"
                                width="90"
@@ -31,8 +30,6 @@
                   </LayoutGroup>
                  
             </Rectangle>
-
-            <vertiOddDescr id="verticalOdds" visible="false" />
 
       </children>
 

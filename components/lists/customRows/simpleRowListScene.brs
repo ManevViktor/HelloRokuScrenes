@@ -9,20 +9,37 @@ function init()
       rect = CreateObject("roSGNode", "Rectangle")
       rect.width = 410
       rect.height = 550
-      rect.color = "0x000000a8"
+      rect.color = "0x000000"
+
+      SDK = {
+
+            config: {
+                  client: "",
+                  id: ""
+            }
+            widgetSize: [410, 600]
+      }
+
+      m.global.addfields({ embetSDK: sdk })
+
       my = CreateObject("roSGNode", "embetSections")
       rect.translation = "[800,150]"
 
-      my.setFocus(true)
-      ' my.jumptoItem = 0
-      ' m.label.setfocus(true)
+      
+      '  m.label.setfocus(true)
       m.top.appendChild(rect)
-
+      
       rect.appendChild(my)
+      my.setFocus(true)
+      my.animateToItem = 10
 
-       addEmbet()
+      rect2 = CreateObject("roSGNode", "maskScroll")
+      m.top.appendChild(rect2)
+      rect2.translation = [50,400]
+      '  rect2.setFocus(true)
+      ' addEmbet()
 
- 
+
 end function
 
 
@@ -39,7 +56,7 @@ sub addEmbet()
 
       if screenSize <> invalid then
             ' For this POC the size of the widget is fixed for next release you will be able to change the size
-            widgetWidth = 400 
+            widgetWidth = 400
             widgetX = (screenSize.w - widgetWidth)
             padding = { x: 15, y: 15 }
             m.embetUI.translation = [widgetx - padding.x, padding.y]

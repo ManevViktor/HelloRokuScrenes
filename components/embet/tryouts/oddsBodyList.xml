@@ -9,7 +9,7 @@
       <field id="sizeChanged" type="assocArray" />
     </interface>
 
-      <script type="text/brightscript" uri="pkg:/components/embet/odds/oddsBodylist.brs"/>
+      <script type="text/brightscript" uri="oddsBodylist.brs"/>
         
 
 

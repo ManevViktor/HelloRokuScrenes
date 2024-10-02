@@ -2,17 +2,19 @@ sub init()
 
       m.top.itemComponentName = "simpleBoxItems"
       m.top.numColumns = 3
-      m.top.numRows = 8
-      m.top.itemSize = [60, 60]
-      m.top.itemSpacing = [1, 1]
+      m.top.numRows = 10
+      m.top.itemSize = [50, 50]
+      m.top.itemSpacing = [0, 5]
       m.top.wrapDividerHeight = 0
+      m.top.rowSpacings = [5,5,5,5,0,0,0,5,0]
       m.top.drawFocusFeedback = true
+      m.top.drawFocusFeedbackOnTop = true
+       m.top.focusBitmapUri = "pkg:/images/focusblend.9.png"
       m.top.vertFocusAnimationStyle = "floatingFocus"
       m.top.fixedLayout = true
       m.top.observeField("itemFocused", "onItemFocused")
 
-
-      m.global.addFields({ embetSDK: { width: 400 } })
+      ?"mblobal =  "m.global.embetSDK.widgetSize
 
 
       showmarkupgrid()
@@ -37,12 +39,12 @@ sub onNewData(event as object)
       m.top.content = content
 
       m.s = CreateObject("RoSGNode", "disclaimer")
-      m.top.appendChild(m.s)
+      ' m.top.appendChild(m.s)
       rect = m.top.boundingRect()
 
-      text = m.top.findNode("txtDis")
-      text.font.size = 13
-      m.s.translation = [0, rect.height - 15]
+      ' text = m.top.findNode("txtDis")
+      ' text.font.size = 13
+      m.s.translation = [0, rect.height + 15]
       ?"rect = " m.top.boundingRect
 end sub
 

@@ -9,24 +9,36 @@ function parseEmbetContent(jsondata as object) as object
       y = 0
       x = 0
 
-      totalWidth = m.global.embetSDK
+      size = m.global.embetSDK.widgetSize
+
+      totalWidth = size[0]
+      factor = 3.7
       ?"total width"
 
       widths = []
-      heights = []
+      heights = [50]
+      rowSpaces = []
 
       nodesCollection = node_types()
 
       data = CreateObject("roSGNode", "ContentNode")
+
+      cell = data.CreateChild("oddsBodyContent")
+      cell.X = 0
+      cell.Y = y
+      cell.W = 3
+      cell.H = 1
+      cell.text = "GAME ODDS"
+
+
+      y++
       j = 0
       for each market in json.betDetails
             j++
 
-            if(j = 6) exit for
+            if(j = 9) exit for
 
-            ' "marketId": "sr:market:2",
-            ' "presentation": "vertical",
-            ' "marketName": "MONEYLINE",
+
             rowPos = 0
             present = getPresentationType(market)
 
@@ -42,33 +54,34 @@ function parseEmbetContent(jsondata as object) as object
                         cell.marketData = createCellData(market, i)
                         if(i = 1) then
                               ?"cell bound rect"
-                              wid = 220
+                              wid = totalWidth - (totalWidth / factor * 2)
                               cell.text = "market"
                               cell.nodeType = nodesCollection.horizMarket
                         else
-                              wid = 90
+                              wid = (totalWidth / factor) -2
                               cell.text = "125"
                               cell.nodeType = nodesCollection.horizOdds
                         end if
                         cell.width = wid
                         cell.height = 50
-
-
                         widths.push(cell.width)
-                        heights.push(cell.height)
+                      
 
                         rowPos++
                   end for
                   y++
             else
+                  ' root of vertical markets
                   cell = data.CreateChild("oddsBodyContent")
                   cell.X = 0
                   cell.Y = y
                   cell.W = 3
                   cell.H = 1
-                  cell.width = 410
+                  cell.width = totalWidth
+                  cell.height = 50
                   cell.text = market.marketName
                   cell.nodeType = nodesCollection.vertMarket
+
                   y++
 
 
@@ -80,10 +93,12 @@ function parseEmbetContent(jsondata as object) as object
                               cell.Y = y
                               cell.W = 1
                               cell.H = 1
-                              cell.width = 90
+                              cell.width = (totalWidth / factor) - 2
                               cell.nodeType = nodesCollection.vertOdds
                               cell.text = market.marketoptions[kl / 2].odds
                               cell.num = StrToI(market.marketoptions[kl / 2].description)
+                              cell.height = 50
+
                               y++
 
                         else
@@ -92,7 +107,7 @@ function parseEmbetContent(jsondata as object) as object
                               cell.Y = y
                               cell.W = 2
                               cell.H = 1
-                              cell.width = 315
+                              cell.width = totalWidth - ((totalWidth / factor) - 2)
                               cell.nodeType = nodesCollection.vertDesciption
                               if(kl = 0) then
                                     cell.text = market.marketoptions[kl / 2].description
@@ -100,6 +115,8 @@ function parseEmbetContent(jsondata as object) as object
                                     cell.text = market.marketoptions[kl / 2].description
                               end if
                               cell.num = 120
+                              cell.height = 50
+
 
                         end if
 
@@ -109,7 +126,7 @@ function parseEmbetContent(jsondata as object) as object
       end for
 
 
-      m.top.rowHeights = heights
+      m.top.rowHeights = [50,50,50,50,40,40,40,40]
       m.top.columnWidths = widths
 
       return data
@@ -148,9 +165,10 @@ function createHOutcomeCell(market as object, index as integer) as object
       teamStats = market.marketoptions.getEntry(index)
       if(teamStats <> invalid) then
             mdata.odds = teamStats.odds
+            mdata.odds = "t"
             mdata.description = teamStats.description
             mdata.outcomeid = teamStats.outcomeId
-            mdata.isSuspended = teamStats.isSuspended
+            mdata.isSuspended = true
             mdata.imageUrl = teamStats.imageUrl
       else
             mdata.isSuspended = true

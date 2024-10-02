@@ -5,7 +5,7 @@ function node_types() as object
             horizMarket: "horizMarket",
             vertMarket: "vertMarket",
             vertOdds: "vertOdds",
-            vertDesciption: "vertDescription"
+            vertDesciption: "vertDescription",
             locked : "lockedOdds"
       }
 

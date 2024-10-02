@@ -16,6 +16,7 @@ sub itemContentChanged()
 
       setSize(content)
       if(content.marketData <> invalid) then
+
             m.label.text = content.marketData.odds
             m.label2.text = content.marketData.description
       else
@@ -24,6 +25,13 @@ sub itemContentChanged()
             m.label.vertAlign = "center"
             m.label.horizAlign = "left"
             m.layoutGrp.translation = [15, 0]
+
+            if(content.nodeType = m.nodes.vertOdds) then
+                  m.layoutGrp.translation = [0, 0]
+                  m.label.vertAlign = "center"
+                  m.label.horizAlign = "center"
+
+            end if
             ' m.label2.text = content.num
 
 
@@ -34,6 +42,26 @@ sub itemContentChanged()
       m.label.font.size = 14
       m.label2.font.size = 12
 
+if(content.marketData <> invalid and content.marketData.isSuspended = true) then 
+      obj =  CreateObject("roSgNode","lockedOdds")
+      obj.width = content.width
+      m.top.appendChild(obj)
+
+endif
+
+if(content.nodeType = m.nodes.horizOdds) then
+           m.rect.height = 50
+else 
+      m.rect.height = 50          
+endif
+
+if(content.nodeType = m.nodes.vertMarket) then
+      m.label.vertAlign = "bottom"
+      m.layoutGrp.translation = [15, -10]
+      m.label.font = "font:smallestBoldSystemFont"
+      m.label.font.size =15
+endif
+
       ' if(content.nodeType = "vteamName") then
       '   m.verRect.visible = true
       '   m.rect.visible = false
@@ -42,18 +70,27 @@ sub itemContentChanged()
       '       m.rect.visible = true
       ' endif
 
-      
-      if(content.nodeType = m.nodes.horizMarket) then
-            m.label.text = content.nodeType
-      else if(content.nodeType = m.nodes.vertMarket) then
-            m.label.text = "vertikalata"
-      end if
+
+      ' if(content.nodeType = m.nodes.horizMarket) then
+      '       m.label.text = content.nodeType
+      '      obj =  CreateObject("roSgNode","horizMarket")
+      '      m.top.appendChild(obj)
+      ' else if(content.nodeType = m.nodes.horizOdds) then
+      '       obj =  CreateObject("roSgNode","horizOutcomes")
+      '       m.top.appendChild(obj)
+      ' else if(content.nodeType = m.nodes.vertDesciption) then
+      '       obj =  CreateObject("roSgNode","vertiOddDescr")
+      '       m.top.appendChild(obj)
+      ' else if(content.nodeType = m.nodes.vertMarket) then
+      '       m.rect.visible = true
+      ' end if
 
 end sub
 
 
 sub setSize(content as object)
 
+      m.rect.height = content.height
       m.rect.width = content.width
       m.rect.height = content.height
       m.label.width = content.width

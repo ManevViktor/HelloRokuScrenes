@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--********** Copyright 2018 Roku Corp.  All Rights Reserved. **********-->
+
+<!-- This component will create a Button node example -->
+<component name="maskScroll" extends="Group" initialFocus="exampleButton1">
+
+      <script type="text/brightscript" uri="maskscroll.brs" />
+
+      <children >
+
+            <MaskGroup id="scrollView" maskSize="[350,350]" maskUri="pkg:/images/rectangle.png" maskOffset="[0, 50]">
+
+                  <LayoutGroup id="fullysaturatedcolors" translation="[ 0, 0 ]" itemSpacings="[0]" layoutDirection="vert">
+                        <Button id="exampleButton1" text=" Button1" showFocusFootprint="true" minWidth="155" />
+
+                        <Button id="exampleButton2" text=" Button2" showFocusFootprint="true" minWidth="155" />
+
+                        <Button id="exampleButton3" text=" Button3" showFocusFootprint="true" minWidth="155" />
+                        <Button id="exampleButton4" text=" Button4" showFocusFootprint="true" minWidth="155" />
+                        <Button id="exampleButton5" text=" Button5" showFocusFootprint="true" minWidth="155" />
+                        <Button id="exampleButton6" text=" Button6" showFocusFootprint="true" minWidth="155" />
+
+
+                  </LayoutGroup>
+
+            </MaskGroup>
+      </children>
+
+</component>

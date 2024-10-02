@@ -1,0 +1,25 @@
+<component name="horizMarket" extends="Group">
+      
+      <interface > 
+            <field id="configData" type="assocArray" onChange="onDataUpdate" />
+      </interface>
+
+      <script type="text/brightscript" uri="horizMarket.brs" />
+      
+      <children>
+                              
+            <Rectangle id="rectHorizMarket" width="90" height="70" color="0x000000">                                       
+                  <Label id="labelMarket"
+                         color="0xffffff"
+                         text="hi"
+                         width="90"
+                         height="50"
+                         horizAlign="center"
+                         vertAlign="center"
+                         font="font:SmallestSystemFont" />
+                 
+            </Rectangle>
+
+      </children>
+
+</component>

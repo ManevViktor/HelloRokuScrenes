@@ -28,7 +28,7 @@
                   "marketOptions": [
                         {
                               "description": "O 3.5",
-                              "odds": "-200",
+                              "odds": "-150",
                               "imageUrl": "",
                               "url": "https://odds_composit_url",
                               "outcomeId": "sr:outcome:1",
@@ -51,7 +51,7 @@
                   "marketOptions": [
                         {
                               "description": "O 3.5",
-                              "odds": "-200",
+                              "odds": "-300",
                               "imageUrl": "",
                               "url": "https://odds_composit_url",
                               "outcomeId": "sr:outcome:3",
@@ -82,7 +82,7 @@
                         },
                         {
                               "description": "U 3.5",
-                              "odds": "+200",
+                              "odds": "+50",
                               "imageUrl": "",
                               "outcomeId": "sr:outcome:13",
                               "isSuspended": false,

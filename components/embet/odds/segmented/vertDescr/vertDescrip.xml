@@ -1,0 +1,40 @@
+<component name="vertDescrip" extends="Group">
+      
+      <interface >
+      <field id="width" type="integer" onChange="onNewWidth" />
+      </interface>
+
+      <script type="text/brightscript" uri="vertDescip.brs" />
+      
+      <children>
+                              
+            <Rectangle 
+                       id="rectVertical"
+                       width="90"
+                       height="50"
+                       color="0x000000">
+                                        
+                 
+                  <LayoutGroup id="vertgrOutcomes" layoutDirection="horiz" horizAlignment="left" itemSpacings="5"> 
+
+                        <Poster 
+                              id="posterodds"
+                               translation="[7,7]"
+                                loadDisplayMode="scaleToZoom"
+                                width="25"
+                                height="25"
+                                uri="pkg:/images/team.jpg" />   
+                        <Label id="vLabelTeam"
+                               color="0xffffff"
+                               text="hi"
+                               width="90"
+                               horizAlign="left"
+                               vertAlign="center"
+                               font="font:SmallestSystemFont" />
+                  </LayoutGroup>
+                 
+            </Rectangle>
+
+      </children>
+
+</component>
