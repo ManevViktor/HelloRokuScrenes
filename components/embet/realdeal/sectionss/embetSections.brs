@@ -1,15 +1,16 @@
 sub init()
 
+      m.top.id="markupEmbet"
       m.top.itemComponentName = "simpleBoxItems"
       m.top.numColumns = 3
       m.top.numRows = 10
       m.top.itemSize = [50, 50]
       m.top.itemSpacing = [0, 5]
       m.top.wrapDividerHeight = 0
-      m.top.rowSpacings = [5,5,5,5,0,0,0,5,0]
+      m.top.rowSpacings = [5, 5, 5, 5, 0, 0, 0, 5, 0]
       m.top.drawFocusFeedback = true
       m.top.drawFocusFeedbackOnTop = true
-       m.top.focusBitmapUri = "pkg:/images/focusblend.9.png"
+      m.top.focusBitmapUri = "pkg:/images/focusblend.9.png"
       m.top.vertFocusAnimationStyle = "floatingFocus"
       m.top.fixedLayout = true
       m.top.observeField("itemFocused", "onItemFocused")
@@ -18,13 +19,24 @@ sub init()
 
 
       showmarkupgrid()
+      ' initLibrary2()
 
 end sub
 
+' sub oneventPBnubUpdate(event as object)
+'       ?"emb sec : event update pubnub"
+'       ?"m.parent"
+'      content = parseEmbetContent( event.getData())
+'      m.top.content = invalid
+'      m.top.content = content
+
+'      newMarkupgrid = CreateObject("roSgNode","embetSections")
+'      newMarkupgrid.content = content
+'      m.top.replaceChild(newMarkupgrid, 0)
+' end sub
+
 sub onItemFocused()
       ?"on item focused " m.top.itemFocused
-
-
 
       if(m.top.content <> invalid)
             ' ?"content num = "m.top.content.getChild(m.top.itemFocused).text

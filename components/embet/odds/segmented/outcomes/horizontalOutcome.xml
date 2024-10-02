@@ -1,20 +1,16 @@
-<component name="horizOutcomes" extends="Group">
+<component name="horizontalOutcome" extends="BaseCellNode">
       
-      <interface > 
-            
-      </interface>
-
-      <script type="text/brightscript" uri="horizOucome.brs" />
+      <script type="text/brightscript" uri="horizontalOutcome.brs" />
 
       
       <children>
                               
-            <Rectangle id="horizontalOucome" width="90" height="70" color="0x000000">
+            <Rectangle id="rectRoot" width="90" height="70" color="0x000000">
                                              
                   <LayoutGroup id="groupOutcomes" layoutDirection="vert" vertAlignment="top" itemSpacings="5"> 
                         <Label id="lblPrimary"
                                color="0xffffff"
-                               text="hi"
+                               text="horOutcome"
                                width="90"
                                horizAlign="center"
                                vertAlign="top"

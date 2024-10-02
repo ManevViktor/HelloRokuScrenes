@@ -1,10 +1,10 @@
-<component name="vertDescrip" extends="Group">
+<component name="vertiOddDescr" extends="Group">
       
       <interface >
       <field id="width" type="integer" onChange="onNewWidth" />
       </interface>
 
-      <script type="text/brightscript" uri="vertDescip.brs" />
+      <script type="text/brightscript" uri="vertiOddDescr.brs" />
       
       <children>
                               
@@ -26,7 +26,7 @@
                                 uri="pkg:/images/team.jpg" />   
                         <Label id="vLabelTeam"
                                color="0xffffff"
-                               text="hi"
+                               text="hello"
                                width="90"
                                horizAlign="left"
                                vertAlign="center"

@@ -1,16 +1,12 @@
-<component name="lockedOdds" extends="Group">
+<component name="lockedOdds" extends="BaseCellNode">
       
-      <interface >
-            <field id="width" type="float" onChange="onNewWidth" />
-      </interface>
 
       <script type="text/brightscript" uri="lockedOdds.brs" />
 
       <children>                         
 
         
-            <Rectangle 
-                       id="rootCell"
+            <Rectangle id="rootCell"
                        visible="true"
                        width="90"
                        height="50"
@@ -21,12 +17,12 @@
                           loadDisplayMode="scaleToFill"
                           uri="pkg:/images/test24.png"></Poster>
 
-                            <Poster id="posterLock"
-                    translation="[15,15]"
-                    visible = "true"
-                    width="20.5"
-                    height="20.5"
-                    uri="pkg:/images/lock-icon.png" />       
+                  <Poster id="posterLock"
+                          translation="[15,15]"
+                          visible="true"
+                          width="20.5"
+                          height="20.5"
+                          uri="pkg:/images/lock-icon.png" />       
             </Rectangle>                                   
              
           

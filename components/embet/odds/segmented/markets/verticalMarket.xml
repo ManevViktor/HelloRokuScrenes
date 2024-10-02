@@ -1,17 +1,18 @@
-<component name="horizMarket" extends="BaseCellNode">
+<component name="verticalMarket" extends="BaseCellNode">
       
 
-      <script type="text/brightscript" uri="horizMarket.brs" />
+      <script type="text/brightscript" uri="verticalMarket.brs" />
       
       <children>
                               
-            <Rectangle id="rectRoot" width="90" height="70" color="0x234432">                                       
+            <Rectangle id="RectRoot" width="90" height="70" color="0x000000">                                       
                   <Label id="labelPrimary"
+                         translation="[10,0]"
                          color="0xffffff"
-                         text="horMarket"
+                         text="vertMarket"
                          width="90"
                          height="50"
-                         horizAlign="center"
+                         horizAlign="left"
                          vertAlign="center"
                          font="font:SmallestSystemFont" />
                  

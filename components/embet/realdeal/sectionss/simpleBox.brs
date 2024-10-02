@@ -14,7 +14,7 @@ sub itemContentChanged()
 
       content = m.top.itemContent
 
-      setSize(content)
+
       if(content.marketData <> invalid) then
 
             m.label.text = content.marketData.odds
@@ -42,25 +42,25 @@ sub itemContentChanged()
       m.label.font.size = 14
       m.label2.font.size = 12
 
-if(content.marketData <> invalid and content.marketData.isSuspended = true) then 
-      obj =  CreateObject("roSgNode","lockedOdds")
-      obj.width = content.width
-      m.top.appendChild(obj)
+      if(content.marketData <> invalid and content.marketData.isSuspended = true) then
+            obj = CreateObject("roSgNode", "lockedOdds")
+            obj.width = content.width
+            m.top.appendChild(obj)
 
-endif
+      end if
 
-if(content.nodeType = m.nodes.horizOdds) then
-           m.rect.height = 50
-else 
-      m.rect.height = 50          
-endif
+      if(content.nodeType = m.nodes.horizOdds) then
+            m.rect.height = 50
+      else
+            m.rect.height = 50
+      end if
 
-if(content.nodeType = m.nodes.vertMarket) then
-      m.label.vertAlign = "bottom"
-      m.layoutGrp.translation = [15, -10]
-      m.label.font = "font:smallestBoldSystemFont"
-      m.label.font.size =15
-endif
+      if(content.nodeType = m.nodes.vertMarket) then
+            m.label.vertAlign = "bottom"
+            m.layoutGrp.translation = [15, -10]
+            m.label.font = "font:smallestBoldSystemFont"
+            m.label.font.size = 15
+      end if
 
       ' if(content.nodeType = "vteamName") then
       '   m.verRect.visible = true
@@ -86,6 +86,51 @@ endif
       ' end if
 
 end sub
+
+sub itemContentChanged2()
+      content = m.top.itemContent
+
+      if(content <> invalid) then
+            cell = createCell(content)
+            m.top.appendChild(cell)
+      end if
+
+
+
+end sub
+
+function createCell(content as object) as object
+      obj = {}
+
+      if(content.nodeType = m.nodes.horizMarket) then
+            obj = CreateObject("roSgNode", "horizMarket")
+            m.top.appendChild(obj)
+      else if(content.nodeType = m.nodes.horizOdds) then
+            obj = CreateObject("roSgNode", "horizontalOutcome")
+            m.top.appendChild(obj)
+      else if(content.nodeType = m.nodes.vertDesciption) then
+            obj = CreateObject("roSgNode", "verticalDesciption")
+            m.top.appendChild(obj)
+      else if(content.nodeType = m.nodes.vertMarket) then
+            obj = CreateObject("roSgNode", "verticalMarket")
+      else if(content.nodeType = m.nodes.vertOdds) then
+            obj = CreateObject("roSgNode", "verticalOutcome")
+      end if
+
+    
+
+      data = {
+            size: [content.width, content.height]
+            marketDetails: content.marketData
+            canFocus: content.canFocus
+            nodeType: content.nodeType
+            style : content.style
+      }
+      obj.configData = data
+
+      return obj
+
+end function
 
 
 sub setSize(content as object)

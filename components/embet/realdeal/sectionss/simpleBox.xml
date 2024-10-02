@@ -1,7 +1,7 @@
 <component name="simpleBoxItems" extends="Group">
       
       <interface > 
-            <field id="itemContent" type="node" onChange="itemContentChanged"  />   
+            <field id="itemContent" type="node" onChange="itemContentChanged2"  />   
       </interface>
 
       <script type="text/brightscript" uri="simpleBox.brs" />
@@ -9,7 +9,7 @@
       
       <children>
                               
-            <Rectangle visible="true" id="rectMarkUp" width="90" height="70" color="0x000000">
+            <Rectangle visible="false" id="rectMarkUp" width="90" height="70" color="0x000000">
                                         
                  
                   <LayoutGroup id="groupOutcomes" layoutDirection="vert" vertAlignment="top" itemSpacings="5"> 
