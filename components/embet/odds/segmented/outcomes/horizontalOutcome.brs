@@ -3,6 +3,7 @@ sub init()
       m.group = m.top.findNode("groupOutcomes")
       m.labelPrimary = m.top.findNode("lblPrimary")
       m.labelSecondary = m.top.findNode("lbldescripton")
+      m.roundedRect = m.top.findNode("roundedRect")
 end sub
 
 
@@ -12,6 +13,8 @@ sub cellConfig(evn as object)
       ?"config ="  evn.getData().marketDetails
       config = evn.getData()
 
+      width = config.size[0]
+      height = config.size[1]
 
       m.rect.width = config.size[0]
       m.labelPrimary.width = config.size[0]
@@ -28,5 +31,10 @@ sub cellConfig(evn as object)
       
       m.labelSecondary.text = config.marketDetails.description
       m.labelSecondary.font.size = config.style.secondaryFontSize
+
+
+      m.roundedRect.width = width - 10
+      m.roundedRect.height = height
+      m.roundedRect.translation = [5,0]
 
 end sub

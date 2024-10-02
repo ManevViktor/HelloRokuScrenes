@@ -29,6 +29,8 @@ function parseEmbetContent(jsondata as object) as object
       cell.W = 3
       cell.H = 1
       cell.text = "GAME ODDS"
+      cell.market = {description : "GAME ODDS"}
+      cell.nodeType = nodesCollection.vertMarket
       setstyle(cell)
 
 
