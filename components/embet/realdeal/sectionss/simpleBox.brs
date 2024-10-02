@@ -125,6 +125,7 @@ function createCell(content as object) as object
             canFocus: content.canFocus
             nodeType: content.nodeType
             style : content.style
+            displayText : content.text
       }
       obj.configData = data
 

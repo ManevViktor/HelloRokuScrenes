@@ -12,7 +12,7 @@
                        id="rectVertical"
                        width="90"
                        height="50"
-                       color="0x000000">
+                       color="0x0000c7">
                                         
                  
                   <LayoutGroup id="vertgrOutcomes" layoutDirection="horiz" horizAlignment="left" itemSpacings="5"> 

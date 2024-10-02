@@ -8,25 +8,21 @@
       
       <children>
                               
-            <Rectangle id="rectVertical" width="90" height="50" color="0x000000">
+            <Rectangle id="rectVertical" width="150" height="50" color="0xc90000">
                                         
-                 
-                  <LayoutGroup id="vertgrOutcomes" layoutDirection="horiz" horizAlignment="left" itemSpacings="5"> 
-
-                        <Poster id="posterodds"
-                                translation="[7,7]"
-                                loadDisplayMode="scaleToZoom"
+                        <Poster id="posterodds"                  
+                                loadDisplayMode="scaleToFit"
                                 width="25"
                                 height="25"
-                                uri="pkg:/images/odds/th.jpg" />   
+                                uri="pkg:/images/team.jpg" />   
                         <Label id="vLabelTeam"
                                color="0xffffff"
+                               translation="[60,0]"
                                text="vertDesc"
-                               width="90"
+                               width="150"
+                               font= "font:MediumSystemFont"
                                horizAlign="left"
-                               vertAlign="center"
-                               font="font:SmallestSystemFont" />
-                  </LayoutGroup>
+                               vertAlign="center" />
                  
             </Rectangle>
 

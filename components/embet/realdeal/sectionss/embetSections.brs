@@ -3,11 +3,11 @@ sub init()
       m.top.id="markupEmbet"
       m.top.itemComponentName = "simpleBoxItems"
       m.top.numColumns = 3
-      m.top.numRows = 10
+      m.top.numRows = 12
       m.top.itemSize = [50, 50]
       m.top.itemSpacing = [0, 5]
       m.top.wrapDividerHeight = 0
-      m.top.rowSpacings = [5, 5, 5, 5, 0, 0, 0, 5, 0]
+      ' m.top.rowSpacings = [5, 5, 5, 5, 0, 0, 0, 5, 0]
       m.top.drawFocusFeedback = true
       m.top.drawFocusFeedbackOnTop = true
       m.top.focusBitmapUri = "pkg:/images/focusblend.9.png"

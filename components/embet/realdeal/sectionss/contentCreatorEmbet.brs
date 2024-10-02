@@ -29,6 +29,7 @@ function parseEmbetContent(jsondata as object) as object
       cell.W = 3
       cell.H = 1
       cell.text = "GAME ODDS"
+      setstyle(cell)
 
 
       y++
@@ -43,6 +44,7 @@ function parseEmbetContent(jsondata as object) as object
             present = getPresentationType(market)
 
 
+            ' horizontal presentation
             if(present = "horizontal") then
                   for i = 0 to 2
                         cell = data.CreateChild("oddsBodyContent")
@@ -51,25 +53,29 @@ function parseEmbetContent(jsondata as object) as object
                         cell.W = 1
                         cell.H = 1
                         cell.num = rowPos
+                       
                         cell.marketData = createCellData(market, i)
+                        setstyle(cell)
                         if(i = 1) then
                               ?"cell bound rect"
                               wid = totalWidth - (totalWidth / factor * 2)
                               cell.text = "market"
                               cell.nodeType = nodesCollection.horizMarket
                         else
-                              wid = (totalWidth / factor) -2
+                              wid = (totalWidth / factor) - 2
                               cell.text = "125"
                               cell.nodeType = nodesCollection.horizOdds
                         end if
                         cell.width = wid
                         cell.height = 50
                         widths.push(cell.width)
-                      
+
+                        setstyle(cell)
 
                         rowPos++
                   end for
                   y++
+                  heights.push(50)
             else
                   ' root of vertical markets
                   cell = data.CreateChild("oddsBodyContent")
@@ -81,7 +87,7 @@ function parseEmbetContent(jsondata as object) as object
                   cell.height = 50
                   cell.text = market.marketName
                   cell.nodeType = nodesCollection.vertMarket
-
+                  setstyle(cell)
                   y++
 
 
@@ -98,7 +104,7 @@ function parseEmbetContent(jsondata as object) as object
                               cell.text = market.marketoptions[kl / 2].odds
                               cell.num = StrToI(market.marketoptions[kl / 2].description)
                               cell.height = 50
-
+                              setstyle(cell)
                               y++
 
                         else
@@ -116,6 +122,7 @@ function parseEmbetContent(jsondata as object) as object
                               end if
                               cell.num = 120
                               cell.height = 50
+                              setstyle(cell)
 
 
                         end if
@@ -126,7 +133,7 @@ function parseEmbetContent(jsondata as object) as object
       end for
 
 
-      m.top.rowHeights = [50,50,50,50,40,40,40,40]
+      m.top.rowHeights = heights
       m.top.columnWidths = widths
 
       return data
@@ -165,7 +172,6 @@ function createHOutcomeCell(market as object, index as integer) as object
       teamStats = market.marketoptions.getEntry(index)
       if(teamStats <> invalid) then
             mdata.odds = teamStats.odds
-            mdata.odds = "t"
             mdata.description = teamStats.description
             mdata.outcomeid = teamStats.outcomeId
             mdata.isSuspended = true
@@ -184,6 +190,28 @@ function createHmarketCell(market as object, index as integer) as object
       return r
 end function
 
+sub setstyle(cell as object) as object
+      cell.style = {
+            headerFontSize: 14
+            headerTextColor: "0xFFFFFF"
+            headerfontType  : "bold"
+            headerFont : "font:smallestBoldSystemFont"
+            
+            primaryFontSize: 12
+            primaryTextColor: "0xFFFFFF"
+            primaryfontType  : "medium"
+            primaryFont : "font:SmallestSystemFont"
+            
+            secondaryFontSize: 11
+            secondaryTextColor: "0xFFFFFF"
+            secondaryFontType : "small"
+            secondaryFont : "font:SmallestSystemFont"
+            
+            bgColor: "0x000000"
+
+      }
+end sub
+
 
 
 
@@ -195,109 +223,5 @@ end function
 ' 04 14 24
 
 
-
-function parseEmbetContentVert(data as object) as object
-
-      json = m.embetData
-
-      m.x = 0
-      m.y = 0
-
-      y = 0
-      x = 0
-      ?"jsopn" json
-
-      widths = []
-      heights = []
-
-      data = CreateObject("roSGNode", "ContentNode")
-      j = 0
-      ' for each market in json.betDetails
-      j++
-
-      ' if(j = 6) exit for
-
-      ' "marketId": "sr:market:2",
-      ' "presentation": "vertical",
-      ' "marketName": "MONEYLINE",
-      heights = [60, 60]
-      widths = [60, 190, 60]
-      rowPos = 0
-
-
-      deviationx = [0, 2, 0, 2, 0]
-
-      deviationy = [0, 1, 1, 2, 2]
-
-      devW = [3, 2, 1, 2, 1]
-
-
-      ' x[i] = 2
-      ' w[i] = 2
-      ' y[i] = 1
-
-
-      ' marketName
-      cell = data.CreateChild("oddsBodyContent")
-      cell.X = 0
-      cell.Y = 0
-      cell.W = 3
-      cell.H = 1
-      cell.width = 320
-      cell.text = "teamName"
-
-
-
-      ' teamhome
-      cell2 = data.CreateChild("oddsBodyContent")
-      cell2.X = 0
-      cell2.Y = 1
-      cell2.W = 2
-      cell2.H = 1
-      cell2.width = 240
-      cell2.text = "teamName"
-
-      ' outcome
-      cell3 = data.CreateChild("oddsBodyContent")
-      cell3.X = 2
-      cell3.Y = 1
-      cell3.W = 1
-      cell3.H = 1
-      cell3.width = 60
-      cell3.text = "teamName"
-
-
-
-      '  teamaway
-      cell4 = data.CreateChild("oddsBodyContent")
-      cell4.X = 0
-      cell4.Y = 2
-      cell4.W = 2
-      cell4.H = 1
-      cell4.width = 320
-      cell4.text = "teamName"
-
-
-      ' outcome
-      cell5 = data.CreateChild("oddsBodyContent")
-      cell5.X = 2
-      cell5.Y = 2
-      cell5.W = 1
-      cell5.H = 1
-      cell5.width = 60
-      cell5.text = "teamName"
-
-      rowPos++
-
-      y++
-
-      ' end for
-
-      m.top.rowHeights = heights
-      m.top.columnWidths = widths
-
-      return data
-
-end function
 
 

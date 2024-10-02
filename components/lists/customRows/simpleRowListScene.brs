@@ -8,7 +8,7 @@ function init()
       ' ' addTask()
       rect = CreateObject("roSGNode", "Rectangle")
       rect.width = 410
-      rect.height = 550
+      rect.height =750
       rect.color = "0x000000"
 
       SDK = {

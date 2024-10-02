@@ -16,7 +16,11 @@ sub cellConfig(evn as object)
 
       m.rect.width = config.size[0]
       m.rect.height = config.size[1]
+      ' m.rect.color = config.style.bgcolor
+
+      m.labelPrimary.text = config.marketDetails.description
       m.labelPrimary.width = config.size[0]
       m.labelPrimary.height = config.size[1]
+      m.labelPrimary.font.size = config.style.primaryFontSize
 
 end sub
