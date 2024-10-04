@@ -7,7 +7,7 @@ sub init()
       m.top.itemSize = [50, 50]
       m.top.itemSpacing = [0, 5]
       m.top.wrapDividerHeight = 0
-      ' m.top.rowSpacings = [5, 5, 5, 5, 0, 0, 0, 5, 0]
+      
       m.top.drawFocusFeedback = true
       m.top.drawFocusFeedbackOnTop = true
       m.top.focusBitmapUri = "pkg:/images/focusblend.9.png"
@@ -37,6 +37,7 @@ end sub
 
 sub onItemFocused()
       ?"on item focused " m.top.itemFocused
+        if(m.top.itemFocused = 0) then m.top.jumptoitem = 1
 
       if(m.top.content <> invalid)
             ' ?"content num = "m.top.content.getChild(m.top.itemFocused).text

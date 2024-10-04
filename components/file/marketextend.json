@@ -36,7 +36,7 @@
                         },
                         {
                               "description": "U 3.5",
-                              "odds": "+200",
+                              "odds": "+2845",
                               "imageUrl": "",
                               "url": "https://odds_composit_url",
                               "outcomeId": "sr:outcome:2",
@@ -97,7 +97,7 @@
                   "marketOptions": [
                         {
                               "description": "Warriors",
-                              "odds": "-180",
+                              "odds": "-18054",
                               "imageUrl": "",
                               "outcomeId": "sr:outcome:14",
                               "isSuspended": false,

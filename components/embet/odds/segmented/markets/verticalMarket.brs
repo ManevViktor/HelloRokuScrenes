@@ -16,6 +16,6 @@ sub cellConfig(evn as object)
       m.labelPrimary.text = config.displayText
       m.labelPrimary.width = config.size[0]
       m.labelPrimary.height = config.size[1]
-      m.labelPrimary.font.size = config.style.primaryFontSize
+      m.labelPrimary.font.size = config.style.headerFontSize
 
 end sub

@@ -5,7 +5,7 @@
       
       <children>
                               
-            <Rectangle id="RectRoot" width="90" height="70" color="0x2900c8">                                       
+            <Rectangle id="RectRoot" width="90" height="70" color="0x000000">                                       
                   <Label id="labelPrimary"
                          translation="[10,0]"
                          color="0xffffff"
@@ -13,8 +13,10 @@
                          width="90"
                          height="50"
                          horizAlign="left"
-                         vertAlign="center"
-                         font="font:SmallestBoldSystemFont" />
+                         vertAlign="bottom"
+                         font="font:MediumBoldSystemFont" />
+
+                
                  
             </Rectangle>
 

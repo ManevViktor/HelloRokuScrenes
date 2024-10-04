@@ -5,7 +5,7 @@
       
       <children>
                               
-            <Rectangle id="rectRoot" width="90" height="70" color="0x234432">                                       
+            <Rectangle id="rectRoot" width="90" height="70" color="0x000000">                                       
                   <Label id="labelPrimary"
                          color="0xffffff"
                          text="horMarket"

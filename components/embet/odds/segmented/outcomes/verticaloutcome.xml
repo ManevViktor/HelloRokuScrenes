@@ -4,14 +4,21 @@
       <script type="text/brightscript" uri="verticalOutcome.brs" />
       
       <children>
-                              
-            <Rectangle id="RectRoot" width="90" height="70" color="0x000000">   
+            <animationInidicatorUp translation="[10,0]" />    
+            <Rectangle visible="true"
+                       id="RectRoot"
+                       width="90"
+                       height="70"
+                       color="0x000000">   
 
-             <Poster id="roundedRect"
+                  <Poster id="roundedRect"
                           width="108"
                           height="50"
+                          visible="true"
                           loadDisplayMode="scaleToFill"
                           uri="pkg:/images/test24.png"></Poster>
+
+                  <Group></Group>
 
                   <Label id="labelPrimary"
                          color="0xffffff"
@@ -20,10 +27,15 @@
                          height="50"
                          horizAlign="center"
                          vertAlign="center"
-                         font="font:SmallestSystemFont" />
-                 
-            </Rectangle>
+                         font="font:SmallestSystemFont">
+                        
+                  </Label>
 
+
+                          <animationInidicatorUp translation="[80,15]" />     
+                                   
+            </Rectangle>
+          
                
 
       </children>

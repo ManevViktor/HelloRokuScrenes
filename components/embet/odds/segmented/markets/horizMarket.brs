@@ -13,6 +13,8 @@ sub cellConfig(evn as object)
       ?"config ="  evn.getData().size
       config = evn.getData()
 
+      width = config.size[0]
+      height = config.size[1]
 
       m.rect.width = config.size[0]
       m.rect.height = config.size[1]
@@ -22,5 +24,6 @@ sub cellConfig(evn as object)
       m.labelPrimary.width = config.size[0]
       m.labelPrimary.height = config.size[1]
       m.labelPrimary.font.size = config.style.primaryFontSize
+
 
 end sub

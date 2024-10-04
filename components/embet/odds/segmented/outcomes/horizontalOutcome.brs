@@ -23,7 +23,7 @@ sub cellConfig(evn as object)
       ' m.rect.color = config.style.bgcolor
 
       ?"config size" config.size[1]
-      y = (config.size[1]/2) - 12
+      y = (config.size[1]/2) - 13
       m.group.translation = [0 , y]
 
       m.labelPrimary.text = config.marketDetails.odds
@@ -36,5 +36,12 @@ sub cellConfig(evn as object)
       m.roundedRect.width = width - 10
       m.roundedRect.height = height
       m.roundedRect.translation = [5,0]
+
+
+      
+      anim =CreateObject("roSGNode", "animationInidicatorUp")
+      ' m.top.appendChild(anim)
+      ' anim.translation = [2]
+
 
 end sub

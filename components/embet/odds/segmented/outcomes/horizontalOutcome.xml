@@ -4,16 +4,19 @@
 
       
       <children>
-                              
-            <Rectangle id="rectRoot" translation="[2,0]" width="90" height="70" color="0x000000">
+                            
+            <Rectangle  id="rectRoot" translation="[2,0]" width="90" height="70" color="0x000000">
 
               <Poster id="roundedRect"
                           width="90"
                           height="50"
                           loadDisplayMode="scaleToFill"
-                          uri="pkg:/images/test24.png"></Poster>
-                                             
-                  <LayoutGroup id="groupOutcomes" layoutDirection="vert" vertAlignment="top" itemSpacings="5"> 
+                          uri="pkg:/images/test24.png">
+                         
+                          </Poster>
+
+                                                                    
+                  <LayoutGroup visible="true" id="groupOutcomes" layoutDirection="vert" vertAlignment="top" itemSpacings="5"> 
                         <Label id="lblPrimary"
                                color="0xffffff"
                                text="horOutcome"
@@ -28,10 +31,12 @@
                                vertAlign="top"
                                width="90"
                                font="font:SmallestSystemFont" />
-                         
+
+                           
                   </LayoutGroup>
-                 
+                  <animationInidicatorUp translation = "[85,15]"/>  
             </Rectangle>
+
 
       </children>
 

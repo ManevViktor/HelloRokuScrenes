@@ -8,7 +8,7 @@
       
       <children>
                               
-            <Rectangle id="rectVertical" width="150" height="50" color="0xc90000">
+            <Rectangle id="rectVertical" width="150" height="50" color="0x000000">
                                         
                         <Poster id="posterodds"                  
                                 loadDisplayMode="scaleToFit"
@@ -23,6 +23,8 @@
                                font= "font:MediumSystemFont"
                                horizAlign="left"
                                vertAlign="center" />
+
+                                
                  
             </Rectangle>
 

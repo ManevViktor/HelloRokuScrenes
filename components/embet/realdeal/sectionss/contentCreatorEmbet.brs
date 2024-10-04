@@ -29,7 +29,7 @@ function parseEmbetContent(jsondata as object) as object
       cell.W = 3
       cell.H = 1
       cell.text = "GAME ODDS"
-      cell.market = {description : "GAME ODDS"}
+      cell.marketData = {description : "GAME ODDS"}
       cell.nodeType = nodesCollection.vertMarket
       setstyle(cell)
 
@@ -72,6 +72,10 @@ function parseEmbetContent(jsondata as object) as object
                         cell.height = 50
                         widths.push(cell.width)
 
+                        if(rowPos = 0 and i =0) then
+                              cell.nodeType = nodesCollection.locked
+                        endif
+
                         setstyle(cell)
 
                         rowPos++
@@ -105,7 +109,7 @@ function parseEmbetContent(jsondata as object) as object
                               cell.nodeType = nodesCollection.vertOdds
                               cell.text = market.marketoptions[kl / 2].odds
                               cell.num = StrToI(market.marketoptions[kl / 2].description)
-                              cell.height = 50
+                              cell.height = 45
                               setstyle(cell)
                               y++
 
@@ -123,7 +127,7 @@ function parseEmbetContent(jsondata as object) as object
                                     cell.text = market.marketoptions[kl / 2].description
                               end if
                               cell.num = 120
-                              cell.height = 50
+                              cell.height = 45
                               setstyle(cell)
 
 
@@ -135,7 +139,8 @@ function parseEmbetContent(jsondata as object) as object
       end for
 
 
-      m.top.rowHeights = heights
+      m.top.rowHeights = [50,50,50,50,45,45,45,45]
+      m.top.rowSpacings = [15, 15, 15, 15, 10, 10, 10, 10, 10]
       m.top.columnWidths = widths
 
       return data
@@ -194,7 +199,7 @@ end function
 
 sub setstyle(cell as object) as object
       cell.style = {
-            headerFontSize: 14
+            headerFontSize: 16
             headerTextColor: "0xFFFFFF"
             headerfontType  : "bold"
             headerFont : "font:smallestBoldSystemFont"

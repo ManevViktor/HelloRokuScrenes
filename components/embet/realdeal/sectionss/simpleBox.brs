@@ -115,6 +115,8 @@ function createCell(content as object) as object
             obj = CreateObject("roSgNode", "verticalMarket")
       else if(content.nodeType = m.nodes.vertOdds) then
             obj = CreateObject("roSgNode", "verticalOutcome")
+      else if(content.nodeType = m.nodes.locked) then
+            obj = CreateObject("roSgNode", "lockedOdds")
       end if
 
     

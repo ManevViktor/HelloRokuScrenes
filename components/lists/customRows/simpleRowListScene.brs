@@ -33,12 +33,14 @@ function init()
       my.setFocus(true)
       my.animateToItem = 10
 
-      rect2 = CreateObject("roSGNode", "maskScroll")
-      m.top.appendChild(rect2)
-      rect2.translation = [50,400]
+      ' rect2 = CreateObject("roSGNode", "maskScroll")
+      ' m.top.appendChild(rect2)
+      ' rect2.translation = [50,400]
       '  rect2.setFocus(true)
-      ' addEmbet()
+       addEmbet()
 
+      ' child = CreateObject("roSgNode", "animationInidicatorUp")
+      ' m.top.appendChild(child)
 
 end function
 
