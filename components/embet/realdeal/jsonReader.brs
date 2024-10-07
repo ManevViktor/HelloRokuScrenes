@@ -3,69 +3,33 @@ sub init()
 end sub
 
 sub getcontent()
-      json = ParseJson(ReadAsciifile("pkg:/components/file/marketextend.json"))
+
+      filename = m.top.marketID
+
+      ?"filename ="filename
+      json = ParseJson(ReadAsciifile(filename))
 
 
-      newdata = []
-      count = 0
-      for each item in json.betDetails
+      ' newdata = []
+      ' count = 0
 
-            count ++
-            newdata.push({
-                  homeodds: item.marketOptions[0]
-                  marketName: item
-                  awayodds: item.marketOptions[1]
-            })
+      ' for each item in json.betDetails
 
-      end for
+      '       count ++
+      '       newdata.push({
+      '             homeodds: item.marketOptions[0]
+      '             marketName: item
+      '             awayodds: item.marketOptions[1]
+      '       })
 
-      rodata = []
-      for each item2 in json.betDetails
+      ' end for
 
-            pr = getPresentationType(item2)
 
-            rodata.push({
-                  market: item2
-                  odds: item2.marketOptions[0]
-                  presentation : pr
-                  type: "odds"
-            })
 
-            rodata.push({
-                  market: item2
-                  type: "market"
-                  presentation : pr
-                  odds : "none"
-            })
 
-            rodata.push({
-                  market: item2
-                  odds: item2.marketOptions[1]
-                  presentation : pr
-                  type: "odds"
-            })
-
-      end for
-
-    
 
       m.top.dataContent = json
 end sub
-
-
-function getPresentationType(market as object) as dynamic
-    
-      if market.presentation <> invalid then
-            return market.presentation 
-      else
-            return "horizontal"
-      end if
-
-end function
-
-function getMarket(market as dynamic) as object
-
-end function
 
 
 

@@ -8,7 +8,7 @@ function init()
       ' ' addTask()
       rect = CreateObject("roSGNode", "Rectangle")
       rect.width = 410
-      rect.height =750
+      rect.height = 750
       rect.color = "0x000000"
 
       SDK = {
@@ -22,22 +22,26 @@ function init()
 
       m.global.addfields({ embetSDK: sdk })
 
-      my = CreateObject("roSGNode", "embetSections")
-      rect.translation = "[800,150]"
+      ' m.sections = CreateObject("roSGNode", "embetSections")
+      ' rect.translation = "[800,150]"
 
-      
-      '  m.label.setfocus(true)
-      m.top.appendChild(rect)
-      
-      rect.appendChild(my)
-      my.setFocus(true)
-      my.animateToItem = 10
+
+      ' '  m.label.setfocus(true)
+      ' m.top.appendChild(rect)
+
+      ' rect.appendChild(m.sections)
+      ' m.sections.setFocus(true)
+
+
+      ' showmarkupgrid()
+
 
       ' rect2 = CreateObject("roSGNode", "maskScroll")
       ' m.top.appendChild(rect2)
       ' rect2.translation = [50,400]
       '  rect2.setFocus(true)
-       addEmbet()
+        addEmbet()
+      
 
       ' child = CreateObject("roSgNode", "animationInidicatorUp")
       ' m.top.appendChild(child)
@@ -45,11 +49,49 @@ function init()
 end function
 
 
+sub onNewData()
+
+      '   m.embetData = event.getData()
+      ' m.sections.jsonData = root
+end sub
+
+sub showmarkupgrid()
+      ' content = GetRowListContent()
+
+      m.task = CreateObject("roSGNode", "JsonReader")
+      m.task.observeField("dataContent", "onNewData")
+      ' m.task.control = "run"
+
+end sub
+
+
+sub time()
+
+      m.timer = createObject("roSGNode", "Timer")
+      m.timer.id = "timer"
+      m.timer.repeat = true
+      m.timer.duration = 10
+      m.timer.ObserveField("fire", "onDataTimer")
+      m.timer.control = "start"
+
+end sub
+
+sub onDataTimer()
+
+
+
+      root = {}
+
+      m.sections.content = root
+
+end sub
+
+
 sub addEmbet()
 
       m.embetUI = CreateObject("roSGNode", "embetRoot")
       m.top.appendChild(m.embetUI)
-      ' m.embetUI.setfocus(true)
+       m.embetUI.setfocus(true)
       m.embetUI.observeField("focusChanged", "onFocusChanged")
 
       di = CreateObject("roDeviceInfo")
@@ -111,10 +153,10 @@ function onKeyEvent(key as string, press as boolean) as boolean
 end function
 
 function onFocusChanged()
-      if(m.embetUI.focusChanged = "unfocused") then
-            m.btn.setfocus(true)
-      end if
-      ?" onFocusChanged" m.embetUI.focusChanged
+      ' if(m.embetUI.focusChanged = "unfocused") then
+      '       m.btn.setfocus(true)
+      ' end if
+      ' ?" onFocusChanged" m.embetUI.focusChanged
       ' return focus to your own components
 
 end function

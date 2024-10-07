@@ -37,7 +37,7 @@ splash_color=#000000
 splash_min_time=1
 
 # Resolution
-ui_resolutions=sd,hd, fhd
+ui_resolutions=sd,hd,fhd
 
 ### lib
 hidden=0

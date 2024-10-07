@@ -15,13 +15,14 @@ sub init()
       m.headerText = m.top.findNode("embetOddsHeaderText")
       m.root = m.top.findNode("embetOddsRoot")
       m.list = m.top.findNode("embetOddsList")
+      m.sectionlist = m.top.findNode("embetSectionsList")
       m.headerRect = m.top.findNode("embetOddsHeader")
       m.bodyRect = m.top.findNode("embetOddsBodyInfo")
       m.oddsRect = m.top.findNode("oddsListRect")
       m.bodyTitle = m.top.findNode("embetOddsInformation")
       m.oddsListItems = m.top.findNode("embetOddsList")
       rect2 = m.headerText.boundingRect()
-     
+
 
 
       '      m.clippingRect = rect
@@ -43,6 +44,110 @@ sub init()
 
       m.top.observeField("size", "onSizeChanged")
 
+      showmarkupgrid(false)
+      ' addTimer()
+      initPubnubLib()
+
+end sub
+
+
+sub onPuBnubUpdate(event as object)
+      ?"emb sec : event update pubnub"
+      ?"m.parent"
+      m.updatecontent = event.getData()
+
+      m.parentot = m.top.getChild(0) .getChild(2)
+
+      newMarkupgrid = CreateObject("roSgNode", "embetSections")
+      newMarkupgrid.id = "embetSectionsList"
+      newMarkupgrid.jsonData = m.updatecontent
+
+      ?"index = "findChildIndex("embetSectionsList")
+
+      m.parentot.replaceChild(newMarkupgrid, 0)
+      newMarkupgrid.setfocus(true)
+      newMarkupgrid.jumpToItem = 5
+
+     addTimer()
+
+'      TO add focused index and 
+
+      ' m.top.appendChild(newMarkupgrid)
+      ' newMarkupgrid.translation = [-400, 0]
+
+end sub
+
+function findChildIndex(newdata as dynamic) as integer
+
+      topcount = m.top.getChildCount()
+
+         ' while(m.sectionlist.content.getChildCount() > 0)
+      '       m.sectionlist.content.removeChildIndex(0)
+      ' end while
+
+
+      ?m.sectionlist
+
+      index = 0
+      for p = 0 to topcount - 1
+            if(m.top.getChild(p)).id = newData
+                  index = p
+            end if
+      end for
+
+      return index
+
+end function
+
+sub onNewData(e as object)
+      ?"task comepletec " e.getData()
+
+      root = e.getData()
+
+       m.sectionlist.jsonData = root
+
+       ?"child 0 = "m.top.getChild(0).subtype()
+       ?""
+       ?""
+       ?"child 12" m.top.getChild(0).getChild(2).subtype()
+end sub
+
+sub showmarkupgrid(extend as boolean)
+      ' content = GetRowListContent()
+      uri = ""
+      if(extend = true) then
+            uri = "pkg:/components/file/marketextend.json"
+      else
+            uri = "pkg:/components/file/market.json"
+      end if
+
+      m.task = CreateObject("roSGNode", "JsonReader")
+      m.task.observeField("dataContent", "onNewData")
+
+      m.task.control = "run"
+
+end sub
+
+sub addTimer()
+      m.timer = createObject("roSGNode", "Timer")
+      m.timer.id = "timer"
+      m.timer.repeat = false
+      m.timer.duration = 5
+      m.timer.ObserveField("fire", "onTimer")
+      m.timer.control = "start"
+end sub
+
+sub onTimer()
+      ' total = m.sectionlist.content.getChildCount() - 1
+
+      ' for i = 0 to total
+      '       m.sectionlist.content.removeChildIndex(i)
+
+      ' end for
+
+      ' m.sectionlist.content = ""
+      ' m.task.control = "run"
+     m.sectionlist.jsonData = m.updatecontent
 
 end sub
 
@@ -72,15 +177,15 @@ sub redraw()
 end sub
 
 sub onFocusedChildChange()
-      if m.top.focusedChild = invalid
-            ?"embet sending event unfocused"
-            m.top.focusChanged = "unfocused"
-      else
-            if(m.oddsListItems.hasFocus() = false) then
-                  m.oddsListItems.setfocus(true)
-            end if
-            m.top.focusChanged = "focused"
-      end if
+      ' if m.top.focusedChild = invalid
+      '       ?"embet sending event unfocused"
+      '       m.top.focusChanged = "unfocused"
+      ' else
+      '       if(m.oddsListItems.hasFocus() = false) then
+      '             m.oddsListItems.setfocus(true)
+      '       end if
+      '       m.top.focusChanged = "focused"
+      ' end if
 end sub
 
 
@@ -89,14 +194,6 @@ sub initLibrary()
       m.bcLib.id = "QRCodelib"
       m.bcLib.uri = "https://main--pocrokutest.netlify.app/4/qrcodes.zip"
       m.bcLib.observeField("loadStatus", "onLoadStatus")
-
-end sub
-
-sub initLibrary2()
-      m.pblib = createObject("roSGNode", "ComponentLibrary")
-      m.pblib.id = "PubNubRoku"
-      m.pblib.uri = "pkg:/components/external/pubnb.zip"
-      m.pblib.observeField("loadStatus", "onpbStatus")
 
 end sub
 
@@ -131,31 +228,6 @@ sub onLoadStatus(ev)
 end sub
 
 
-
-sub onpbStatus(ev)
-      status = ev.getData()
-      if status = "ready" then
-            ?"Load lib ready"
-            ' m.pubnub = createObject("roSGNode", "PubNubRoku:pubnubTask")
-            ' m.pubnub.debug = true
-            ' m.pubnub.config = { subscribeKey: "sub-c-57fa010c-b8db-11ec-a091-7ec486788b75", publishKey: "pub-c-b475f60f-5f12-4537-a7ff-93bd7a3c0388"}
-
-
-            ' m.bcLib = createObject("roSGNode", "Embet:MultibetWidget")
-            ' Lib was successfully downloaded and all its components are now accessible
-
-      else if status = "loading" then
-            ?"Load lib Loading"
-
-            ' bcLib package is currently being downloaded
-
-      else if status = "failed" then
-            ?"Load lib failed"
-            ' Something went wrong with the bcLib download/load process.
-            ' Please check if the package URL was properly set.
-
-      end if
-end sub
 
 
 function onKeyEvent(key as string, press as boolean) as boolean

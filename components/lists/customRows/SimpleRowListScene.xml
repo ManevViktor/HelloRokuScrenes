@@ -6,6 +6,7 @@
 
     <script type="text/brightscript" uri="pkg:/components/lists/customRows/simpleRowListScene.brs" />
 
+
     <children>
         <ScrollableText id="exampleScrollableText"
                         translation="[ 50, 50 ]"

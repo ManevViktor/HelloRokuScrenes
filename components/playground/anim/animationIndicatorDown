@@ -2,7 +2,7 @@
 
 <!--********** Copyright 2015 Roku Corp.  All Rights Reserved. **********-->
 
-    <component name="animationInidicatorUp" extends="Group" >
+    <component name="animationInidicatorDown" extends="Group" >
 
         <script type="text/brightscript" >
             <![CDATA[
@@ -14,9 +14,9 @@
 
 <children>
 
-    <Poster  id="testPoster"  uri="pkg:/images/odds/indic_up.png"  width="10"  height="10"  translation="[0,0]"  opacity="0.0" />
+    <Poster  id="testPoster"  uri="pkg:/images/odds/indic_down.png"  width="10"  height="10"  translation="[0,0]"  opacity="0.0" />
     <Animation   id="testAnimation"  duration="4"  repeat="false"  control="start"  easeFunction="linear" >
-        <FloatFieldInterpolator    id = "testFloat"   key="[0.0, 0.15 , 0.34, 0.51, 0.60 ,0.75, 1.0]"    keyValue="[ 0.0, 1.0, 0.0, 1.0 , 0.0, 1.0,0.0 ]"       fieldToInterp="testPoster.opacity"   />
+        <FloatFieldInterpolator    id = "testFloat"   key="[0.0, 0.15 , 0.34, 0.51, 0.68 ,0.85, 1.0]"    keyValue="[ 0.0, 1.0, 0.0, 1.0 , 0.0, 1.0,0.0 ]"       fieldToInterp="testPoster.opacity"   />
     </Animation>
 
 </children>

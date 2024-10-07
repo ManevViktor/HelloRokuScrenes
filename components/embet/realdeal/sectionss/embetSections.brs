@@ -1,13 +1,13 @@
 sub init()
 
-      m.top.id="markupEmbet"
+      m.top.id = "markupEmbet"
       m.top.itemComponentName = "simpleBoxItems"
       m.top.numColumns = 3
       m.top.numRows = 12
       m.top.itemSize = [50, 50]
       m.top.itemSpacing = [0, 5]
       m.top.wrapDividerHeight = 0
-      
+
       m.top.drawFocusFeedback = true
       m.top.drawFocusFeedbackOnTop = true
       m.top.focusBitmapUri = "pkg:/images/focusblend.9.png"
@@ -15,11 +15,18 @@ sub init()
       m.top.fixedLayout = true
       m.top.observeField("itemFocused", "onItemFocused")
 
+
       ?"mblobal =  "m.global.embetSDK.widgetSize
 
 
-      showmarkupgrid()
+      ' showmarkupgrid()
       ' initLibrary2()
+
+end sub
+
+sub jsonUpdate(evn as object) 
+      content = parseEmbetContent( evn.getData())
+      m.top.content = content
 
 end sub
 
@@ -37,7 +44,7 @@ end sub
 
 sub onItemFocused()
       ?"on item focused " m.top.itemFocused
-        if(m.top.itemFocused = 0) then m.top.jumptoitem = 1
+      if(m.top.itemFocused = 0) then m.top.jumptoitem = 1
 
       if(m.top.content <> invalid)
             ' ?"content num = "m.top.content.getChild(m.top.itemFocused).text
@@ -46,19 +53,19 @@ end sub
 
 sub onNewData(event as object)
 
-      m.embetData = event.getData()
-      content = parseEmbetContent(m.embetData)
+      ' m.embetData = event.getData()
+      ' content = parseEmbetContent(m.embetData)
 
-      m.top.content = content
+      ' m.top.content = content
 
-      m.s = CreateObject("RoSGNode", "disclaimer")
-      ' m.top.appendChild(m.s)
-      rect = m.top.boundingRect()
+      ' m.s = CreateObject("RoSGNode", "disclaimer")
+      ' ' m.top.appendChild(m.s)
+      ' rect = m.top.boundingRect()
 
-      ' text = m.top.findNode("txtDis")
-      ' text.font.size = 13
-      m.s.translation = [0, rect.height + 15]
-      ?"rect = " m.top.boundingRect
+      ' ' text = m.top.findNode("txtDis")
+      ' ' text.font.size = 13
+      ' m.s.translation = [0, rect.height + 15]
+      ' ?"rect = " m.top.boundingRect
 end sub
 
 sub showmarkupgrid()

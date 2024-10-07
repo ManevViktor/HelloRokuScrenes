@@ -1,5 +1,5 @@
 
-sub initLibrary2()
+sub initPubnubLib()
       m.pblib = createObject("roSGNode", "ComponentLibrary")
       m.pblib.id = "PubNubRoku"
       m.pblib.uri = "pkg:/components/external/pubnb.zip"
@@ -18,7 +18,7 @@ sub onpbStatus(ev)
             m.pubnub.debug = true
             params = { subscribeKey: "sub-c-57fa010c-b8db-11ec-a091-7ec486788b75", publishKey: "pub-c-b475f60f-5f12-4537-a7ff-93bd7a3c0388", channels: ["demo", "demo2"] }
             m.pubnub.config = params
-            m.pubnub.ObserveField("pubnubData", "onPubnubUpdate")
+            m.pubnub.ObserveField("pubnubData", "onPubnubLibData")
             m.pubnub.control = "RUN"
 
             ' m.bcLib = createObject("roSGNode", "Embet:MultibetWidget")
@@ -37,7 +37,7 @@ sub onpbStatus(ev)
       end if
 end sub
 
-sub onPubnubUpdate(event as dynamic)
+sub onPubnubLibData(event as dynamic)
       ?"printing event" event
     
       brm = event.getData()

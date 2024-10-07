@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?> 
 
-<component name="embetRoot" extends="Group" initialFocus="embetOddsList">
+<component name="embetRoot" extends="Group" initialFocus="embetSectionsList">
     <interface>
         <field id="focusChanged" type="string" />
         <field id="size" type="assocArray" />
+        <field id="dataUpdate" type="assocArray" onChange="onPuBnubUpdate" />
     </interface>
     <script type="text/brightscript" uri="pkg:/components/embet/embetScene.brs" />
     <script type="text/brightscript" uri="pkg:/components/embet/odds/util.brs" />
+    <script type="text/brightscript" uri="realdeal/pubnubrunner.brs" />
+
     <children>
         <Rectangle focusable="false"
                    id="embetOddsRoot"
-                   width="400"
-                   height="650"
-                   color="0x0000f4">
+                   width="410"
+                   height="850"
+                   color="0x000000">
 
             <Rectangle focusable="false"
                        id="embetOddsHeader"
-                       width="400"
+                       width="410"
                        height="70"
                        color="0x000000B4">
                          
@@ -38,10 +41,10 @@
 
             <Rectangle id="embetOddsBodyInfo"
                        translation="[0, 50]"
-                       width="400"
+                       width="410"
                        height="70"
                        color="0x000000">
-                <Label width="400"
+                <Label width="410"
                        height="70"
                        horizAlign="center"
                        font="font:SmallestSystemFont"
@@ -55,12 +58,12 @@
 
             <Rectangle id="oddsListRect"
                        translation="[0, 120]"
-                       width="400"
+                       width="410"
                        height="300"
                        color="0x000000">
                 <!-- <oddsBodylist id="embetOddsList" focusable="true" /> -->
                 <!-- <embetMarkUP id="exampleMarkupGrid" />  -->
-                 <embetSections  focusable="true" />
+                <embetSections id="embetSectionsList" />
             
             </Rectangle>
                          

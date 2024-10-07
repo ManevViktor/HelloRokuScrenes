@@ -7,10 +7,10 @@
   <script type="text/brightscript" uri="contentCreatorEmbet.brs" />
   <script type="text/brightscript" uri="celldataUtil.brs" />
   <script type="text/brightscript" uri="embetSections.brs"></script>
-  <script type="text/brightscript" uri="../pubnubrunner.brs" />
 
 <interface>
-  <field id="dataUpdate" type="assocArray" onChange ="oneventPBnubUpdate" />
+
+  <field id="jsonData" type="assocArray" onChange="jsonUpdate" />
 </interface>
 
   <children >
