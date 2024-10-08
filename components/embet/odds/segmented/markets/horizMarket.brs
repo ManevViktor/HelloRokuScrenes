@@ -10,7 +10,6 @@ end sub
 
 sub cellConfig(evn as object)
 
-      ?"config ="  evn.getData().size
       config = evn.getData()
 
       width = config.size[0]

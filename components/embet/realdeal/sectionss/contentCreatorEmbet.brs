@@ -1,5 +1,5 @@
 
-function parseEmbetContent(jsondata as object) as object
+function parseEmbetContent(jsondata as object, history as object) as object
 
       json = jsondata
 
@@ -29,7 +29,7 @@ function parseEmbetContent(jsondata as object) as object
       cell.W = 3
       cell.H = 1
       cell.text = "GAME ODDS"
-      cell.marketData = {description : "GAME ODDS"}
+      cell.marketData = { description: "GAME ODDS" }
       cell.nodeType = nodesCollection.vertMarket
       setstyle(cell)
 
@@ -55,29 +55,27 @@ function parseEmbetContent(jsondata as object) as object
                         cell.W = 1
                         cell.H = 1
                         cell.num = rowPos
-                       
+
                         cell.marketData = createCellData(market, i)
+
                         setstyle(cell)
                         if(i = 1) then
                               ?"cell bound rect"
                               wid = totalWidth - (totalWidth / factor * 2)
-                              cell.text = "market"
                               cell.nodeType = nodesCollection.horizMarket
                         else
                               wid = (totalWidth / factor) - 2
-                              cell.text = "125"
                               cell.nodeType = nodesCollection.horizOdds
+                              if(cell.marketData.isSuspended = true)
+                                    cell.nodeType = nodesCollection.locked
+                              end if
+
+                              compareOutcomes(cell, history)
                         end if
+
                         cell.width = wid
                         cell.height = 50
                         widths.push(cell.width)
-
-                        if(rowPos = 0 and i =0) then
-                              cell.nodeType = nodesCollection.locked
-                        endif
-
-                        setstyle(cell)
-
                         rowPos++
                   end for
                   y++
@@ -139,7 +137,7 @@ function parseEmbetContent(jsondata as object) as object
       end for
 
 
-      m.top.rowHeights = [50,50,50,50,45,45,45,45]
+      m.top.rowHeights = [50, 50, 50, 50, 45, 45, 45, 45]
       m.top.rowSpacings = [15, 15, 15, 15, 10, 10, 10, 10, 10]
       m.top.columnWidths = widths
 
@@ -178,10 +176,11 @@ function createHOutcomeCell(market as object, index as integer) as object
       mdata = {}
       teamStats = market.marketoptions.getEntry(index)
       if(teamStats <> invalid) then
+            mdata.marketID = market.marketID
             mdata.odds = teamStats.odds
             mdata.description = teamStats.description
             mdata.outcomeid = teamStats.outcomeId
-            mdata.isSuspended = true
+            mdata.isSuspended = teamStats.isSuspended
             mdata.imageUrl = teamStats.imageUrl
       else
             mdata.isSuspended = true
@@ -201,25 +200,96 @@ sub setstyle(cell as object) as object
       cell.style = {
             headerFontSize: 16
             headerTextColor: "0xFFFFFF"
-            headerfontType  : "bold"
-            headerFont : "font:smallestBoldSystemFont"
-            
+            headerfontType: "bold"
+            headerFont: "font:smallestBoldSystemFont"
+
             primaryFontSize: 12
             primaryTextColor: "0xFFFFFF"
-            primaryfontType  : "medium"
-            primaryFont : "font:SmallestSystemFont"
-            
+            primaryfontType: "medium"
+            primaryFont: "font:SmallestSystemFont"
+
             secondaryFontSize: 11
             secondaryTextColor: "0xFFFFFF"
-            secondaryFontType : "small"
-            secondaryFont : "font:SmallestSystemFont"
-            
+            secondaryFontType: "small"
+            secondaryFont: "font:SmallestSystemFont"
+
             bgColor: "0x000000"
 
       }
 end sub
 
+sub compareOutcomes(newCell as object, history as object)
 
+      newCell.stream = "same"
+
+      if(newCell <> invalid and newCell.marketData <> invalid)
+            historyMarket = findCurrentMarket(history, newCell)
+
+            historyOdds = findHistoryOdds(historyMarket, newCell)
+
+
+            if(historyOdds <> invalid)
+
+                  ?"current market = " historyMarket
+                  ?"history odds =" historyOdds
+
+                  newCell.stream = compareOdds(historyOdds.odds, newCell.marketData.odds)
+                  ?"compare odds = "newCell.stream
+            end if
+
+      end if
+
+      ?"cell stream" newCell.stream
+end sub
+
+function findCurrentMarket(historyJson as object, newCell as object)
+
+      this = invalid
+
+      if(historyJson <> invalid and newCell <> invalid and newCell.marketData <> invalid)
+            for each item in historyJson.betDetails
+                  if(item.marketID = newCell.marketData.marketID)
+                        this = item
+                        exit for
+                  end if
+            end for
+      end if
+
+      return this
+end function
+
+function findHistoryOdds(historyMarket as object, newCell as object)
+
+      this = invalid
+
+      if(historyMarket <> invalid and newCell <> invalid and newCell.marketData <> invalid)
+            for each item in historyMarket.marketOptions
+                  if(item.outcomeId = newCell.marketData.outcomeId)
+                        this = item
+                        exit for
+                  end if
+            end for
+      end if
+
+      return this
+end function
+
+function compareOdds(historyodds, newCellOdss) as dynamic
+
+      
+      old = historyodds.toFloat()
+      new = newCellOdss.toFloat()
+      ?"history odd" old
+      ?"new odd" new
+
+      if(old > new)
+            return "down"
+      else if (old < new)
+            return "up"
+      else return "same"
+      end if
+
+end function
 
 
 

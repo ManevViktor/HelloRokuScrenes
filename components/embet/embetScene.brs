@@ -20,7 +20,7 @@ sub init()
       m.bodyRect = m.top.findNode("embetOddsBodyInfo")
       m.oddsRect = m.top.findNode("oddsListRect")
       m.bodyTitle = m.top.findNode("embetOddsInformation")
-      m.oddsListItems = m.top.findNode("embetOddsList")
+
       rect2 = m.headerText.boundingRect()
 
 
@@ -32,8 +32,6 @@ sub init()
       m.headerText.translation = [x, 0]
 
       logEvent({ key: "rect headerText", value: rect2 })
-
-      m.root.opacity = 1
       logEvent({ key: "UI embet root", value: m.root.boundingRect() })
 
       m.top.observeField("focusedChild", "onFocusedChildChange")
@@ -41,6 +39,7 @@ sub init()
       di = CreateObject("roDeviceInfo")
       size = di.GetDisplaySize()
 
+      m.historyData = invalid
 
       m.top.observeField("size", "onSizeChanged")
 
@@ -56,60 +55,30 @@ sub onPuBnubUpdate(event as object)
       ?"m.parent"
       m.updatecontent = event.getData()
 
-      m.parentot = m.top.getChild(0) .getChild(2)
-
       newMarkupgrid = CreateObject("roSgNode", "embetSections")
       newMarkupgrid.id = "embetSectionsList"
+      newMarkupgrid.historyData = m.historyData
       newMarkupgrid.jsonData = m.updatecontent
 
-      ?"index = "findChildIndex("embetSectionsList")
 
-      m.parentot.replaceChild(newMarkupgrid, 0)
+      m.oddsRect.replaceChild(newMarkupgrid, 0)
       newMarkupgrid.setfocus(true)
-      newMarkupgrid.jumpToItem = 5
+      newMarkupgrid.jumpToItem = 6
+      m.historyData = m.updatecontent
 
-     addTimer()
-
-'      TO add focused index and 
-
-      ' m.top.appendChild(newMarkupgrid)
-      ' newMarkupgrid.translation = [-400, 0]
+      ' addTimer()
 
 end sub
 
-function findChildIndex(newdata as dynamic) as integer
-
-      topcount = m.top.getChildCount()
-
-         ' while(m.sectionlist.content.getChildCount() > 0)
-      '       m.sectionlist.content.removeChildIndex(0)
-      ' end while
-
-
-      ?m.sectionlist
-
-      index = 0
-      for p = 0 to topcount - 1
-            if(m.top.getChild(p)).id = newData
-                  index = p
-            end if
-      end for
-
-      return index
-
-end function
 
 sub onNewData(e as object)
       ?"task comepletec " e.getData()
 
       root = e.getData()
 
-       m.sectionlist.jsonData = root
-
-       ?"child 0 = "m.top.getChild(0).subtype()
-       ?""
-       ?""
-       ?"child 12" m.top.getChild(0).getChild(2).subtype()
+      m.historyData = root
+      ?"on new data " m.historyData.betdetails
+      m.sectionlist.jsonData = root
 end sub
 
 sub showmarkupgrid(extend as boolean)
@@ -147,7 +116,7 @@ sub onTimer()
 
       ' m.sectionlist.content = ""
       ' m.task.control = "run"
-     m.sectionlist.jsonData = m.updatecontent
+      ' m.sectionlist.jsonData = m.updatecontent
 
 end sub
 

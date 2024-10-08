@@ -91,8 +91,8 @@ sub itemContentChanged2()
       content = m.top.itemContent
 
       if(content <> invalid) then
-            cell = createCell(content)
-            m.top.appendChild(cell)
+            m.cell = createCell(content)
+            m.top.appendChild(m.cell)
       end if
 
 
@@ -104,13 +104,10 @@ function createCell(content as object) as object
 
       if(content.nodeType = m.nodes.horizMarket) then
             obj = CreateObject("roSgNode", "horizMarket")
-            m.top.appendChild(obj)
       else if(content.nodeType = m.nodes.horizOdds) then
             obj = CreateObject("roSgNode", "horizontalOutcome")
-            m.top.appendChild(obj)
       else if(content.nodeType = m.nodes.vertDesciption) then
             obj = CreateObject("roSgNode", "verticalDesciption")
-            m.top.appendChild(obj)
       else if(content.nodeType = m.nodes.vertMarket) then
             obj = CreateObject("roSgNode", "verticalMarket")
       else if(content.nodeType = m.nodes.vertOdds) then
@@ -119,16 +116,19 @@ function createCell(content as object) as object
             obj = CreateObject("roSgNode", "lockedOdds")
       end if
 
-    
+
 
       data = {
             size: [content.width, content.height]
             marketDetails: content.marketData
             canFocus: content.canFocus
             nodeType: content.nodeType
-            style : content.style
-            displayText : content.text
+            style: content.style
+            displayText: content.text
+            streamAnim: content.stream
       }
+
+
       obj.configData = data
 
       return obj

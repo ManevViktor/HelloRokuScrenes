@@ -20,6 +20,7 @@
             <field id="text" type="string" />
             <field id="marketData" type="assocArray" />
             <field id="present" type="string" />
+            <field id="stream" type="string" />
       </interface>
 
       <!-- <children> -->

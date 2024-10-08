@@ -11,6 +11,7 @@
 <interface>
 
   <field id="jsonData" type="assocArray" onChange="jsonUpdate" />
+  <field id="historyData" type="assocArray"  />
 </interface>
 
   <children >

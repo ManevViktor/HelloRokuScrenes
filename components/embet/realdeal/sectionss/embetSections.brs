@@ -24,8 +24,10 @@ sub init()
 
 end sub
 
-sub jsonUpdate(evn as object) 
-      content = parseEmbetContent( evn.getData())
+sub jsonUpdate(evn as object)
+
+      history = m.top.historyData
+      content = parseEmbetContent(evn.getData(), history)
       m.top.content = content
 
 end sub
