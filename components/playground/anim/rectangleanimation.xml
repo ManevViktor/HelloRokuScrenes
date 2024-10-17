@@ -2,57 +2,67 @@
 
 <!--********** Copyright 2015 Roku Corp.  All Rights Reserved. **********-->
 
-<component name="rectangleanimationScene" extends="Scene">
+<component name="rectangleanimationScene" extends="Group" initialFocus ="exampleScrollableText22">
 
 	<script type="text/brightscript">
 		<![CDATA[
 
 sub init()
-	m.top.backgroundURI = "pkg:/images/purplebg.jpg"
 
-	sec= createObject("roSGNode","MaskGroupExample")
-
-	m.top.setFocus(true)
 end sub
 
 ]]></script>
 
 		<children>
 
-			<MaskGroup id="scrollView" maskSize="[200,50]" maskOffset="[-100,50]" translation="[100, 100]">
-
 	
-				<!-- Rectangle -->
-				<Rectangle id="rect"
-				           width="200"
-				           height="100"
-				           color="#FF0000"
-				           translation="[50, 50]" />
 
-			</MaskGroup>
+			<Rectangle id="bottomRectangle" color="0x000000" width="400" height="60">
+		
+					<ScrollableText id="exampleScrollableText22"
+	
+					                width="400"
+					                height="150"
+					                font="font:SmallestSystemFont"
+					                text="Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement software on the Roku...FURTHER INFORMATION."
+					                color="0xffffff" />
+				</Rectangle>
 
-			<Rectangle id="bottomRectangle"
-			           color="0x0000FFFF"
-			           width="1280"
-			           height="60"
-			           translation="[0,620]" />
+					<!-- <Animation id="colorchangeAnimation"
+			           duration="5"
+			           repeat="true"
+			           reverse="true"
+			           easeFunction="linear"
+			           control="start">
+				<FloatFieldInterpolator id="colorchangeRectangle" key="[0.0, 1.0]" keyValue="[ 0, 500 ]" fieldToInterp="bottomRectangle.height" />
+			</Animation> -->
 
-			<Animation id="colorchangeAnimation" duration="2" repeat="true" easeFunction="linear">
-				<FloatFieldInterpolator id="colorchangeRectangle" key="[0.0, 1.0]" keyValue="[ 0, 200 ]" fieldToInterp="rect.height" />
-			</Animation>
+			
+					<!-- <ParallelAnimation   id = "testParallelAnimation" duration="2"  control="start" > -->
+					<Animation id="R1Animation"
+					          control="start"
+					           repeat="false"
+					           duration="1.5"
+					           easeFunction="linear">
+						<Vector2DFieldInterpolator key="[0, 1]" keyValue="[ [1, 500], [1, 1] ]" fieldToInterp="bottomRectangle.translation" /> 
+						<!-- <FloatFieldInterpolator key="[0, 0.5, 1]" keyValue="[ 0.2, 1, 0.2 ]" fieldToInterp="bottomRectangle.opacity" /> -->
+						<FloatFieldInterpolator id="colorchangeRectangle" key="[0.0, 1.0]" keyValue="[ 0, 400 ]" fieldToInterp="bottomRectangle.height" />
+					</Animation>
 
+					<Animation id="R2Animation"
+					          control="start"
+					           repeat="false"
+					           duration="1.5"
+					           easeFunction="linear">
+						<!-- <FloatFieldInterpolator key="[0, 0.5, 1]" keyValue="[ 0.2, 1, 0.2 ]" fieldToInterp="bottomRectangle.opacity" /> -->
+						<FloatFieldInterpolator id="colorchangeRectangle25" key="[0.0, 1.0]" keyValue="[ 0, 400 ]" fieldToInterp="exampleScrollableText22.height" />
+					</Animation>
 
+					
+				
+				<!-- </ParallelAnimation> -->
 
+			
+				</children>
 
-			<Rectangle id="bottomRectangle2"
-			           color="0x0000FFFF"
-			           width="1280"
-			           height="60"
-			           translation="[0,620]" />
-
-			<Animation id="colorchangeAnimation2" duration="2" repeat="true" easeFunction="linear">
-				<Vector2DFieldInterpolator id="colorchangeRectangle" key="[0.0, 1.0]" keyValue="[ [100, 100], [1, 200], [1, 1000] ]" fieldToInterp="scrollView.maskOffset" />
-			</Animation>
-		</children>
-
-	</component>
+			</component>

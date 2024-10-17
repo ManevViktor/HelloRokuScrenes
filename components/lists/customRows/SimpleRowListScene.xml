@@ -12,6 +12,8 @@
                         translation="[ 50, 50 ]"
                         width="400"
                         height = "200"
+                        scrollbarTrackBitmapUri=""
+                        scrollbarThumbBitmapUri="pkg:/images/lock-icon.png"
                         font="font:SmallBoldSystemFont"
                         text="Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement Roku now offers Nielsen audience measurement software on the Roku...FURTHER INFORMATION."
                         color="0x000000"

@@ -1,5 +1,4 @@
-
-function parseEmbetContent(jsondata as object, history as object) as object
+function parseEmbetContentv2(jsondata as object, history as object) as object
 
       json = jsondata
 
@@ -42,7 +41,7 @@ function parseEmbetContent(jsondata as object, history as object) as object
             if(j = 9) exit for
 
 
-            colPos = 0
+            rowPos = 0
             present = getPresentationType(market)
 
 
@@ -50,11 +49,11 @@ function parseEmbetContent(jsondata as object, history as object) as object
             if(present = "horizontal") then
                   for i = 0 to 2
                         cell = data.CreateChild("oddsBodyContent")
-                        cell.X = colPos
+                        cell.X = rowPos
                         cell.Y = y
                         cell.W = 1
                         cell.H = 1
-                        cell.num = colPos
+                        cell.num = rowPos
 
                         cell.marketData = createCellData(market, i)
 
@@ -76,7 +75,7 @@ function parseEmbetContent(jsondata as object, history as object) as object
                         cell.width = wid
                         cell.height = 50
                         widths.push(cell.width)
-                        colPos++
+                        rowPos++
                   end for
                   y++
                   heights.push(50)
@@ -146,7 +145,7 @@ function parseEmbetContent(jsondata as object, history as object) as object
 end function
 
 
-function getPresentationType(market as object) as dynamic
+function getPresentationTypev2(market as object) as dynamic
 
       if market.presentation <> invalid then
             return market.presentation
@@ -156,7 +155,7 @@ function getPresentationType(market as object) as dynamic
 
 end function
 
-sub createDirection(nodetype as object, index as dynamic) as object
+sub createDirectionv2(nodetype as object, index as dynamic) as object
       direction = {}
       nodesCollection = node_types()
 
@@ -167,7 +166,7 @@ sub createDirection(nodetype as object, index as dynamic) as object
       endif
 end sub
 
-function createCellData(market as object, index as integer) as object
+function createCellDatav2(market as object, index as integer) as object
 
       mdata = {}
 
@@ -183,7 +182,7 @@ function createCellData(market as object, index as integer) as object
 end function
 
 
-function createHOutcomeCell(market as object, index as integer) as object
+function createHOutcomeCellv2(market as object, index as integer) as object
       mdata = {}
       teamStats = market.marketoptions.getEntry(index)
       if(teamStats <> invalid) then
@@ -201,13 +200,13 @@ function createHOutcomeCell(market as object, index as integer) as object
 end function
 
 
-function createHmarketCell(market as object, index as integer) as object
+function createHmarketCellv2(market as object, index as integer) as object
       r = {}
       r.description = market.marketName
       return r
 end function
 
-sub setstyle(cell as object) as object
+sub setstylev2(cell as object) as object
       cell.style = {
             headerFontSize: 16
             headerTextColor: "0xFFFFFF"
@@ -229,7 +228,7 @@ sub setstyle(cell as object) as object
       }
 end sub
 
-sub compareOutcomes(newCell as object, history as object)
+sub compareOutcomesv2(newCell as object, history as object)
 
       newCell.stream = "same"
 
@@ -253,7 +252,7 @@ sub compareOutcomes(newCell as object, history as object)
       ?"cell stream" newCell.stream
 end sub
 
-function findCurrentMarket(historyJson as object, newCell as object)
+function findCurrentMarketv2(historyJson as object, newCell as object)
 
       this = invalid
 
@@ -269,7 +268,7 @@ function findCurrentMarket(historyJson as object, newCell as object)
       return this
 end function
 
-function findHistoryOdds(historyMarket as object, newCell as object)
+function findHistoryOddsv2(historyMarket as object, newCell as object)
 
       this = invalid
 
@@ -285,7 +284,7 @@ function findHistoryOdds(historyMarket as object, newCell as object)
       return this
 end function
 
-function compareOdds(historyodds, newCellOdss) as dynamic
+function compareOddsv2(historyodds, newCellOdss) as dynamic
 
 
       old = historyodds.toFloat()

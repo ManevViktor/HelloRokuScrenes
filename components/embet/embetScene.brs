@@ -55,6 +55,13 @@ sub onPuBnubUpdate(event as object)
       ?"m.parent"
       m.updatecontent = event.getData()
 
+      hasFocus = m.sectionlist.hasFocus()
+      focusedIndex = invalid
+
+      if(hasFocus) then
+            focusedIndex = m.sectionlist.itemFocused
+      end if
+
       newMarkupgrid = CreateObject("roSgNode", "embetSections")
       newMarkupgrid.id = "embetSectionsList"
       newMarkupgrid.historyData = m.historyData
@@ -63,8 +70,11 @@ sub onPuBnubUpdate(event as object)
 
       m.oddsRect.replaceChild(newMarkupgrid, 0)
       newMarkupgrid.setfocus(true)
-      newMarkupgrid.jumpToItem = 6
+      if(focusedIndex <> invalid) then
+            newMarkupgrid.jumpToItem = focusedIndex
+      end if
       m.historyData = m.updatecontent
+      m.sectionlist = newMarkupgrid
 
       ' addTimer()
 

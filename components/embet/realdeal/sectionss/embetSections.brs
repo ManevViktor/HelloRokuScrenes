@@ -18,6 +18,8 @@ sub init()
 
       ?"mblobal =  "m.global.embetSDK.widgetSize
 
+      m.top.configCache = {}
+
 
       ' showmarkupgrid()
       ' initLibrary2()
@@ -51,6 +53,10 @@ sub onItemFocused()
       if(m.top.content <> invalid)
             ' ?"content num = "m.top.content.getChild(m.top.itemFocused).text
       end if
+
+      m.top.configCache.focused = m.top.itemFocused
+      m.top.configCache.hasFocus = true
+
 end sub
 
 sub onNewData(event as object)

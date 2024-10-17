@@ -25,6 +25,13 @@ function init()
       ' m.sections = CreateObject("roSGNode", "embetSections")
       ' rect.translation = "[800,150]"
 
+      er = CreateObject("rosgNode", "rectangleanimationScene")
+      m.top.appendChild(er)
+      er.translation = [900,400]
+
+      ' nodeFoucs = m.top.FindNode("exampleScrollableText22")
+
+'      er.setfocus(true)
 
       ' '  m.label.setfocus(true)
       ' m.top.appendChild(rect)
@@ -41,7 +48,7 @@ function init()
       ' rect2.translation = [50,400]
       '  rect2.setFocus(true)
         addEmbet()
-      
+      '   nodeFoucs.setfocus(true)
 
       ' child = CreateObject("roSgNode", "animationInidicatorUp")
       ' m.top.appendChild(child)
@@ -91,11 +98,12 @@ sub addEmbet()
 
       m.embetUI = CreateObject("roSGNode", "embetRoot")
       m.top.appendChild(m.embetUI)
-       m.embetUI.setfocus(true)
+      m.embetUI.setfocus(true)
       m.embetUI.observeField("focusChanged", "onFocusChanged")
 
       di = CreateObject("roDeviceInfo")
       screenSize = di.GetDisplaySize()
+      ' m.global.embetUI.addfields(screenSize)
 
 
       if screenSize <> invalid then

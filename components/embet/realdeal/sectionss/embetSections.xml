@@ -8,13 +8,13 @@
   <script type="text/brightscript" uri="celldataUtil.brs" />
   <script type="text/brightscript" uri="embetSections.brs"></script>
 
-<interface>
+  <interface>
 
-  <field id="jsonData" type="assocArray" onChange="jsonUpdate" />
-  <field id="historyData" type="assocArray"  />
-</interface>
+    <field id="jsonData" type="assocArray" onChange="jsonUpdate" />
+    <field id="historyData" type="assocArray" />
+    <field id="configCache" type="assocArray" />
+  </interface>
 
-  <children >
-  </children>
+  <children ></children>
 
 </component>

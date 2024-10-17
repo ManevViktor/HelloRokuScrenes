@@ -5,6 +5,7 @@
         <field id="focusChanged" type="string" />
         <field id="size" type="assocArray" />
         <field id="dataUpdate" type="assocArray" onChange="onPuBnubUpdate" />
+        <field id="configCache" type="assocArray" />
     </interface>
     <script type="text/brightscript" uri="pkg:/components/embet/embetScene.brs" />
     <script type="text/brightscript" uri="pkg:/components/embet/odds/util.brs" />
