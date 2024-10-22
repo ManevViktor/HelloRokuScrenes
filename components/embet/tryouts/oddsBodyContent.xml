@@ -15,12 +15,13 @@
             <field id="num" type="integer" value="100" />
             <field id="nodeType" type="string" />
             <field id="color" type="string" />
-            <field id="canFocus" type="boolean" />
+            <field id="canFocus" type="boolean" value = "false" />
             <field id="style" type="assocArray" />
             <field id="text" type="string" />
             <field id="marketData" type="assocArray" />
             <field id="present" type="string" />
             <field id="stream" type="string" />
+            <field id="placement" type="string" value="mid"/>
       </interface>
 
       <!-- <children> -->

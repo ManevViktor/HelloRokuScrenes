@@ -19,6 +19,7 @@ sub init()
       ?"mblobal =  "m.global.embetSDK.widgetSize
 
       m.top.configCache = {}
+      m.nodeList = node_types()
 
 
       ' showmarkupgrid()
@@ -282,19 +283,30 @@ sub ok()
       obj.textColor = "0xffffff"
 end sub
 
+function shouldFocus(key as string) as dynamic
 
-function getFocusIndex(key as string) as integer
-      nextIndex = m.top.itemFocused
+      return invalid
+end function
+
+
+function getNextFocusIndex(key as string) as integer
+      selectedIndex = m.top.itemFocused
       childCount = m.top.content.getChildCount()
-      selectedchild = m.top.content.getChild(nextIndex)
+      selectedchild = m.top.content.getChild(selectedIndex)
 
-      ?"item focused =" nextIndex
+      ?"item focused =" selectedIndex
+      nextIndex = selectedIndex
       if(key = "left") then
 
-            if(selectedchild.type = "vertical") then
-                  i = -1
-            else
-                  i = -1
+            if(selectedchild.nodeType = m.nodeList.horizOdds) then
+                  if(selectedchild.placement = "away")
+                        propIndex = selectedIndex + 2
+                        if(canFocusIndex(propIndex) = true)
+                              nextIndex = propIndex
+                        end if
+                  else
+                        i = -1
+                  end if
             end if
 
             nextIndex -= 1
@@ -318,6 +330,31 @@ function getFocusIndex(key as string) as integer
       else return nextIndex + i
       end if
 
+end function
+
+
+
+function onKeyEvent(key as string, press as boolean) as boolean
+      handled = false
+      ?" "
+
+      if(key = "down" and press = true) then
+            handled = true
+            jump = navigateDown()
+            ?"jump equqs" jump
+
+            m.top.jumptoitem = m.top.itemFocused + jump
+
+      else if(key = "up" and press = true) then
+            handled = true
+            jump = navigateUp()
+            if(jump <> invalid or jump>0) then
+                  ?"jump = " jump
+                  m.top.jumptoitem =  m.top.itemFocused - jump
+            end if
+      end if
+
+      return handled
 end function
 
 sub onTimer()

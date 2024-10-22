@@ -39,8 +39,6 @@ function parseEmbetContent(jsondata as object, history as object) as object
       for each market in json.betDetails
             j++
 
-            if(j = 9) exit for
-
 
             colPos = 0
             present = getPresentationType(market)
@@ -59,18 +57,28 @@ function parseEmbetContent(jsondata as object, history as object) as object
                         cell.marketData = createCellData(market, i)
 
                         setstyle(cell)
+
                         if(i = 1) then
                               ?"cell bound rect"
                               wid = totalWidth - (totalWidth / factor * 2)
                               cell.nodeType = nodesCollection.horizMarket
                         else
+
+                              if(i = 0)
+                                    cell.placement = "left"
+                              else 
+                                    cell.placement = "right"
+                              endif
+
                               wid = (totalWidth / factor) - 2
                               cell.nodeType = nodesCollection.horizOdds
+                              cell.canFocus = true
+                              compareOutcomes(cell, history)
+                              
                               if(cell.marketData.isSuspended = true)
                                     cell.nodeType = nodesCollection.locked
                               end if
 
-                              compareOutcomes(cell, history)
                         end if
 
                         cell.width = wid
@@ -109,9 +117,12 @@ function parseEmbetContent(jsondata as object, history as object) as object
                               cell.num = StrToI(market.marketoptions[kl / 2].description)
                               cell.height = 45
                               setstyle(cell)
+                              cell.canFocus = true
+                              cell.placement = "right"
                               y++
 
                         else
+                            
                               cell = data.CreateChild("oddsBodyContent")
                               cell.X = 0
                               cell.Y = y
