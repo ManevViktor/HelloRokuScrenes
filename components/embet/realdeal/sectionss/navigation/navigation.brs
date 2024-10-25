@@ -26,15 +26,37 @@ end function
 function navigateDown() as dynamic
       obj = navigationobject()
 
-      if(obj.child = invalid) then
-            return invalid
-      else if(obj.type = node_types().horizOdds and obj.child.placement = "home")
-            return invalid
-      else if(obj.type = m.nodeList.vertOdds)
-            return 2
-      else return 3
-      end if
+      jump = 0
+      found = invalid
+      ?"count" obj.childCount
+   
+            j = 0
+            i = m.top.itemFocused +1
+            while(i <= obj.childCount)
+                  j++
+                  nextItem = getCh(i)
+                  if(nextItem.canFocus = true and nextItem.placement = obj.child.placement and (nextItem.nodeType = m.nodeList.vertOdds or nextItem.nodeType = m.nodeList.horizOdds))
+                        found = true
+                        ?"fouind"
+                        jump = j
+                        exitwhile
+                  else if (nextItem.canFocus = true and nextItem.nodeType = m.nodeList.vertOdds)
+                        found = true
+                          ?"fouinded"
+                        jump = j
+                        exitwhile
+                  end if
+                  i++
 
+            end while
+   
+      ?"jump = " jump
+      return jump
+
+end function
+
+function getCh(index as integer) as object
+      return m.top.content.getChild(index)
 end function
 
 function navigateUp() as dynamic
@@ -42,7 +64,7 @@ function navigateUp() as dynamic
       i = obj.focusedIndex - 1
       jump = 0
       j = 0
-      
+
       while(i >= 1)
             j++
             nextInline = m.top.content.getChild(i)
@@ -58,11 +80,28 @@ function navigateUp() as dynamic
       return jump
 end function
 
-function navigateLeft()
+function navigateLeft() as dynamic
+      obj = navigationobject()
+      jump = invalid
 
+      if(obj.type = "horizOdds" and obj.child.placement = "right")
+            ?"left correct"
+            jump = 2
+      end if
+
+      return jump
 end function
 
 
 function navigateRight()
+
+      obj = navigationobject()
+      jump = invalid
+
+      if(obj.type = "horizOdds" and obj.child.placement = "left")
+            jump = 2
+      end if
+
+      return jump
 end function
 

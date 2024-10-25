@@ -32,6 +32,17 @@ sub cellConfig(evn as object)
 
             m.labelSecondary.text = config.marketDetails.description
             m.labelSecondary.font.size = config.style.secondaryFontSize
+
+            if(config.marketDetails.isSuspended = true)
+                  obj = CreateObject("roSgNode", "lockedOdds")      
+                  m.top.appendChild(obj)      
+                  data = {
+                        size: [width, height]
+                  }      
+                  obj.configdata = data    
+            else 
+                  animateProp(config, width, height)
+             end if
       end if
 
       m.roundedRect.width = width - 10
@@ -39,6 +50,14 @@ sub cellConfig(evn as object)
       m.roundedRect.translation = [5, 0]
 
 
+      ' m.top.appendChild(anim)
+      ' anim.translation = [2]
+
+
+end sub
+
+sub animateProp(config as object, width , height) 
+      
       if(config.streamAnim = "up")
             anim = CreateObject("roSGNode", "animationInidicatorUp")
             m.top.appendChild(anim)
@@ -48,8 +67,5 @@ sub cellConfig(evn as object)
             m.top.appendChild(anim)
             anim.translation = [width - 25, (height/2) -5]
       end if
-      ' m.top.appendChild(anim)
-      ' anim.translation = [2]
 
-
-end sub
+endsub

@@ -21,7 +21,7 @@
             <field id="marketData" type="assocArray" />
             <field id="present" type="string" />
             <field id="stream" type="string" />
-            <field id="placement" type="string" value="mid"/>
+            <field id="placement" type="string" value="right"/>
       </interface>
 
       <!-- <children> -->

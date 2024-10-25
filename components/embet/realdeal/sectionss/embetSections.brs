@@ -295,63 +295,45 @@ function getNextFocusIndex(key as string) as integer
       selectedchild = m.top.content.getChild(selectedIndex)
 
       ?"item focused =" selectedIndex
-      nextIndex = selectedIndex
-      if(key = "left") then
-
-            if(selectedchild.nodeType = m.nodeList.horizOdds) then
-                  if(selectedchild.placement = "away")
-                        propIndex = selectedIndex + 2
-                        if(canFocusIndex(propIndex) = true)
-                              nextIndex = propIndex
-                        end if
-                  else
-                        i = -1
-                  end if
-            end if
-
-            nextIndex -= 1
-      else if(key = "right") then
-            i = + 1
-            nextIndex += 1
-      else if(key = "up") then
-            nextIndex -= 3
-            i = -2
-      else if(key = "down") then
-            i = 2
-            nextIndex += 3
-      end if
-
-
-
-      focusable = m.top.content.getChild(nextIndex).canFocus
-
-      if(focusable = true)
-            return nextIndex
-      else return nextIndex + i
-      end if
-
+      return selectedIndex
 end function
 
 
 
 function onKeyEvent(key as string, press as boolean) as boolean
       handled = false
-      ?" "
 
       if(key = "down" and press = true) then
-            handled = true
+             handled = true
             jump = navigateDown()
-            ?"jump equqs" jump
+            ' ?"jump equqs" jump
 
-            m.top.jumptoitem = m.top.itemFocused + jump
+            if(jump <> invalid)
+                  m.top.jumptoitem = m.top.itemFocused + jump
+            end if
 
       else if(key = "up" and press = true) then
             handled = true
             jump = navigateUp()
-            if(jump <> invalid or jump>0) then
+            if(jump <> invalid or jump > 0) then
                   ?"jump = " jump
-                  m.top.jumptoitem =  m.top.itemFocused - jump
+                  m.top.jumptoitem = m.top.itemFocused - jump
             end if
+
+      else if(key = "left" and press = true) then
+            handled = true
+            jump = navigateLeft()
+            if(jump <> invalid)
+                  m.top.jumptoitem = m.top.itemFocused - jump
+            end if
+
+      else if(key = "right" and press = true) then
+            handled = true
+            jump = navigateRight()
+            if(jump <> invalid)
+                  m.top.jumptoitem = m.top.itemFocused + jump
+            end if
+
       end if
 
       return handled
