@@ -37,12 +37,10 @@ function navigateDown() as dynamic
                   nextItem = getCh(i)
                   if(nextItem.canFocus = true and nextItem.placement = obj.child.placement and (nextItem.nodeType = m.nodeList.vertOdds or nextItem.nodeType = m.nodeList.horizOdds))
                         found = true
-                        ?"fouind"
                         jump = j
                         exitwhile
                   else if (nextItem.canFocus = true and nextItem.nodeType = m.nodeList.vertOdds)
-                        found = true
-                          ?"fouinded"
+                        found = true    
                         jump = j
                         exitwhile
                   end if

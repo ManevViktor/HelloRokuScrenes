@@ -3,7 +3,7 @@ sub init()
       m.top.id = "markupEmbet"
       m.top.itemComponentName = "simpleBoxItems"
       m.top.numColumns = 3
-      m.top.numRows = 12
+      m.top.numRows = 8
       m.top.itemSize = [50, 50]
       m.top.itemSpacing = [0, 5]
       m.top.wrapDividerHeight = 0
@@ -24,6 +24,8 @@ sub init()
 
       ' showmarkupgrid()
       ' initLibrary2()
+      ?"m in embet section" m 
+      ?"m top in embet section" m.top 
 
 end sub
 
@@ -304,20 +306,24 @@ function onKeyEvent(key as string, press as boolean) as boolean
       handled = false
 
       if(key = "down" and press = true) then
-             handled = true
+            handled = true
             jump = navigateDown()
             ' ?"jump equqs" jump
 
-            if(jump <> invalid)
+            if(jump <> invalid and jump > 0)
                   m.top.jumptoitem = m.top.itemFocused + jump
+            else
+                  m.top.focusShouldChange = "disc"
             end if
 
       else if(key = "up" and press = true) then
             handled = true
             jump = navigateUp()
-            if(jump <> invalid or jump > 0) then
+            if(jump <> invalid and jump > 0) then
                   ?"jump = " jump
                   m.top.jumptoitem = m.top.itemFocused - jump
+            else
+                  m.top.focusShouldChange = "lost"
             end if
 
       else if(key = "left" and press = true) then
@@ -338,6 +344,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
       return handled
 end function
+
 
 sub onTimer()
 

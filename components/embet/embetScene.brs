@@ -20,10 +20,12 @@ sub init()
       m.bodyRect = m.top.findNode("embetOddsBodyInfo")
       m.oddsRect = m.top.findNode("oddsListRect")
       m.bodyTitle = m.top.findNode("embetOddsInformation")
+      m.disclaimer = m.top.findNode("embetDisclaimer")
 
       rect2 = m.headerText.boundingRect()
 
 
+      setupFocusGrid()
 
       '      m.clippingRect = rect
 
@@ -47,6 +49,40 @@ sub init()
       ' addTimer()
       initPubnubLib()
 
+      m.disclaimer.observeField("focusShouldChange", "navigateFocus")
+
+end sub
+
+sub setupFocusGrid()
+      m.sectionlist.observeField("focusShouldChange", "navigateFocus")
+end sub
+
+sub navigateFocus(evn as object)
+
+      nextItem = evn.getData()
+
+      if(nextItem = "disc")
+            focusDisclaimer()
+      else if (nextItem = "grid")
+            focusGrid()
+      else
+            loseFocus()
+      end if
+end sub
+
+sub loseFocus()
+    ?"lose focus"
+    
+end sub
+
+sub focusGrid()
+      m.sectionlist.setfocus(true)
+       ?"focus Grid"
+end sub
+
+sub focusDisclaimer()
+     ?"focus disclaimer"
+     m.disclaimer.setfocus(true)
 end sub
 
 
@@ -75,6 +111,7 @@ sub onPuBnubUpdate(event as object)
       end if
       m.historyData = m.updatecontent
       m.sectionlist = newMarkupgrid
+      setupFocusGrid()
 
       ' addTimer()
 
@@ -101,7 +138,9 @@ sub showmarkupgrid(extend as boolean)
       end if
 
       m.task = CreateObject("roSGNode", "JsonReader")
+      m.task.marketID = uri
       m.task.observeField("dataContent", "onNewData")
+
 
       m.task.control = "run"
 

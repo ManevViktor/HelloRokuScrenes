@@ -17,10 +17,10 @@ end sub
 
 	
 
-			<Rectangle id="bottomRectangle" color="0x000000" width="400" height="60">
+			<Rectangle id="bottomRectangle" color="0x000000" width="410" height="70">
 		
 					<ScrollableText id="exampleScrollableText22"
-	
+							 
 					                width="400"
 					                height="150"
 					                font="font:SmallestSystemFont"
@@ -36,26 +36,24 @@ end sub
 			           control="start">
 				<FloatFieldInterpolator id="colorchangeRectangle" key="[0.0, 1.0]" keyValue="[ 0, 500 ]" fieldToInterp="bottomRectangle.height" />
 			</Animation> -->
-
 			
 					<!-- <ParallelAnimation   id = "testParallelAnimation" duration="2"  control="start" > -->
 					<Animation id="R1Animation"
-					          control="start"
+					         
 					           repeat="false"
 					           duration="1.5"
 					           easeFunction="linear">
-						<Vector2DFieldInterpolator key="[0, 1]" keyValue="[ [1, 500], [1, 1] ]" fieldToInterp="bottomRectangle.translation" /> 
+						<Vector2DFieldInterpolator key="[0, 1]" keyValue="[ [1, 200], [1, 1] ]" fieldToInterp="bottomRectangle.translation" /> 
 						<!-- <FloatFieldInterpolator key="[0, 0.5, 1]" keyValue="[ 0.2, 1, 0.2 ]" fieldToInterp="bottomRectangle.opacity" /> -->
-						<FloatFieldInterpolator id="colorchangeRectangle" key="[0.0, 1.0]" keyValue="[ 0, 400 ]" fieldToInterp="bottomRectangle.height" />
+						<FloatFieldInterpolator id="colorchangeRectangle" key="[0.0, 1.0]" keyValue="[ 0, 200 ]" fieldToInterp="bottomRectangle.height" />
 					</Animation>
 
-					<Animation id="R2Animation"
-					          control="start"
+					<Animation id="R2Animation" 
 					           repeat="false"
 					           duration="1.5"
 					           easeFunction="linear">
 						<!-- <FloatFieldInterpolator key="[0, 0.5, 1]" keyValue="[ 0.2, 1, 0.2 ]" fieldToInterp="bottomRectangle.opacity" /> -->
-						<FloatFieldInterpolator id="colorchangeRectangle25" key="[0.0, 1.0]" keyValue="[ 0, 400 ]" fieldToInterp="exampleScrollableText22.height" />
+						<FloatFieldInterpolator id="colorchangeRectangle25" key="[0.0, 1.0]" keyValue="[ 0, 200 ]" fieldToInterp="exampleScrollableText22.height" />
 					</Animation>
 
 					

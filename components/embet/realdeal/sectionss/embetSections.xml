@@ -14,6 +14,8 @@
     <field id="jsonData" type="assocArray" onChange="jsonUpdate" />
     <field id="historyData" type="assocArray" />
     <field id="configCache" type="assocArray" />
+
+     <field id="focusShouldChange" type="string" alwaysNotify="true" />
   </interface>
 
   <children ></children>
