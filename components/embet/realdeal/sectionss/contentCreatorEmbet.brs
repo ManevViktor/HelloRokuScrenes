@@ -74,7 +74,7 @@ function parseEmbetContent(jsondata as object, history as object) as object
                               wid = (totalWidth / factor) - 2
                               cell.nodeType = nodesCollection.horizOdds
                               cell.canFocus = true
-                              ' compareOutcomes(cell, history)
+                               compareOutcomes(cell, history)
                               
                               ' if(cell.marketData.isSuspended = true)
                               '       cell.nodeType = nodesCollection.locked
