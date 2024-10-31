@@ -47,7 +47,7 @@ sub init()
 
       showmarkupgrid(false)
       ' addTimer()
-      initPubnubLib()
+      ' initPubnubLib()
 
       m.disclaimer.observeField("focusShouldChange", "navigateFocus")
 
@@ -72,6 +72,9 @@ end sub
 
 sub loseFocus()
     ?"lose focus"
+    m.sectionlist.setfocus(false)
+    m.disclaimer.setfocus(false)
+    m.top.focusChanged = "unfocused"
     
 end sub
 
@@ -195,15 +198,15 @@ sub redraw()
 end sub
 
 sub onFocusedChildChange()
-      ' if m.top.focusedChild = invalid
-      '       ?"embet sending event unfocused"
-      '       m.top.focusChanged = "unfocused"
-      ' else
-      '       if(m.oddsListItems.hasFocus() = false) then
-      '             m.oddsListItems.setfocus(true)
-      '       end if
-      '       m.top.focusChanged = "focused"
-      ' end if
+      if m.top.focusedChild = invalid
+            ?"embet sending event unfocused"
+            ' m.top.focusChanged = "unfocused"
+      else
+            if(m.sectionlist.hasFocus() = false and m.disclaimer.hasFocus() = false) then
+                  m.sectionlist.setfocus(true)
+            end if
+            m.top.focusChanged = "focused"
+      end if
 end sub
 
 

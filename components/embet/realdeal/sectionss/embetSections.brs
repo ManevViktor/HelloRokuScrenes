@@ -16,7 +16,8 @@ sub init()
       m.top.observeField("itemFocused", "onItemFocused")
 
 
-      ?"mblobal =  "m.global.embetSDK.widgetSize
+      ?"mblobal size =  "m.global.embetSDK.widgetSize
+      ?"mblobal debug" m.global.embetSDK
 
       m.top.configCache = {}
       m.nodeList = node_types()
@@ -24,8 +25,6 @@ sub init()
 
       ' showmarkupgrid()
       ' initLibrary2()
-      ?"m in embet section" m 
-      ?"m top in embet section" m.top 
 
 end sub
 
@@ -339,6 +338,9 @@ function onKeyEvent(key as string, press as boolean) as boolean
             if(jump <> invalid)
                   m.top.jumptoitem = m.top.itemFocused + jump
             end if
+
+      else if(key = "back" and press = true)
+            m.top.focusShouldChange = "lost"
 
       end if
 

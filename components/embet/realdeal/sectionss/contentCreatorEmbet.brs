@@ -13,7 +13,7 @@ function parseEmbetContent(jsondata as object, history as object) as object
 
       totalWidth = size[0]
       factor = 3.7
-      ?"total width"
+      ?"total width" totalWidth
 
       widths = []
       heights = [50]
@@ -74,7 +74,7 @@ function parseEmbetContent(jsondata as object, history as object) as object
                               wid = (totalWidth / factor) - 2
                               cell.nodeType = nodesCollection.horizOdds
                               cell.canFocus = true
-                              compareOutcomes(cell, history)
+                              ' compareOutcomes(cell, history)
                               
                               ' if(cell.marketData.isSuspended = true)
                               '       cell.nodeType = nodesCollection.locked
@@ -115,11 +115,18 @@ function parseEmbetContent(jsondata as object, history as object) as object
                               cell.width = (totalWidth / factor) - 2
                               cell.nodeType = nodesCollection.vertOdds
                               cell.text = market.marketoptions[kl / 2].odds
+                              cell.marketData = createVerticalMarketData(market, kl/2)
                               cell.num = StrToI(market.marketoptions[kl / 2].description)
                               cell.height = 45
                               setstyle(cell)
                               cell.canFocus = true
                               cell.placement = "right"
+                              if(history <> invalid)
+                              compareOutcomes(cell, history)
+                              endif
+                              ' ?"vertical now "cell.marketData
+                              ' ?"history vertical = " history
+                              ' ?"compared vertical" cell.stream 
                               y++
 
                         else
@@ -247,22 +254,15 @@ sub compareOutcomes(newCell as object, history as object)
 
       if(newCell <> invalid and newCell.marketData <> invalid)
             historyMarket = findCurrentMarket(history, newCell)
-
             historyOdds = findHistoryOdds(historyMarket, newCell)
 
-
             if(historyOdds <> invalid)
-
-                  ?"current market = " historyMarket
-                  ?"history odds =" historyOdds
-
                   newCell.stream = compareOdds(historyOdds.odds, newCell.marketData.odds)
-                  ?"compare odds = "newCell.stream
             end if
 
       end if
 
-      ?"cell stream" newCell.stream
+    
 end sub
 
 function findCurrentMarket(historyJson as object, newCell as object)
@@ -270,6 +270,7 @@ function findCurrentMarket(historyJson as object, newCell as object)
       this = invalid
 
       if(historyJson <> invalid and newCell <> invalid and newCell.marketData <> invalid)
+           
             for each item in historyJson.betDetails
                   if(item.marketID = newCell.marketData.marketID)
                         this = item
@@ -302,8 +303,6 @@ function compareOdds(historyodds, newCellOdss) as dynamic
 
       old = historyodds.toFloat()
       new = newCellOdss.toFloat()
-      ?"history odd" old
-      ?"new odd" new
 
       if(old > new)
             return "down"

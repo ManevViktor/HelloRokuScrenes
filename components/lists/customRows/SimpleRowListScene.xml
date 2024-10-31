@@ -5,6 +5,7 @@
 <component name="SimpleRowListScene" extends="Scene">
 
     <script type="text/brightscript" uri="pkg:/components/lists/customRows/simpleRowListScene.brs" />
+    <script type="text/brightscript" uri="../../embet/odds/util.brs" />
 
 
     <children>

@@ -14,16 +14,20 @@
 
 	
 
-            <Rectangle id="bottomRectangle" color="0x212121" width="405" height="75">
+            <Rectangle id="bottomRectangle" color="0x212121" translation="[2,0]" width="405" height="75">
+                <Label id="discTitle"
+                visible = "false"
+                 text = "title"
+                   font="font:SmallestSystemFont"
+                   translation="[15,10]"
+                />
 
 
 		
                   <Label id="discLabel"
                          translation="[15,15]"
                          width="350"
-                         maxWidth="350"
-                         height="70"
-                         renderTracking="full"
+                         height="50"
                          wrap="true"
                          font="font:SmallestSystemFont"
                          text="To the maximum extent permitted by applicable law, in no event shall  or its affiliates, partners, directors, employees, or agents be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the services; (ii) any conduct or content of any third party on the services; (iii) any content obtained from the services; and (iv) unauthorized access, use, or alteration of your transmissions or content. In no event shall the aggregate liability of [Company Name] exceed the greater of one hundred U.S. dollars (US $100) or the amount you paid [Company Name], if any, in the past six months for the services giving rise to the claim."
@@ -41,7 +45,7 @@
 			
             <!-- <ParallelAnimation   id = "testParallelAnimation" duration="2"  control="start" > -->
             <Animation id="ExpandAnimation" repeat="false" duration="0.5" easeFunction="linear">
-                  <Vector2DFieldInterpolator key="[0, 1]" keyValue="[ [1, 0], [1, -152] ]" fieldToInterp="bottomRectangle.translation" /> 
+                  <Vector2DFieldInterpolator key="[0, 1]" keyValue="[ [2, 0], [2, -152] ]" fieldToInterp="bottomRectangle.translation" /> 
                   <!-- <FloatFieldInterpolator key="[0, 0.5, 1]" keyValue="[ 0.2, 1, 0.2 ]" fieldToInterp="bottomRectangle.opacity" /> -->
                   <FloatFieldInterpolator id="colorchangeRectangle" key="[0.0, 1.0]" keyValue="[ 70, 230 ]" fieldToInterp="bottomRectangle.height" />
                   <FloatFieldInterpolator id="colorchangeRectangle25" key="[0.0, 1.0]" keyValue="[ 70, 200 ]" fieldToInterp="discLabel.height" />
@@ -49,7 +53,7 @@
 
             <Animation id="collapseAnimation" repeat="false" duration="0.5" easeFunction="linear">
                   <!-- <FloatFieldInterpolator key="[0, 0.5, 1]" keyValue="[ 0.2, 1, 0.2 ]" fieldToInterp="bottomRectangle.opacity" /> -->
-                  <Vector2DFieldInterpolator key="[0, 1]" keyValue="[ [0, -152], [0,0 ] ]" fieldToInterp="bottomRectangle.translation" /> 
+                  <Vector2DFieldInterpolator key="[0, 1]" keyValue="[ [2, -152], [2,0 ] ]" fieldToInterp="bottomRectangle.translation" /> 
                   <!-- <FloatFieldInterpolator key="[0, 0.5, 1]" keyValue="[ 0.2, 1, 0.2 ]" fieldToInterp="bottomRectangle.opacity" /> -->
                   <FloatFieldInterpolator id="colorchangeRectangle" key="[0.0, 1.0]" keyValue="[ 230 , 70]" fieldToInterp="bottomRectangle.height" />
                   <FloatFieldInterpolator id="colorchangeRectangle25" key="[0.0, 1.0]" keyValue="[  200, 70 ]" fieldToInterp="discLabel.height" />

@@ -30,9 +30,6 @@
                          font="font:SmallestSystemFont">
                         
                   </Label>
-
-
-                          <animationInidicatorUp translation="[80,15]" />     
                                    
             </Rectangle>
           

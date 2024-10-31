@@ -2,16 +2,16 @@ function init()
       m.theRowList = m.top.FindNode("theRowList")
 
       ' m.label = m.top.FindNode("exampleScrollableText")
-      ' m.btn = m.top.FindNode("btn1")
+       m.btn = m.top.FindNode("btn1")
 
 
       ' ' addTask()
       rect = CreateObject("roSGNode", "Rectangle")
-      rect.width = 410
+      rect.width = 320
       rect.height = 750
       rect.color = "0x000000"
 
-      SDK = {
+      sdk = {
 
             config: {
                   client: "",
@@ -20,18 +20,27 @@ function init()
             widgetSize: [410, 600]
       }
 
-      m.global.addfields({ embetSDK: sdk })
+
+
+      m.global.addFields({ embetSDK: sdk })
+      obj = m.global.getField("embetSDK")
+      ' m.global.embetSDK.setField("debug". true)
+      ?"obj get field" obj
+      obj.hey = true
+      m.global.setfield("embetSDK", obj)
+      ?"m.global row list" m.global.embetSDK
+      ?"m.global row" m.global
 
       ' m.sections = CreateObject("roSGNode", "embetSections")
       ' rect.translation = "[800,150]"
 
       er = CreateObject("rosgNode", "rectangleanimationScene")
       m.top.appendChild(er)
-      er.translation = [900,400]
+      er.translation = [900, 400]
 
       ' nodeFoucs = m.top.FindNode("exampleScrollableText22")
 
-'      er.setfocus(true)
+      '      er.setfocus(true)
 
       ' '  m.label.setfocus(true)
       ' m.top.appendChild(rect)
@@ -47,7 +56,7 @@ function init()
       ' m.top.appendChild(rect2)
       ' rect2.translation = [50,400]
       '  rect2.setFocus(true)
-        addEmbet()
+      addEmbet()
       '   nodeFoucs.setfocus(true)
 
       ' child = CreateObject("roSgNode", "animationInidicatorUp")
@@ -151,20 +160,20 @@ end sub
 
 function onKeyEvent(key as string, press as boolean) as boolean
 
-      ' if(press = true) then
-      '       if(m.btn.hasFocus() = true) then
-      '             m.embetUI.setfocus(true)
-      '       end if
-      ' end if
-      ' ?"on key smlrkss " key
-      return false
+     
+      if(press = true) then
+             ?"keypress scene" key
+            if(m.btn.hasFocus() = true) then
+                  m.embetUI.setfocus(true)
+            end if
+      end if
+      return true
 end function
 
 function onFocusChanged()
-      ' if(m.embetUI.focusChanged = "unfocused") then
-      '       m.btn.setfocus(true)
-      ' end if
-      ' ?" onFocusChanged" m.embetUI.focusChanged
-      ' return focus to your own components
+      if(m.embetUI.focusChanged = "unfocused") then
+            m.btn.setfocus(true)
+      end if
+      ?" onFocusChanged" m.embetUI.focusChanged
 
 end function
