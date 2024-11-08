@@ -28,7 +28,7 @@ function navigateDown() as dynamic
 
       jump = 0
       found = invalid
-      ?"count" obj.childCount
+      ' ?"count" obj.childCount
    
             j = 0
             i = m.top.itemFocused +1
@@ -48,7 +48,7 @@ function navigateDown() as dynamic
 
             end while
    
-      ?"jump = " jump
+      ' ?"jump = " jump
       return jump
 
 end function
@@ -74,7 +74,7 @@ function navigateUp() as dynamic
 
             end if
       end while
-      ?"navigate up = " jump
+      ' ?"navigate up = " jump
       return jump
 end function
 
@@ -83,7 +83,6 @@ function navigateLeft() as dynamic
       jump = invalid
 
       if(obj.type = "horizOdds" and obj.child.placement = "right")
-            ?"left correct"
             jump = 2
       end if
 

@@ -16,8 +16,8 @@ sub init()
       m.top.observeField("itemFocused", "onItemFocused")
 
 
-      ?"mblobal size =  "m.global.embetSDK.widgetSize
-      ?"mblobal debug" m.global.embetSDK
+      ' ?"mblobal size =  "m.global.embetSDK.widgetSize
+      ' ?"mblobal debug" m.global.embetSDK
 
       m.top.configCache = {}
       m.nodeList = node_types()
@@ -319,7 +319,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
             handled = true
             jump = navigateUp()
             if(jump <> invalid and jump > 0) then
-                  ?"jump = " jump
+                  ' ?"jump = " jump
                   m.top.jumptoitem = m.top.itemFocused - jump
             else
                   m.top.focusShouldChange = "lost"
@@ -340,6 +340,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
             end if
 
       else if(key = "back" and press = true)
+            handled = true
             m.top.focusShouldChange = "lost"
 
       end if

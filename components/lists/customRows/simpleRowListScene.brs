@@ -17,50 +17,25 @@ function init()
                   client: "",
                   id: ""
             }
-            widgetSize: [410, 600]
+            widgetSize: [480, 600]
       }
 
 
 
-      m.global.addFields({ embetSDK: sdk })
-      obj = m.global.getField("embetSDK")
+      ' m.global.addFields({ embetSDK: sdk })
+      ' obj = m.global.getField("embetSDK")
       ' m.global.embetSDK.setField("debug". true)
-      ?"obj get field" obj
-      obj.hey = true
-      m.global.setfield("embetSDK", obj)
-      ?"m.global row list" m.global.embetSDK
-      ?"m.global row" m.global
+      ' ?"obj get field" obj
+      ' obj.hey = true
+      ' m.global.setfield("embetSDK", obj)
+      ' ?"m.global row list" m.global.embetSDK
+      ' ?"m.global row" m.global
 
-      ' m.sections = CreateObject("roSGNode", "embetSections")
-      ' rect.translation = "[800,150]"
 
-      er = CreateObject("rosgNode", "rectangleanimationScene")
-      m.top.appendChild(er)
-      er.translation = [900, 400]
 
       ' nodeFoucs = m.top.FindNode("exampleScrollableText22")
 
-      '      er.setfocus(true)
-
-      ' '  m.label.setfocus(true)
-      ' m.top.appendChild(rect)
-
-      ' rect.appendChild(m.sections)
-      ' m.sections.setFocus(true)
-
-
-      ' showmarkupgrid()
-
-
-      ' rect2 = CreateObject("roSGNode", "maskScroll")
-      ' m.top.appendChild(rect2)
-      ' rect2.translation = [50,400]
-      '  rect2.setFocus(true)
       addEmbet()
-      '   nodeFoucs.setfocus(true)
-
-      ' child = CreateObject("roSgNode", "animationInidicatorUp")
-      ' m.top.appendChild(child)
 
 end function
 
@@ -88,7 +63,7 @@ sub time()
       m.timer.repeat = true
       m.timer.duration = 10
       m.timer.ObserveField("fire", "onDataTimer")
-      m.timer.control = "start"
+      ' m.timer.control = "start"
 
 end sub
 
@@ -117,7 +92,7 @@ sub addEmbet()
 
       if screenSize <> invalid then
             ' For this POC the size of the widget is fixed for next release you will be able to change the size
-            widgetWidth = 400
+            widgetWidth = 490
             widgetX = (screenSize.w - widgetWidth)
             padding = { x: 15, y: 15 }
             m.embetUI.translation = [widgetx - padding.x, padding.y]

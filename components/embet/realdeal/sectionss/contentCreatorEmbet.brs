@@ -11,7 +11,7 @@ function parseEmbetContent(jsondata as object, history as object) as object
 
       size = m.global.embetSDK.widgetSize
 
-      totalWidth = size[0]
+      totalWidth = 480
       factor = 3.7
       ?"total width" totalWidth
 
@@ -59,7 +59,7 @@ function parseEmbetContent(jsondata as object, history as object) as object
                         setstyle(cell)
 
                         if(i = 1) then
-                              ?"cell bound rect"
+                              
                               wid = totalWidth - (totalWidth / factor * 2)
                               cell.nodeType = nodesCollection.horizMarket
                               cell.canFocus = false

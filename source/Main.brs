@@ -19,7 +19,6 @@ sub Main()
     ' scene = screen.CreateScene("rectangleanimationScene")
     screen.show()
 
-    ?"Mod = "5 mod 3
 
 
     print "global bounds"scene.boundingRect()

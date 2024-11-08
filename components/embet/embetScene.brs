@@ -15,7 +15,7 @@ sub init()
       m.headerText = m.top.findNode("embetOddsHeaderText")
       m.root = m.top.findNode("embetOddsRoot")
       m.list = m.top.findNode("embetOddsList")
-      m.sectionlist = m.top.findNode("embetSectionsList")
+      ' m.sectionlist = m.top.findNode("embetSectionsList")
       m.headerRect = m.top.findNode("embetOddsHeader")
       m.bodyRect = m.top.findNode("embetOddsBodyInfo")
       m.oddsRect = m.top.findNode("oddsListRect")
@@ -23,6 +23,26 @@ sub init()
       m.disclaimer = m.top.findNode("embetDisclaimer")
 
       rect2 = m.headerText.boundingRect()
+
+      
+      sdk = {
+
+            config: {
+                  client: "",
+                  id: ""
+            }
+            widgetSize: [480, 600]
+      }
+
+
+
+      m.global.addFields({ embetSDK: sdk })
+
+
+      grid = CreateObject("roSgNode", "embetSections")
+      grid.id = "embetSectionsList"
+      m.sectionlist = grid
+      m.oddsRect.appendChild(m.sectionlist)
 
 
       setupFocusGrid()
@@ -51,6 +71,8 @@ sub init()
 
       m.disclaimer.observeField("focusShouldChange", "navigateFocus")
 
+      ' initLibrary()
+
 end sub
 
 sub setupFocusGrid()
@@ -71,21 +93,24 @@ sub navigateFocus(evn as object)
 end sub
 
 sub loseFocus()
-    ?"lose focus"
-    m.sectionlist.setfocus(false)
-    m.disclaimer.setfocus(false)
-    m.top.focusChanged = "unfocused"
-    
+      ?"lose focus"
+      if(m.sectionlist.hasFocus() = true)
+            m.sectionlist.setfocus(false)
+      else if(m.disclaimer.hasFocus() = true)
+            m.disclaimer.setfocus(false)
+      end if
+      ' m.top.focusChanged = "unfocused"
+
 end sub
 
 sub focusGrid()
       m.sectionlist.setfocus(true)
-       ?"focus Grid"
+      ?"focus Grid"
 end sub
 
 sub focusDisclaimer()
-     ?"focus disclaimer"
-     m.disclaimer.setfocus(true)
+      ?"focus disclaimer"
+      m.disclaimer.setfocus(true)
 end sub
 
 
@@ -199,8 +224,8 @@ end sub
 
 sub onFocusedChildChange()
       if m.top.focusedChild = invalid
-            ?"embet sending event unfocused"
-            ' m.top.focusChanged = "unfocused"
+          
+             m.top.focusChanged = "unfocused"
       else
             if(m.sectionlist.hasFocus() = false and m.disclaimer.hasFocus() = false) then
                   m.sectionlist.setfocus(true)

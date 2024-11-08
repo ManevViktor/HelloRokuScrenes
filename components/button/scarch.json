@@ -1,0 +1,355 @@
+{
+      "betDetails": [
+            {
+                  "description": "MONEYLINE",
+                  "marketId": "sr:market:219",
+                  "marketName": "MONEYLINE",
+                  "marketOptions": [
+                        {
+                              "description": "NYK",
+                              "isSuspended": false,
+                              "odds": "-265",
+                              "outcomeId": "sr:outcome:5",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0ML77369076_3\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0ML77369076_3\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0ML77369076_3\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0ML77369076_3",
+                              "imageUrl": "https://hp4c5bzmw0.execute-api.eu-central-1.amazonaws.com/public/b3421_50x50.png",
+                              "state": "live"
+                        },
+                        {
+                              "description": "DET",
+                              "isSuspended": false,
+                              "odds": "+215",
+                              "outcomeId": "sr:outcome:4",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0ML77369076_1\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0ML77369076_1\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0ML77369076_1\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0ML77369076_1",
+                              "imageUrl": "https://hp4c5bzmw0.execute-api.eu-central-1.amazonaws.com/public/b3424_50x50.png",
+                              "state": "live"
+                        }
+                  ],
+                  "presentation": "horizontal"
+            },
+            {
+                  "description": "SPREAD",
+                  "marketId": "sr:market:223",
+                  "marketName": "SPREAD",
+                  "marketOptions": [
+                        {
+                              "description": "NYK (-6.5)",
+                              "isSuspended": false,
+                              "odds": "-108",
+                              "outcomeId": "sr:outcome:1715",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0HC77369076N650_3\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0HC77369076N650_3\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0HC77369076N650_3\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0HC77369076N650_3",
+                              "imageUrl": "https://hp4c5bzmw0.execute-api.eu-central-1.amazonaws.com/public/b3421_50x50.png",
+                              "state": "live"
+                        },
+                        {
+                              "description": "DET (+6.5)",
+                              "isSuspended": false,
+                              "odds": "-112",
+                              "outcomeId": "sr:outcome:1714",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0HC77369076P650_1\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0HC77369076P650_1\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0HC77369076P650_1\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0HC77369076P650_1",
+                              "imageUrl": "https://hp4c5bzmw0.execute-api.eu-central-1.amazonaws.com/public/b3424_50x50.png",
+                              "state": "live"
+                        }
+                  ],
+                  "presentation": "horizontal"
+            },
+            {
+                  "description": "TOTAL",
+                  "marketId": "sr:market:225",
+                  "marketName": "TOTAL",
+                  "marketOptions": [
+                        {
+                              "description": "O 216",
+                              "isSuspended": false,
+                              "odds": "-110",
+                              "outcomeId": "sr:outcome:12",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77369076O21600_1\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77369076O21600_1\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77369076O21600_1\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77369076O21600_1",
+                              "state": "live"
+                        },
+                        {
+                              "description": "U 216",
+                              "isSuspended": false,
+                              "odds": "-110",
+                              "outcomeId": "sr:outcome:13",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77369076U21600_3\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77369076U21600_3\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77369076U21600_3\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77369076U21600_3",
+                              "state": "live"
+                        }
+                  ],
+                  "presentation": "horizontal"
+            },
+            {
+                  "description": "1st half - total",
+                  "marketId": "sr:market:68",
+                  "marketName": "1st half - total",
+                  "marketOptions": [
+                        {
+                              "description": "O 110",
+                              "isSuspended": false,
+                              "odds": "-112",
+                              "outcomeId": "sr:outcome:12",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378808O11000_1\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378808O11000_1\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378808O11000_1\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378808O11000_1",
+                              "state": "live"
+                        },
+                        {
+                              "description": "U 110",
+                              "isSuspended": false,
+                              "odds": "-108",
+                              "outcomeId": "sr:outcome:13",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378808U11000_3\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378808U11000_3\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378808U11000_3\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378808U11000_3",
+                              "state": "live"
+                        }
+                  ],
+                  "presentation": "vertical"
+            },
+            {
+                  "description": "1st quarter - total",
+                  "marketId": "sr:market:236",
+                  "marketName": "1st quarter - total",
+                  "marketOptions": [
+                        {
+                              "description": "O 54.5",
+                              "isSuspended": false,
+                              "odds": "-118",
+                              "outcomeId": "sr:outcome:12",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378804O5450_1\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378804O5450_1\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378804O5450_1\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378804O5450_1",
+                              "state": "live"
+                        },
+                        {
+                              "description": "U 54.5",
+                              "isSuspended": false,
+                              "odds": "-102",
+                              "outcomeId": "sr:outcome:13",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378804U5450_3\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378804U5450_3\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378804U5450_3\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0OU77378804U5450_3",
+                              "state": "live"
+                        }
+                  ],
+                  "presentation": "vertical"
+            },
+            {
+                  "description": "1st quarter - race to 10 points",
+                  "marketId": "sr:market:305",
+                  "marketName": "1st quarter - race to 10 points",
+                  "marketOptions": [
+                        {
+                              "description": "NEW YORK KNICKS",
+                              "isSuspended": false,
+                              "odds": "-150",
+                              "outcomeId": "sr:outcome:5",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0QA220139962%2378509421_15L42648Q11368774353Q20\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0QA220139962%2378509421_15L42648Q11368774353Q20\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0QA220139962%2378509421_15L42648Q11368774353Q20\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0QA220139962%2378509421_15L42648Q11368774353Q20",
+                              "imageUrl": "https://hp4c5bzmw0.execute-api.eu-central-1.amazonaws.com/public/b3421_50x50.png",
+                              "state": "live"
+                        },
+                        {
+                              "description": "DETROIT PISTONS",
+                              "isSuspended": false,
+                              "odds": "+120",
+                              "outcomeId": "sr:outcome:4",
+                              "url": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0QA220139962%2378509420_13L42648Q11492576237Q20\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0QA220139962%2378509420_13L42648Q11492576237Q20\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0QA220139962%2378509420_13L42648Q11492576237Q20\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592%3Foutcomes%3D0QA220139962%2378509420_13L42648Q11492576237Q20",
+                              "imageUrl": "https://hp4c5bzmw0.execute-api.eu-central-1.amazonaws.com/public/b3424_50x50.png",
+                              "state": "live"
+                        }
+                  ],
+                  "presentation": "vertical"
+            }
+      ],
+      "labels": {
+            "information": "Game Odds",
+            "disclaimerTitle": "Responsible Gaming",
+            "disclaimerDescription": "GAMBLING PROBLEM? CALL 1-800-GAMBLER, (800) 327-5050 or visit gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY).\nPlease Gamble Responsibly. 888-789-7777/visit ccpg.org (CT), or visit www.mdgamblinghelp.org (MD).\n21+ and present in most states. (18+ DC/KY/NH/WY). Void in ONT. Eligibility restrictions apply. Terms:draftkings.com/sportsbook. On behalf of Boot Hill Casino \u0026 Resort (KS).",
+            "disclaimerDescriptionCollapsed": "GAMBLING PROBLEM? CALL 1-800-GAMBLER. Call 877-8-HOPENY/text HOPENY (467369) (NY). 21+ and present in most jurisdictions. Eligibility restrictions apply. Click for full Responsible Gaming information.",
+            "qrBetMessage": "Scan to place bet"
+      },
+      "placeBetLabel": "Place Bet on Sportsbook",
+      "placeBetUrl": "https://dksb.sng.link/As9kz/qtp6?pcid=267344\u0026psn=2397\u0026pcn=Widget\u0026pscn=LeaguePassStream\u0026pcrn=BettingOdds\u0026pscid=xx\u0026pcrid=xx\u0026wpcid=267344\u0026wpsrc=2397\u0026wpcn=Widget\u0026wpscn=LeaguePassStream\u0026wpcrn=BettingOdds\u0026wpscid=xx\u0026wpcrid=xx\u0026_forward_params=1\u0026_ios_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592\u0026_android_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592\u0026_dl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592\u0026_fallback_redirect=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F31300592",
+      "timer": "bar",
+      "resize": true,
+      "sportsbookLogoUrl": "https://stg-cdn.embet-nonprod.sportradar.dev/images/4/draftkings-01-1706992381.png",
+      "theme": {
+            "widgets": {
+                  "odds": {
+                        "accessoryButton": {
+                              "color": "#FFFFFF"
+                        },
+                        "betButton": {
+                              "background": {
+                                    "color": "#00000000",
+                                    "format": "fill"
+                              },
+                              "borderColor": "#D65773",
+                              "fontColor": "#FFFFFF",
+                              "fontFamily": "Roboto",
+                              "fontSize": 16,
+                              "fontWeight": "bold"
+                        },
+                        "betButtonIcon": {
+                              "color": "#00000000"
+                        },
+                        "body": {
+                              "background": {
+                                    "color": "#000000",
+                                    "format": "fill"
+                              },
+                              "fontColor": "#FFFFFF",
+                              "fontSize": 16,
+                              "fontWeight": "normal",
+                              "padding": [
+                                    0,
+                                    16,
+                                    0,
+                                    16
+                              ]
+                        },
+                        "disclaimer": {
+                              "fontColor": "#FFFFFF",
+                              "fontFamily": "Roboto",
+                              "fontSize": 16,
+                              "fontWeight": "bold"
+                        },
+                        "disclaimerDescription": {
+                              "fontColor": "#A4A7AE",
+                              "fontFamily": "Roboto",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                        },
+                        "footer": {
+                              "background": {
+                                    "color": "#000",
+                                    "format": "fill"
+                              }
+                        },
+                        "header": {
+                              "background": {
+                                    "color": "#00000000",
+                                    "format": "fill"
+                              },
+                              "fontColor": "#FFFFFF",
+                              "fontFamily": "Roboto",
+                              "fontSize": 16,
+                              "fontWeight": "bold",
+                              "margin": [
+                                    0,
+                                    0,
+                                    3,
+                                    0
+                              ]
+                        },
+                        "indicator": {
+                              "size": "8px"
+                        },
+                        "lockIcon": {
+                              "color": "#FFFFFF"
+                        },
+                        "optionRow": {
+                              "background": {
+                                    "color": "#00000000",
+                                    "format": "fill"
+                              },
+                              "fontColor": "#FFFFFF",
+                              "fontFamily": "Roboto",
+                              "fontSize": 14,
+                              "fontWeight": "bold",
+                              "padding": [
+                                    12,
+                                    8,
+                                    12,
+                                    8
+                              ]
+                        },
+                        "optionRowVertical": {
+                              "fontSize": 16,
+                              "fontWeight": "bold"
+                        },
+                        "root": {
+                              "background": {
+                                    "color": "#000000",
+                                    "format": "fill"
+                              }
+                        },
+                        "selectedOption": {
+                              "background": {
+                                    "color": "#00000000",
+                                    "format": "fill"
+                              },
+                              "borderColor": "#FFFFFF",
+                              "borderRadius": [
+                                    3,
+                                    3,
+                                    3,
+                                    3
+                              ],
+                              "borderWidth": 1,
+                              "fontColor": "#FFF",
+                              "fontSize": 14,
+                              "fontWeight": "bold",
+                              "padding": [
+                                    3,
+                                    3,
+                                    3,
+                                    3
+                              ]
+                        },
+                        "selectedOptionDescription": {
+                              "color": "#A4A7AE",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                        },
+                        "separator": {
+                              "color": "#00000000"
+                        },
+                        "teamName": {
+                              "fontColor": "#A4A7AE",
+                              "fontSize": 12
+                        },
+                        "unselectedOption": {
+                              "background": {
+                                    "color": "#00000000",
+                                    "format": "fill"
+                              },
+                              "borderColor": "#3D414A90",
+                              "borderRadius": [
+                                    3,
+                                    3,
+                                    3,
+                                    3
+                              ],
+                              "borderWidth": 1,
+                              "fontColor": "#FFF",
+                              "fontSize": 14,
+                              "fontWeight": "bold",
+                              "padding": [
+                                    3,
+                                    3,
+                                    3,
+                                    3
+                              ]
+                        },
+                        "unselectedOptionDescription": {
+                              "color": "#A4A7AE",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                        }
+                  }
+            }
+      },
+      "widgetType": "live-odds",
+      "widgetVariation": "odds-tv",
+      "segmentation": {
+            "and": [
+                  {
+                        "==": [
+                              {
+                                    "var": "bookmaker"
+                              },
+                              "draftkings"
+                        ]
+                  },
+                  {
+                        "==": [
+                              {
+                                    "var": "platform"
+                              },
+                              "tv"
+                        ]
+                  }
+            ]
+      }
+}

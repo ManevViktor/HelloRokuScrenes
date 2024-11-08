@@ -6,6 +6,7 @@ sub init()
       m.discCollassed = m.top.findNode("discCollassed")
       m.expandAnim = m.top.findNode("expandAnimation")
       m.collapseAnim = m.top.findNode("collapseAnimation")
+      m.imageChevron = m.top.findNode("embetChevron")
       m.top.observeField("focusedChild", "onFocusChange")
 
       m.discLabel.font.size = 14
@@ -14,12 +15,15 @@ end sub
 
 sub onFocusChange()
 
+
       if(m.top.isInFocusChain())
             m.expandAnim.control = "start"
             m.rootRect.color = "0xa9A9A94D"
+            m.imageChevron.uri = "pkg:/images/chevron_down.png"
       else
             m.collapseAnim.control = "start"
-            m.rootRect.color = "0x212121"
+            m.rootRect.color = "0x2121214D"
+            m.imageChevron.uri = "pkg:/images/odds/chevron_up_white.png"
       end if
 
 end sub
