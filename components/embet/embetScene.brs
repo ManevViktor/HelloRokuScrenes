@@ -15,7 +15,7 @@ sub init()
       m.headerText = m.top.findNode("embetOddsHeaderText")
       m.root = m.top.findNode("embetOddsRoot")
       m.list = m.top.findNode("embetOddsList")
-      ' m.sectionlist = m.top.findNode("embetSectionsList")
+       m.sectionlist = m.top.findNode("embetSectionsList")
       m.headerRect = m.top.findNode("embetOddsHeader")
       m.bodyRect = m.top.findNode("embetOddsBodyInfo")
       m.oddsRect = m.top.findNode("oddsListRect")
@@ -39,10 +39,10 @@ sub init()
       m.global.addFields({ embetSDK: sdk })
 
 
-      grid = CreateObject("roSgNode", "embetSections")
-      grid.id = "embetSectionsList"
-      m.sectionlist = grid
-      m.oddsRect.appendChild(m.sectionlist)
+      ' grid = CreateObject("roSgNode", "embetSections")
+      ' grid.id = "embetSectionsList"
+      ' m.sectionlist = grid
+      ' m.oddsRect.appendChild(m.sectionlist)
 
 
       setupFocusGrid()
@@ -67,7 +67,7 @@ sub init()
 
       showmarkupgrid(false)
       ' addTimer()
-      ' initPubnubLib()
+        initPubnubLib()
 
       m.disclaimer.observeField("focusShouldChange", "navigateFocus")
 

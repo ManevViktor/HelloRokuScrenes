@@ -65,7 +65,7 @@
                        color="0x000000">
                 <!-- <oddsBodylist id="embetOddsList" focusable="true" /> -->
                 <!-- <embetMarkUP id="exampleMarkupGrid" />  -->
-                <!-- <embetSections id="embetSectionsList" /> -->
+                <embetSections id="embetSectionsList" />
             
                 <embetDisclaimer id="embetDisclaimer"   translation="[0, 692]" />
             </Rectangle>
